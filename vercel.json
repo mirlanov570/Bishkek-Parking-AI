@@ -1,17 +1,12 @@
 {
   "experimentalServices": {
     "frontend": {
-      "root": "frontend"
+      "root": "frontend",
+      "routePrefix": "/"
     },
     "backend": {
       "root": "backend",
-      "runtime": "python3.9"
+      "routePrefix": "/api"
     }
-  },
-  "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/backend/vercel.py"
-    }
-  ]
+  }
 }
