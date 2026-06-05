@@ -1,0 +1,1176 @@
+2026-05-13 16:45:36,152 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-13 16:45:36,192 | INFO | app.main | main.py:23 | Application startup started
+2026-05-13 16:45:36,192 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-13 16:45:36,193 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-13 16:45:50,736 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-13 16:45:50,737 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-13 16:45:50,737 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-13 16:45:51,520 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-13 16:45:51,565 | INFO | app.main | main.py:23 | Application startup started
+2026-05-13 16:45:51,565 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-13 16:45:51,566 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-13 16:46:07,324 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-13 16:46:07,324 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-13 16:46:07,325 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-13 16:46:08,119 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-13 16:46:08,155 | INFO | app.main | main.py:23 | Application startup started
+2026-05-13 16:46:08,156 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-13 16:46:08,156 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-13 16:46:21,284 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-13 16:46:27,069 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-13 16:46:36,253 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-13 16:46:36,254 | INFO | app.test | <string>:1 | test log message
+2026-05-13 16:47:17,107 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-13 16:47:17,357 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-13 16:47:46,627 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-13 16:47:46,781 | WARNING | app.auth | router.py:58 | Login failed | login_or_email=administrator code=INVALID_LOGIN_OR_PASSWORD detail=Invalid login or password
+2026-05-13 16:47:46,786 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=POST path=/api/v1/auth/login status_code=401 code=INVALID_LOGIN_OR_PASSWORD detail=Invalid login or password
+2026-05-13 16:48:08,593 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=POST path=/api/v1/parkings status_code=409 code=PARKING_NAME_ALREADY_EXISTS detail=Parking with this name already exists
+2026-05-13 16:48:16,897 | INFO | app.parking_requests | parking_request_service.py:181 | Parking request create attempt | user_id=1 parking_id=3 selected_zone_id=None
+2026-05-13 16:48:16,900 | WARNING | app.parking_requests | parking_request_service.py:52 | Parking request rejected | parking_id=3 reason=no_free_places
+2026-05-13 16:48:16,900 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=POST path=/api/v1/parking-requests status_code=400 code=PARKING_HAS_NO_FREE_PLACES detail=Parking has no free places
+2026-05-13 16:52:02,855 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-13 16:56:06,672 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-13 16:56:06,834 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-13 17:16:46,463 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-13 17:16:46,470 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-13 17:16:46,470 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-14 16:16:52,000 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-14 16:16:52,039 | INFO | app.main | main.py:23 | Application startup started
+2026-05-14 16:16:52,040 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-14 16:16:52,040 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-14 16:16:53,283 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/ status_code=404 code=NOT_FOUND detail=Not Found
+2026-05-14 16:16:53,305 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/favicon.ico status_code=404 code=NOT_FOUND detail=Not Found
+2026-05-14 16:17:27,460 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-14 16:17:27,461 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-14 16:17:27,462 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-14 16:17:28,293 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-14 16:17:28,331 | INFO | app.main | main.py:23 | Application startup started
+2026-05-14 16:17:28,332 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-14 16:17:28,332 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-14 16:17:41,829 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-14 16:17:41,830 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-14 16:17:41,830 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-14 16:17:42,603 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-14 16:17:42,643 | INFO | app.main | main.py:23 | Application startup started
+2026-05-14 16:17:42,644 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-14 16:17:42,644 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-14 16:17:54,728 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-14 16:17:54,730 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-14 16:17:54,730 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-14 16:17:55,474 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-14 16:17:55,516 | INFO | app.main | main.py:23 | Application startup started
+2026-05-14 16:17:55,516 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-14 16:17:55,516 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-14 16:18:08,483 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-14 16:18:08,484 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-14 16:18:08,484 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-14 16:18:09,285 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-14 16:18:09,323 | INFO | app.main | main.py:23 | Application startup started
+2026-05-14 16:18:09,323 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-14 16:18:09,324 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-14 16:18:18,759 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-14 16:18:18,760 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-14 16:18:18,760 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-14 16:18:19,576 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-14 16:18:19,619 | INFO | app.main | main.py:23 | Application startup started
+2026-05-14 16:18:19,620 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-14 16:18:19,620 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-14 16:19:37,144 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-14 16:19:37,444 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-14 16:30:50,419 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-14 16:30:50,426 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-14 16:30:50,426 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-14 16:30:51,244 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-14 16:30:51,288 | INFO | app.main | main.py:23 | Application startup started
+2026-05-14 16:30:51,289 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-14 16:30:51,289 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-14 16:31:09,352 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-14 16:31:09,354 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-14 16:31:09,354 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-14 16:31:10,128 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-14 16:31:10,173 | INFO | app.main | main.py:23 | Application startup started
+2026-05-14 16:31:10,174 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-14 16:31:10,174 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-14 16:31:26,054 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-14 16:31:26,054 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-14 16:31:26,055 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-14 16:31:26,814 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-14 16:31:26,858 | INFO | app.main | main.py:23 | Application startup started
+2026-05-14 16:31:26,858 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-14 16:31:26,858 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-14 16:31:52,910 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-14 16:31:52,911 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-14 16:31:52,911 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-14 16:31:53,746 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-14 16:31:53,790 | INFO | app.main | main.py:23 | Application startup started
+2026-05-14 16:31:53,792 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-14 16:31:53,792 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-14 16:32:07,356 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-14 16:32:07,357 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-14 16:32:07,357 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-14 16:32:08,143 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-14 16:32:08,188 | INFO | app.main | main.py:23 | Application startup started
+2026-05-14 16:32:08,188 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-14 16:32:08,188 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-14 16:32:20,003 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-14 16:32:20,004 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-14 16:32:20,004 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-14 16:32:20,871 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-14 16:32:20,915 | INFO | app.main | main.py:23 | Application startup started
+2026-05-14 16:32:20,915 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-14 16:32:20,916 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-14 16:34:19,201 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-14 16:34:19,491 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-14 16:36:51,646 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-14 16:36:51,840 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-14 16:38:04,123 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=demo_driver_1
+2026-05-14 16:38:04,319 | INFO | app.auth | router.py:66 | Login success | user_id=20 login=demo_driver_1 role_id=2
+2026-05-14 16:57:13,137 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-14 16:57:13,144 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-14 16:57:13,144 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-14 16:57:14,017 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-14 16:57:14,062 | INFO | app.main | main.py:23 | Application startup started
+2026-05-14 16:57:14,063 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-14 16:57:14,063 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-14 16:57:29,851 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-14 16:57:29,853 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-14 16:57:29,853 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-14 16:57:30,642 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-14 16:57:30,686 | INFO | app.main | main.py:23 | Application startup started
+2026-05-14 16:57:30,687 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-14 16:57:30,687 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-14 16:57:42,161 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-14 16:57:42,163 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-14 16:57:42,163 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-14 16:57:42,979 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-14 16:57:43,025 | INFO | app.main | main.py:23 | Application startup started
+2026-05-14 16:57:43,025 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-14 16:57:43,026 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-14 16:58:02,723 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-14 16:58:02,724 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-14 16:58:02,725 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-14 16:58:04,702 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-14 16:58:04,746 | INFO | app.main | main.py:23 | Application startup started
+2026-05-14 16:58:04,746 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-14 16:58:04,746 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-14 16:58:38,502 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-14 16:58:38,786 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-14 16:58:46,475 | INFO | app.ml_predictions | ml_prediction_service.py:209 | ML training started | parking_id=None test_size=0.2 min_rows=30
+2026-05-14 16:58:46,533 | INFO | app.ml_predictions | ml_prediction_service.py:276 | ML training completed | parking_id=None metric_id=41 mae=9.4079 mse=132.0466 r2=0.8231
+2026-05-14 16:59:07,187 | INFO | app.ml_predictions | ml_prediction_service.py:209 | ML training started | parking_id=1 test_size=0.2 min_rows=30
+2026-05-14 16:59:07,188 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=POST path=/api/v1/predictions/train status_code=400 code=NOT_ENOUGH_HISTORY_FOR_TRAINING detail=Not enough history rows for training. Required at least 30, found 4
+2026-05-14 17:00:24,587 | INFO | app.ml_predictions | ml_prediction_service.py:209 | ML training started | parking_id=1 test_size=0.2 min_rows=30
+2026-05-14 17:00:24,588 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=POST path=/api/v1/predictions/train status_code=400 code=NOT_ENOUGH_HISTORY_FOR_TRAINING detail=Not enough history rows for training. Required at least 30, found 4
+2026-05-14 17:01:11,803 | INFO | app.errors | exceptions.py:160 | Validation error handled | method=POST path=/api/v1/predictions/train detail=Validation error at body.min_rows: Input should be greater than or equal to 10
+2026-05-14 17:01:56,670 | INFO | app.ml_predictions | ml_prediction_service.py:209 | ML training started | parking_id=1 test_size=0.2 min_rows=10
+2026-05-14 17:01:56,671 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=POST path=/api/v1/predictions/train status_code=400 code=NOT_ENOUGH_HISTORY_FOR_TRAINING detail=Not enough history rows for training. Required at least 10, found 4
+2026-05-14 17:05:48,508 | INFO | app.ml_predictions | ml_prediction_service.py:209 | ML training started | parking_id=1 test_size=0.2 min_rows=30
+2026-05-14 17:05:48,555 | INFO | app.ml_predictions | ml_prediction_service.py:276 | ML training completed | parking_id=1 metric_id=42 mae=14.3287 mse=255.1395 r2=0.0528
+2026-05-14 17:05:58,888 | INFO | app.ml_predictions | ml_prediction_service.py:413 | ML prediction created | prediction_id=281 parking_id=1 load=85.0
+2026-05-14 17:13:18,772 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-14 17:13:18,775 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-14 17:13:18,775 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-14 17:13:20,599 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-14 17:13:20,646 | INFO | app.main | main.py:23 | Application startup started
+2026-05-14 17:13:20,646 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-14 17:13:20,646 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-14 17:13:32,153 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-14 17:13:32,154 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-14 17:13:32,154 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-14 17:13:33,941 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-14 17:13:33,985 | INFO | app.main | main.py:23 | Application startup started
+2026-05-14 17:13:33,985 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-14 17:13:33,986 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-14 17:13:46,584 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-14 17:13:46,585 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-14 17:13:46,585 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-14 17:13:48,278 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-14 17:13:48,326 | INFO | app.main | main.py:23 | Application startup started
+2026-05-14 17:13:48,326 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-14 17:13:48,327 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-14 17:14:01,560 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-14 17:14:01,561 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-14 17:14:01,561 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-14 17:14:03,350 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-14 17:14:03,396 | INFO | app.main | main.py:23 | Application startup started
+2026-05-14 17:14:03,396 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-14 17:14:03,397 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-14 17:14:24,975 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-14 17:14:24,976 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-14 17:14:24,976 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-14 17:14:26,714 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-14 17:14:26,760 | INFO | app.main | main.py:23 | Application startup started
+2026-05-14 17:14:26,761 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-14 17:14:26,761 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-14 17:14:36,942 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-14 17:14:36,942 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-14 17:14:36,943 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-14 17:14:38,692 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-14 17:14:38,737 | INFO | app.main | main.py:23 | Application startup started
+2026-05-14 17:14:38,737 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-14 17:14:38,737 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-14 17:14:52,653 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-14 17:14:52,654 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-14 17:14:52,654 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-14 17:14:54,333 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-14 17:14:54,378 | INFO | app.main | main.py:23 | Application startup started
+2026-05-14 17:14:54,379 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-14 17:14:54,379 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-14 17:15:38,516 | INFO | app.ml_predictions | ml_prediction_service.py:209 | ML training started | parking_id=None test_size=0.2 min_rows=30
+2026-05-14 17:15:38,594 | INFO | app.ml_predictions | ml_prediction_service.py:276 | ML training completed | parking_id=None metric_id=43 mae=9.4988 mse=134.9575 r2=0.8155
+2026-05-14 17:15:46,382 | INFO | app.ml_predictions | ml_prediction_service.py:413 | ML prediction created | prediction_id=282 parking_id=1 load=85.0
+2026-05-14 17:15:57,309 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-14 17:15:57,520 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-14 17:16:05,587 | INFO | app.recommendations | recommendation_service.py:437 | Improved recommendation created | recommendation_id=159 user_id=1 recommended_parking_id=43 score=38.2350
+2026-05-14 17:16:20,552 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-14 17:16:20,745 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-14 17:16:57,608 | INFO | app.recommendations | recommendation_service.py:437 | Improved recommendation created | recommendation_id=160 user_id=1 recommended_parking_id=36 score=60.3280
+2026-05-14 17:17:31,999 | INFO | app.parking_requests | parking_request_service.py:181 | Parking request create attempt | user_id=1 parking_id=1 selected_zone_id=None
+2026-05-14 17:17:32,042 | INFO | app.parking_requests | parking_request_service.py:222 | Parking request created | request_id=393 user_id=1 parking_id=1 status=created
+2026-05-14 17:17:41,085 | INFO | app.recommendations | recommendation_service.py:437 | Improved recommendation created | recommendation_id=161 user_id=1 recommended_parking_id=43 score=38.2350
+2026-05-14 17:17:50,734 | INFO | app.recommendations | recommendation_service.py:437 | Improved recommendation created | recommendation_id=162 user_id=1 recommended_parking_id=43 score=39.0350
+2026-05-14 18:00:54,733 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=POST path=/api/v1/predictions/predict status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-14 18:01:33,087 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-14 18:01:33,281 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-14 18:01:46,283 | INFO | app.ml_predictions | ml_prediction_service.py:413 | ML prediction created | prediction_id=283 parking_id=1 load=52.0
+2026-05-14 18:02:22,053 | INFO | app.ml_predictions | ml_prediction_service.py:413 | ML prediction created | prediction_id=284 parking_id=1 load=68.0
+2026-05-14 18:02:31,864 | INFO | app.ml_predictions | ml_prediction_service.py:413 | ML prediction created | prediction_id=285 parking_id=1 load=84.0
+2026-05-14 18:10:06,252 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-14 18:10:06,255 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-14 18:10:06,255 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-14 20:24:53,697 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\User\Desktop\parking-ai\backend\logs\app.log level=INFO
+2026-05-14 20:24:53,815 | INFO | app.main | main.py:23 | Application startup started
+2026-05-14 20:24:53,815 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\User\Desktop\parking-ai\backend\uploads
+2026-05-14 20:24:53,815 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-14 20:24:53,951 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/ status_code=404 code=NOT_FOUND detail=Not Found
+2026-05-14 20:24:53,996 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/favicon.ico status_code=404 code=NOT_FOUND detail=Not Found
+2026-05-14 20:29:05,447 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-14 20:29:13,629 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-14 20:43:24,781 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\User\Desktop\parking-ai\backend\logs\app.log level=INFO
+2026-05-14 20:43:24,866 | INFO | app.main | main.py:23 | Application startup started
+2026-05-14 20:43:24,867 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\User\Desktop\parking-ai\backend\uploads
+2026-05-14 20:43:24,867 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-14 20:44:19,099 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-14 20:44:19,480 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-14 21:30:29,977 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-14 21:30:30,207 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-14 21:42:22,108 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\User\Desktop\parking-ai\backend\logs\app.log level=INFO
+2026-05-14 21:42:22,196 | INFO | app.main | main.py:23 | Application startup started
+2026-05-14 21:42:22,196 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\User\Desktop\parking-ai\backend\uploads
+2026-05-14 21:42:22,197 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-14 21:56:55,058 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-14 21:56:55,058 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-14 21:56:55,059 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-14 21:56:59,245 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\User\Desktop\parking-ai\backend\logs\app.log level=INFO
+2026-05-14 21:56:59,331 | INFO | app.main | main.py:23 | Application startup started
+2026-05-14 21:56:59,331 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\User\Desktop\parking-ai\backend\uploads
+2026-05-14 21:56:59,332 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-14 21:59:28,867 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-14 21:59:28,868 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-14 21:59:28,868 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-14 21:59:34,511 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\User\Desktop\parking-ai\backend\logs\app.log level=INFO
+2026-05-14 21:59:34,593 | INFO | app.main | main.py:23 | Application startup started
+2026-05-14 21:59:34,594 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\User\Desktop\parking-ai\backend\uploads
+2026-05-14 21:59:34,594 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-14 23:01:18,680 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-14 23:01:19,042 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-14 23:01:28,352 | INFO | app.auth | router.py:155 | Logout requested | user_id=1 login=administrator
+2026-05-14 23:21:24,680 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-14 23:21:24,928 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-14 23:22:53,317 | INFO | app.auth | router.py:155 | Logout requested | user_id=1 login=administrator
+2026-05-14 23:39:53,384 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-14 23:39:53,622 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-14 23:42:52,843 | INFO | app.errors | exceptions.py:160 | Validation error handled | method=POST path=/api/v1/admin/seed-demo-data detail=Validation error at body: Field required
+2026-05-15 00:12:07,208 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/auth/me status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-15 00:12:07,214 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/auth/me status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-15 00:12:07,230 | INFO | app.auth | router.py:99 | Refresh token attempt
+2026-05-15 00:12:07,238 | INFO | app.auth | router.py:122 | Refresh token success | user_id=1 login=administrator
+2026-05-15 00:13:41,441 | INFO | app.parking_requests | parking_request_service.py:181 | Parking request create attempt | user_id=1 parking_id=1 selected_zone_id=None
+2026-05-15 00:13:41,491 | INFO | app.parking_requests | parking_request_service.py:222 | Parking request created | request_id=81 user_id=1 parking_id=1 status=created
+2026-05-15 00:26:51,250 | INFO | app.errors | exceptions.py:160 | Validation error handled | method=GET path=/api/v1/parkings detail=Validation error at query.limit: Input should be less than or equal to 100
+2026-05-15 00:26:51,253 | INFO | app.errors | exceptions.py:160 | Validation error handled | method=GET path=/api/v1/parkings detail=Validation error at query.limit: Input should be less than or equal to 100
+2026-05-15 00:26:53,221 | INFO | app.errors | exceptions.py:160 | Validation error handled | method=GET path=/api/v1/parkings detail=Validation error at query.limit: Input should be less than or equal to 100
+2026-05-15 00:26:53,783 | INFO | app.errors | exceptions.py:160 | Validation error handled | method=GET path=/api/v1/parkings detail=Validation error at query.limit: Input should be less than or equal to 100
+2026-05-15 00:26:54,233 | INFO | app.errors | exceptions.py:160 | Validation error handled | method=GET path=/api/v1/parkings detail=Validation error at query.limit: Input should be less than or equal to 100
+2026-05-15 00:26:54,468 | INFO | app.errors | exceptions.py:160 | Validation error handled | method=GET path=/api/v1/parkings detail=Validation error at query.limit: Input should be less than or equal to 100
+2026-05-15 00:26:54,684 | INFO | app.errors | exceptions.py:160 | Validation error handled | method=GET path=/api/v1/parkings detail=Validation error at query.limit: Input should be less than or equal to 100
+2026-05-15 00:27:55,034 | INFO | app.errors | exceptions.py:160 | Validation error handled | method=GET path=/api/v1/parkings detail=Validation error at query.limit: Input should be less than or equal to 100
+2026-05-15 00:28:02,026 | INFO | app.auth | router.py:155 | Logout requested | user_id=1 login=administrator
+2026-05-15 00:28:27,660 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-15 00:28:27,901 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-15 00:28:34,777 | INFO | app.errors | exceptions.py:160 | Validation error handled | method=GET path=/api/v1/parkings detail=Validation error at query.limit: Input should be less than or equal to 100
+2026-05-15 00:28:34,779 | INFO | app.errors | exceptions.py:160 | Validation error handled | method=GET path=/api/v1/parkings detail=Validation error at query.limit: Input should be less than or equal to 100
+2026-05-15 00:35:36,149 | INFO | app.errors | exceptions.py:160 | Validation error handled | method=GET path=/api/v1/parkings detail=Validation error at query.limit: Input should be less than or equal to 100
+2026-05-15 00:36:50,662 | INFO | app.auth | router.py:155 | Logout requested | user_id=1 login=administrator
+2026-05-15 00:36:52,059 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-15 00:36:52,291 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-15 00:37:53,087 | INFO | app.parking_requests | parking_request_service.py:181 | Parking request create attempt | user_id=1 parking_id=3 selected_zone_id=None
+2026-05-15 00:37:53,117 | INFO | app.parking_requests | parking_request_service.py:222 | Parking request created | request_id=82 user_id=1 parking_id=3 status=created
+2026-05-15 00:55:33,609 | INFO | app.recommendations | recommendation_service.py:437 | Improved recommendation created | recommendation_id=33 user_id=1 recommended_parking_id=8 score=44.8973
+2026-05-15 01:19:02,377 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/auth/me status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-15 01:19:02,383 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/auth/me status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-15 01:19:02,395 | INFO | app.auth | router.py:99 | Refresh token attempt
+2026-05-15 01:19:02,401 | INFO | app.auth | router.py:122 | Refresh token success | user_id=1 login=administrator
+2026-05-15 01:32:47,647 | INFO | app.ml_predictions | ml_prediction_service.py:209 | ML training started | parking_id=None test_size=0.2 min_rows=30
+2026-05-15 01:32:47,826 | INFO | app.ml_predictions | ml_prediction_service.py:276 | ML training completed | parking_id=None metric_id=11 mae=9.5234 mse=137.6004 r2=0.8294
+2026-05-15 01:32:51,327 | INFO | app.ml_predictions | ml_prediction_service.py:413 | ML prediction created | prediction_id=61 parking_id=1 load=23.33
+2026-05-15 01:32:56,371 | INFO | app.ml_predictions | ml_prediction_service.py:413 | ML prediction created | prediction_id=62 parking_id=4 load=72.0
+2026-05-15 01:33:02,075 | INFO | app.ml_predictions | ml_prediction_service.py:413 | ML prediction created | prediction_id=63 parking_id=2 load=51.67
+2026-05-15 01:33:31,435 | INFO | app.ml_predictions | ml_prediction_service.py:413 | ML prediction created | prediction_id=64 parking_id=9 load=68.24
+2026-05-15 01:35:45,564 | INFO | app.recommendations | recommendation_service.py:437 | Improved recommendation created | recommendation_id=34 user_id=1 recommended_parking_id=8 score=44.8973
+2026-05-15 01:36:09,638 | INFO | app.parking_requests | parking_request_service.py:181 | Parking request create attempt | user_id=1 parking_id=2 selected_zone_id=None
+2026-05-15 01:36:09,654 | INFO | app.parking_requests | parking_request_service.py:222 | Parking request created | request_id=83 user_id=1 parking_id=2 status=created
+2026-05-15 01:49:04,832 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=POST path=/api/v1/parking-requests status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-15 01:49:04,840 | INFO | app.auth | router.py:99 | Refresh token attempt
+2026-05-15 01:49:04,847 | INFO | app.auth | router.py:122 | Refresh token success | user_id=1 login=administrator
+2026-05-15 01:49:04,861 | INFO | app.parking_requests | parking_request_service.py:181 | Parking request create attempt | user_id=1 parking_id=3 selected_zone_id=None
+2026-05-15 01:49:04,931 | INFO | app.parking_requests | parking_request_service.py:222 | Parking request created | request_id=84 user_id=1 parking_id=3 status=created
+2026-05-15 02:09:13,867 | INFO | app.parking_requests | parking_request_service.py:278 | Parking request status updated | request_id=2 old_status=processing new_status=recommended
+2026-05-15 02:19:05,140 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/notifications status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-15 02:19:05,151 | INFO | app.auth | router.py:99 | Refresh token attempt
+2026-05-15 02:19:05,158 | INFO | app.auth | router.py:122 | Refresh token success | user_id=1 login=administrator
+2026-05-15 02:25:10,435 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-15 02:25:10,690 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-15 02:25:42,889 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-15 02:25:42,985 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-15 02:25:42,985 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-15 02:25:48,579 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\User\Desktop\parking-ai\backend\logs\app.log level=INFO
+2026-05-15 02:25:48,661 | INFO | app.main | main.py:23 | Application startup started
+2026-05-15 02:25:48,662 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\User\Desktop\parking-ai\backend\uploads
+2026-05-15 02:25:48,662 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-15 02:25:51,694 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-15 02:25:52,184 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-15 03:22:56,831 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/notifications status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-15 03:22:56,848 | INFO | app.auth | router.py:99 | Refresh token attempt
+2026-05-15 03:22:56,858 | INFO | app.auth | router.py:122 | Refresh token success | user_id=1 login=administrator
+2026-05-15 03:26:18,523 | INFO | app.auth | router.py:155 | Logout requested | user_id=1 login=administrator
+2026-05-15 04:19:59,506 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-15 04:19:59,583 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-15 04:19:59,584 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-15 04:20:03,657 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\User\Desktop\parking-ai\backend\logs\app.log level=INFO
+2026-05-15 04:20:03,776 | INFO | app.main | main.py:23 | Application startup started
+2026-05-15 04:20:03,776 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\User\Desktop\parking-ai\backend\uploads
+2026-05-15 04:20:03,776 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-15 04:20:23,895 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-15 04:20:23,896 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-15 04:20:23,897 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-15 04:20:28,162 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\User\Desktop\parking-ai\backend\logs\app.log level=INFO
+2026-05-15 04:20:28,261 | INFO | app.main | main.py:23 | Application startup started
+2026-05-15 04:20:28,262 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\User\Desktop\parking-ai\backend\uploads
+2026-05-15 04:20:28,262 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-15 04:29:27,858 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-15 04:29:28,540 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-15 04:29:38,080 | INFO | app.auth | router.py:155 | Logout requested | user_id=1 login=administrator
+2026-05-15 04:48:51,819 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-15 04:48:51,876 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-15 04:48:51,876 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-15 05:05:08,532 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\User\Desktop\parking-ai\backend\logs\app.log level=INFO
+2026-05-15 05:05:08,700 | INFO | app.main | main.py:23 | Application startup started
+2026-05-15 05:05:08,701 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\User\Desktop\parking-ai\backend\uploads
+2026-05-15 05:05:08,701 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-15 05:06:35,345 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=astanashkin
+2026-05-15 05:06:36,650 | INFO | app.auth | router.py:66 | Login success | user_id=7 login=astanashkin role_id=2
+2026-05-15 05:07:07,867 | INFO | app.auth | router.py:155 | Logout requested | user_id=7 login=astanashkin
+2026-05-15 05:07:32,745 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-15 05:07:33,986 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-15 05:38:05,134 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/notifications status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-15 05:38:05,142 | INFO | app.auth | router.py:99 | Refresh token attempt
+2026-05-15 05:38:05,147 | INFO | app.auth | router.py:122 | Refresh token success | user_id=1 login=administrator
+2026-05-15 07:45:44,375 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/notifications status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-15 07:45:44,396 | INFO | app.auth | router.py:99 | Refresh token attempt
+2026-05-15 07:45:44,406 | INFO | app.auth | router.py:122 | Refresh token success | user_id=1 login=administrator
+2026-05-15 07:45:53,178 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-15 07:45:53,248 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-15 07:45:53,248 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-15 07:59:00,395 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-15 07:59:00,440 | INFO | app.main | main.py:23 | Application startup started
+2026-05-15 07:59:00,440 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-15 07:59:00,440 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-15 07:59:02,686 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/ status_code=404 code=NOT_FOUND detail=Not Found
+2026-05-15 08:02:35,333 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-15 08:02:35,670 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-15 08:03:36,893 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-15 08:03:36,905 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-15 08:03:36,905 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-15 08:09:38,607 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-15 08:09:38,653 | INFO | app.main | main.py:23 | Application startup started
+2026-05-15 08:09:38,654 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-15 08:09:38,654 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-15 08:09:52,493 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/notifications status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-15 08:09:52,733 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/auth/me status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-15 08:09:52,741 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/auth/me status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-15 08:09:52,744 | INFO | app.auth | router.py:99 | Refresh token attempt
+2026-05-15 08:09:52,749 | WARNING | app.auth | router.py:115 | Refresh token failed | code=USER_NOT_FOUND detail=User not found
+2026-05-15 08:09:52,750 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=POST path=/api/v1/auth/refresh status_code=404 code=USER_NOT_FOUND detail=User not found
+2026-05-15 08:09:54,342 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-15 08:09:54,345 | WARNING | app.auth | router.py:58 | Login failed | login_or_email=administrator code=INVALID_LOGIN_OR_PASSWORD detail=Invalid login or password
+2026-05-15 08:09:54,345 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=POST path=/api/v1/auth/login status_code=401 code=INVALID_LOGIN_OR_PASSWORD detail=Invalid login or password
+2026-05-15 08:10:00,831 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-15 08:10:00,833 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-15 08:10:00,833 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-15 08:10:58,039 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-15 08:10:58,083 | INFO | app.main | main.py:23 | Application startup started
+2026-05-15 08:10:58,084 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-15 08:10:58,084 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-15 08:10:58,319 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-15 08:10:58,571 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-15 08:30:44,188 | INFO | app.auth | router.py:155 | Logout requested | user_id=1 login=administrator
+2026-05-15 08:51:09,459 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-15 08:51:09,624 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-15 08:55:49,476 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/model-metrics/latest status_code=404 code=MODEL_METRIC_NOT_FOUND detail=Model metric not found
+2026-05-15 08:55:49,489 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/model-metrics/latest status_code=404 code=MODEL_METRIC_NOT_FOUND detail=Model metric not found
+2026-05-15 08:56:13,373 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-15 08:56:13,384 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-15 08:56:13,384 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-15 08:56:34,249 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-15 08:56:34,300 | INFO | app.main | main.py:23 | Application startup started
+2026-05-15 08:56:34,300 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-15 08:56:34,300 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-15 08:57:00,806 | INFO | app.auth | router.py:155 | Logout requested | user_id=1 login=administrator
+2026-05-15 09:26:00,837 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-15 09:26:01,021 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-15 09:27:35,878 | INFO | app.auth | router.py:155 | Logout requested | user_id=1 login=administrator
+2026-05-15 09:40:22,564 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=astanashkin
+2026-05-15 09:40:22,729 | INFO | app.auth | router.py:66 | Login success | user_id=7 login=astanashkin role_id=2
+2026-05-15 09:40:51,204 | INFO | app.auth | router.py:155 | Logout requested | user_id=7 login=astanashkin
+2026-05-15 09:41:13,995 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-15 09:41:14,157 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-15 09:53:08,285 | INFO | app.auth | router.py:155 | Logout requested | user_id=1 login=administrator
+2026-05-15 09:54:55,117 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-15 09:54:55,275 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-15 10:03:01,949 | INFO | app.auth | router.py:155 | Logout requested | user_id=1 login=administrator
+2026-05-15 10:03:04,481 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-15 10:03:04,642 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-15 10:22:56,207 | INFO | app.auth | router.py:155 | Logout requested | user_id=1 login=administrator
+2026-05-15 10:22:58,072 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-15 10:22:58,233 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-15 10:30:44,180 | INFO | app.auth | router.py:155 | Logout requested | user_id=1 login=administrator
+2026-05-15 10:40:59,748 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-15 10:40:59,915 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-15 10:41:23,922 | INFO | app.auth | router.py:155 | Logout requested | user_id=1 login=administrator
+2026-05-15 10:42:50,568 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-15 10:42:50,731 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-15 10:50:56,926 | INFO | app.parking_requests | parking_request_service.py:181 | Parking request create attempt | user_id=1 parking_id=7 selected_zone_id=None
+2026-05-15 10:50:56,971 | INFO | app.parking_requests | parking_request_service.py:222 | Parking request created | request_id=161 user_id=1 parking_id=7 status=created
+2026-05-15 10:51:39,796 | INFO | app.parking_requests | parking_request_service.py:278 | Parking request status updated | request_id=161 old_status=created new_status=processing
+2026-05-15 10:51:45,026 | INFO | app.recommendations | recommendation_service.py:437 | Improved recommendation created | recommendation_id=65 user_id=1 recommended_parking_id=1 score=47.3325
+2026-05-15 10:53:08,122 | INFO | app.auth | router.py:155 | Logout requested | user_id=1 login=administrator
+2026-05-15 10:53:10,859 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=astanashkin
+2026-05-15 10:53:11,019 | INFO | app.auth | router.py:66 | Login success | user_id=7 login=astanashkin role_id=2
+2026-05-15 10:53:17,428 | INFO | app.parking_requests | parking_request_service.py:181 | Parking request create attempt | user_id=7 parking_id=4 selected_zone_id=None
+2026-05-15 10:53:17,439 | INFO | app.parking_requests | parking_request_service.py:222 | Parking request created | request_id=162 user_id=7 parking_id=4 status=created
+2026-05-15 10:53:22,227 | INFO | app.auth | router.py:155 | Logout requested | user_id=7 login=astanashkin
+2026-05-15 10:53:25,308 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-15 10:53:25,479 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-15 10:54:49,001 | INFO | app.parking_requests | parking_request_service.py:278 | Parking request status updated | request_id=162 old_status=created new_status=recommended
+2026-05-15 10:54:52,440 | INFO | app.auth | router.py:155 | Logout requested | user_id=1 login=administrator
+2026-05-15 10:54:55,116 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=astanashkin
+2026-05-15 10:54:55,280 | INFO | app.auth | router.py:66 | Login success | user_id=7 login=astanashkin role_id=2
+2026-05-15 11:06:09,059 | INFO | app.auth | router.py:155 | Logout requested | user_id=7 login=astanashkin
+2026-05-15 11:06:14,982 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=astanashkin
+2026-05-15 11:06:15,144 | INFO | app.auth | router.py:66 | Login success | user_id=7 login=astanashkin role_id=2
+2026-05-15 11:08:51,978 | INFO | app.parking_requests | parking_request_service.py:181 | Parking request create attempt | user_id=7 parking_id=7 selected_zone_id=None
+2026-05-15 11:08:52,019 | INFO | app.parking_requests | parking_request_service.py:222 | Parking request created | request_id=163 user_id=7 parking_id=7 status=created
+2026-05-15 11:09:00,735 | INFO | app.auth | router.py:155 | Logout requested | user_id=7 login=astanashkin
+2026-05-15 11:09:03,148 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-15 11:09:03,312 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-15 11:22:49,487 | INFO | app.auth | router.py:155 | Logout requested | user_id=1 login=administrator
+2026-05-15 12:03:15,285 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-15 12:03:15,446 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-15 12:33:22,791 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/notifications status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-15 12:33:22,795 | INFO | app.auth | router.py:99 | Refresh token attempt
+2026-05-15 12:33:22,798 | INFO | app.auth | router.py:122 | Refresh token success | user_id=1 login=administrator
+2026-05-15 13:03:31,396 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/notifications status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-15 13:03:31,400 | INFO | app.auth | router.py:99 | Refresh token attempt
+2026-05-15 13:03:31,404 | INFO | app.auth | router.py:122 | Refresh token success | user_id=1 login=administrator
+2026-05-15 13:34:31,437 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/notifications status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-15 13:34:31,441 | INFO | app.auth | router.py:99 | Refresh token attempt
+2026-05-15 13:34:31,492 | INFO | app.auth | router.py:122 | Refresh token success | user_id=1 login=administrator
+2026-05-15 14:05:31,440 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/notifications status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-15 14:05:31,443 | INFO | app.auth | router.py:99 | Refresh token attempt
+2026-05-15 14:05:31,446 | INFO | app.auth | router.py:122 | Refresh token success | user_id=1 login=administrator
+2026-05-15 14:36:31,470 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/notifications status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-15 14:36:31,474 | INFO | app.auth | router.py:99 | Refresh token attempt
+2026-05-15 14:36:31,480 | INFO | app.auth | router.py:122 | Refresh token success | user_id=1 login=administrator
+2026-05-15 15:07:28,481 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/notifications status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-15 15:07:28,485 | INFO | app.auth | router.py:99 | Refresh token attempt
+2026-05-15 15:07:28,488 | INFO | app.auth | router.py:122 | Refresh token success | user_id=1 login=administrator
+2026-05-17 14:03:38,451 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\User\Desktop\parking-ai\backend\logs\app.log level=INFO
+2026-05-17 14:03:38,535 | INFO | app.main | main.py:23 | Application startup started
+2026-05-17 14:03:38,536 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\User\Desktop\parking-ai\backend\uploads
+2026-05-17 14:03:38,536 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-17 14:03:41,530 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/ status_code=404 code=NOT_FOUND detail=Not Found
+2026-05-17 14:03:41,579 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/favicon.ico status_code=404 code=NOT_FOUND detail=Not Found
+2026-05-17 14:05:43,796 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-17 14:05:45,012 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-17 14:06:10,410 | INFO | app.auth | router.py:155 | Logout requested | user_id=1 login=administrator
+2026-05-17 14:59:06,434 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-17 14:59:06,809 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-17 15:18:20,020 | INFO | app.auth | router.py:155 | Logout requested | user_id=1 login=administrator
+2026-05-17 15:18:22,519 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=astanashkin
+2026-05-17 15:18:22,789 | INFO | app.auth | router.py:66 | Login success | user_id=7 login=astanashkin role_id=2
+2026-05-17 21:06:40,032 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/auth/me status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-17 21:06:40,041 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/auth/me status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-17 21:06:40,064 | INFO | app.auth | router.py:99 | Refresh token attempt
+2026-05-17 21:06:40,088 | INFO | app.auth | router.py:122 | Refresh token success | user_id=7 login=astanashkin
+2026-05-17 21:07:15,449 | INFO | app.auth | router.py:155 | Logout requested | user_id=7 login=astanashkin
+2026-05-17 21:07:18,074 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-17 21:07:18,447 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-18 07:34:01,188 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-18 07:34:01,232 | INFO | app.main | main.py:23 | Application startup started
+2026-05-18 07:34:01,232 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-18 07:34:01,232 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-18 07:34:08,049 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/ status_code=404 code=NOT_FOUND detail=Not Found
+2026-05-18 07:34:08,097 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/favicon.ico status_code=404 code=NOT_FOUND detail=Not Found
+2026-05-18 07:34:32,270 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-18 07:34:32,754 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-18 07:34:46,483 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/auth/me status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-18 07:34:46,487 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/auth/me status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-18 07:34:46,490 | INFO | app.auth | router.py:99 | Refresh token attempt
+2026-05-18 07:34:46,497 | INFO | app.auth | router.py:122 | Refresh token success | user_id=1 login=administrator
+2026-05-18 07:35:07,768 | INFO | app.auth | router.py:155 | Logout requested | user_id=1 login=administrator
+2026-05-18 07:35:17,659 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-18 07:35:17,831 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-18 07:35:21,530 | INFO | app.auth | router.py:155 | Logout requested | user_id=1 login=administrator
+2026-05-18 07:35:31,872 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-18 07:35:32,040 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-18 07:38:03,650 | INFO | app.auth | router.py:155 | Logout requested | user_id=1 login=administrator
+2026-05-18 07:38:05,051 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-18 07:38:05,211 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-18 08:17:30,591 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/popular-parkings status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-18 08:17:30,592 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/peak-hours status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-18 08:17:30,594 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/dashboard status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-18 08:17:30,596 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/popular-parkings status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-18 08:17:30,596 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/peak-hours status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-18 08:17:30,599 | INFO | app.auth | router.py:99 | Refresh token attempt
+2026-05-18 08:17:30,600 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/dashboard status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-18 08:17:30,604 | INFO | app.auth | router.py:122 | Refresh token success | user_id=1 login=administrator
+2026-05-18 08:30:24,920 | INFO | app.parking_requests | parking_request_service.py:181 | Parking request create attempt | user_id=1 parking_id=10 selected_zone_id=None
+2026-05-18 08:30:24,945 | INFO | app.parking_requests | parking_request_service.py:222 | Parking request created | request_id=324 user_id=1 parking_id=10 status=created
+2026-05-18 08:30:55,678 | INFO | app.parking_requests | parking_request_service.py:181 | Parking request create attempt | user_id=1 parking_id=10 selected_zone_id=None
+2026-05-18 08:30:55,722 | INFO | app.parking_requests | parking_request_service.py:222 | Parking request created | request_id=325 user_id=1 parking_id=10 status=created
+2026-05-18 08:31:49,842 | INFO | app.parking_requests | parking_request_service.py:181 | Parking request create attempt | user_id=1 parking_id=3 selected_zone_id=None
+2026-05-18 08:31:49,886 | INFO | app.parking_requests | parking_request_service.py:222 | Parking request created | request_id=326 user_id=1 parking_id=3 status=created
+2026-05-18 08:33:08,295 | INFO | app.recommendations | recommendation_service.py:437 | Improved recommendation created | recommendation_id=130 user_id=1 recommended_parking_id=3 score=45.5050
+2026-05-18 08:33:13,333 | INFO | app.recommendations | recommendation_service.py:437 | Improved recommendation created | recommendation_id=131 user_id=1 recommended_parking_id=3 score=45.5050
+2026-05-18 08:35:25,857 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-18 08:35:25,867 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-18 08:35:25,867 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-18 08:35:28,498 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-18 08:35:28,544 | INFO | app.main | main.py:23 | Application startup started
+2026-05-18 08:35:28,544 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-18 08:35:28,544 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-18 08:35:31,952 | INFO | app.recommendations | recommendation_service.py:437 | Improved recommendation created | recommendation_id=132 user_id=1 recommended_parking_id=3 score=45.5050
+2026-05-18 08:48:21,209 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/peak-hours status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-18 08:48:21,210 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/popular-parkings status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-18 08:48:21,211 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/dashboard status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-18 08:48:21,212 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/peak-hours status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-18 08:48:21,213 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/popular-parkings status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-18 08:48:21,214 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/dashboard status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-18 08:48:21,217 | INFO | app.auth | router.py:99 | Refresh token attempt
+2026-05-18 08:48:21,222 | INFO | app.auth | router.py:122 | Refresh token success | user_id=1 login=administrator
+2026-05-18 08:59:33,148 | INFO | app.ml_predictions | ml_prediction_service.py:413 | ML prediction created | prediction_id=241 parking_id=7 load=53.64
+2026-05-18 09:00:21,249 | INFO | app.recommendations | recommendation_service.py:437 | Improved recommendation created | recommendation_id=133 user_id=1 recommended_parking_id=3 score=45.5050
+2026-05-18 09:00:29,445 | INFO | app.recommendations | recommendation_service.py:437 | Improved recommendation created | recommendation_id=134 user_id=1 recommended_parking_id=3 score=45.5050
+2026-05-18 09:40:40,921 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/recommendations/my status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-18 09:40:40,921 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/parking-requests/my status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-18 09:40:40,924 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/recommendations/my status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-18 09:40:40,926 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/parking-requests/my status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-18 09:40:40,927 | INFO | app.auth | router.py:99 | Refresh token attempt
+2026-05-18 09:40:40,937 | INFO | app.auth | router.py:122 | Refresh token success | user_id=1 login=administrator
+2026-05-18 09:45:26,723 | INFO | app.recommendations | recommendation_service.py:437 | Improved recommendation created | recommendation_id=167 user_id=1 recommended_parking_id=2 score=45.6333
+2026-05-18 09:47:46,111 | INFO | app.auth | router.py:155 | Logout requested | user_id=1 login=administrator
+2026-05-18 09:47:55,863 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-18 09:47:56,073 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-18 10:17:31,619 | INFO | app.parking_requests | parking_request_service.py:181 | Parking request create attempt | user_id=1 parking_id=9 selected_zone_id=None
+2026-05-18 10:17:31,673 | INFO | app.parking_requests | parking_request_service.py:222 | Parking request created | request_id=407 user_id=1 parking_id=9 status=created
+2026-05-18 10:17:44,318 | INFO | app.recommendations | recommendation_service.py:437 | Improved recommendation created | recommendation_id=168 user_id=1 recommended_parking_id=2 score=45.6333
+2026-05-18 10:17:51,564 | INFO | app.recommendations | recommendation_service.py:437 | Improved recommendation created | recommendation_id=169 user_id=1 recommended_parking_id=2 score=45.6333
+2026-05-18 10:17:56,858 | INFO | app.recommendations | recommendation_service.py:437 | Improved recommendation created | recommendation_id=170 user_id=1 recommended_parking_id=2 score=45.6333
+2026-05-18 10:18:07,634 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/dashboard status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-18 10:18:07,634 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/peak-hours status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-18 10:18:07,635 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/weekdays-vs-weekends status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-18 10:18:07,638 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/daily-load status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-18 10:18:07,639 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/dashboard status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-18 10:18:07,640 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/popular-parkings status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-18 10:18:07,641 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/weekdays-vs-weekends status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-18 10:18:07,641 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/peak-hours status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-18 10:18:07,644 | INFO | app.auth | router.py:99 | Refresh token attempt
+2026-05-18 10:18:07,645 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/daily-load status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-18 10:18:07,646 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/popular-parkings status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-18 10:18:07,653 | INFO | app.auth | router.py:122 | Refresh token success | user_id=1 login=administrator
+2026-05-18 10:18:07,655 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/parking-load/1 status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-18 10:18:07,658 | INFO | app.auth | router.py:99 | Refresh token attempt
+2026-05-18 10:18:07,676 | INFO | app.auth | router.py:122 | Refresh token success | user_id=1 login=administrator
+2026-05-18 10:20:13,731 | INFO | app.auth | router.py:155 | Logout requested | user_id=1 login=administrator
+2026-05-18 10:20:16,442 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=astanashkin
+2026-05-18 10:20:16,619 | INFO | app.auth | router.py:66 | Login success | user_id=7 login=astanashkin role_id=2
+2026-05-18 10:20:34,473 | INFO | app.auth | router.py:155 | Logout requested | user_id=7 login=astanashkin
+2026-05-18 10:20:37,291 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-18 10:20:37,456 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-18 10:24:52,387 | INFO | app.recommendations | recommendation_service.py:437 | Improved recommendation created | recommendation_id=171 user_id=1 recommended_parking_id=2 score=45.6333
+2026-05-18 10:35:29,035 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-18 10:35:29,047 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-18 10:35:29,047 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-18 10:42:51,746 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-18 10:42:51,791 | INFO | app.main | main.py:23 | Application startup started
+2026-05-18 10:42:51,791 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-18 10:42:51,791 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-18 10:42:57,859 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-18 10:42:58,115 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-18 11:10:10,394 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-18 11:10:10,401 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-18 11:10:10,401 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-18 11:37:02,167 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-18 11:37:02,215 | INFO | app.main | main.py:23 | Application startup started
+2026-05-18 11:37:02,215 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-18 11:37:02,216 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-18 11:37:02,886 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-18 11:37:03,252 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-18 11:40:20,428 | INFO | app.parking_requests | parking_request_service.py:181 | Parking request create attempt | user_id=1 parking_id=8 selected_zone_id=None
+2026-05-18 11:40:20,451 | INFO | app.parking_requests | parking_request_service.py:222 | Parking request created | request_id=408 user_id=1 parking_id=8 status=created
+2026-05-18 11:42:15,639 | INFO | app.parking_requests | parking_request_service.py:181 | Parking request create attempt | user_id=1 parking_id=3 selected_zone_id=None
+2026-05-18 11:42:15,689 | INFO | app.parking_requests | parking_request_service.py:222 | Parking request created | request_id=409 user_id=1 parking_id=3 status=created
+2026-05-18 11:42:34,509 | INFO | app.recommendations | recommendation_service.py:437 | Improved recommendation created | recommendation_id=172 user_id=1 recommended_parking_id=2 score=45.6333
+2026-05-18 11:43:53,024 | INFO | app.recommendations | recommendation_service.py:437 | Improved recommendation created | recommendation_id=173 user_id=1 recommended_parking_id=2 score=45.6333
+2026-05-18 11:47:44,424 | INFO | app.ml_predictions | ml_prediction_service.py:413 | ML prediction created | prediction_id=302 parking_id=4 load=38.0
+2026-05-18 11:49:05,368 | INFO | app.ml_predictions | ml_prediction_service.py:413 | ML prediction created | prediction_id=303 parking_id=4 load=48.67
+2026-05-18 11:49:08,741 | INFO | app.ml_predictions | ml_prediction_service.py:413 | ML prediction created | prediction_id=304 parking_id=4 load=72.0
+2026-05-18 11:53:17,303 | INFO | app.parking_requests | parking_request_service.py:295 | Parking request cancel attempt | request_id=409 current_user_id=1 is_admin=True
+2026-05-18 11:53:17,341 | INFO | app.parking_requests | parking_request_service.py:340 | Parking request cancelled | request_id=409 current_user_id=1
+2026-05-18 12:02:24,485 | WARNING | app.parking_requests | parking_request_service.py:240 | Invalid parking request status transition | from=created to=completed
+2026-05-18 12:02:24,485 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=PATCH path=/api/v1/parking-requests/1/status status_code=400 code=INVALID_PARKING_REQUEST_STATUS_TRANSITION detail=Cannot change parking request status from created to completed
+2026-05-18 12:02:38,395 | WARNING | app.parking_requests | parking_request_service.py:240 | Invalid parking request status transition | from=created to=completed
+2026-05-18 12:02:38,396 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=PATCH path=/api/v1/parking-requests/1/status status_code=400 code=INVALID_PARKING_REQUEST_STATUS_TRANSITION detail=Cannot change parking request status from created to completed
+2026-05-18 12:02:41,805 | WARNING | app.parking_requests | parking_request_service.py:240 | Invalid parking request status transition | from=created to=completed
+2026-05-18 12:02:41,806 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=PATCH path=/api/v1/parking-requests/1/status status_code=400 code=INVALID_PARKING_REQUEST_STATUS_TRANSITION detail=Cannot change parking request status from created to completed
+2026-05-18 12:03:33,629 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=PATCH path=/api/v1/parking-requests/1/status status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-18 12:03:41,873 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-18 12:03:42,037 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-18 12:03:44,196 | WARNING | app.parking_requests | parking_request_service.py:240 | Invalid parking request status transition | from=created to=completed
+2026-05-18 12:03:44,197 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=PATCH path=/api/v1/parking-requests/1/status status_code=400 code=INVALID_PARKING_REQUEST_STATUS_TRANSITION detail=Cannot change parking request status from created to completed
+2026-05-18 12:07:08,079 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/dashboard status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-18 12:07:08,080 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/popular-parkings status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-18 12:07:08,081 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/peak-hours status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-18 12:07:08,121 | INFO | app.auth | router.py:99 | Refresh token attempt
+2026-05-18 12:07:08,126 | INFO | app.auth | router.py:122 | Refresh token success | user_id=1 login=administrator
+2026-05-21 10:50:47,118 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-21 10:50:47,161 | INFO | app.main | main.py:23 | Application startup started
+2026-05-21 10:50:47,161 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-21 10:50:47,161 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-21 10:50:47,169 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/ status_code=404 code=NOT_FOUND detail=Not Found
+2026-05-21 10:50:47,181 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/favicon.ico status_code=404 code=NOT_FOUND detail=Not Found
+2026-05-21 10:51:04,309 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/auth/me status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-21 10:51:04,311 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/auth/me status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-21 10:51:04,313 | INFO | app.auth | router.py:99 | Refresh token attempt
+2026-05-21 10:51:04,554 | INFO | app.auth | router.py:122 | Refresh token success | user_id=1 login=administrator
+2026-05-21 10:53:31,157 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-21 10:53:31,163 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-21 10:53:31,163 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-21 14:13:17,666 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-21 14:13:17,717 | INFO | app.main | main.py:23 | Application startup started
+2026-05-21 14:13:17,717 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-21 14:13:17,717 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-21 14:26:16,973 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-21 14:26:16,978 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-21 14:26:16,978 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-21 14:26:18,677 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-21 14:26:18,726 | INFO | app.main | main.py:23 | Application startup started
+2026-05-21 14:26:18,727 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-21 14:26:18,727 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-21 14:27:00,891 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-21 14:27:00,891 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-21 14:27:00,891 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-21 14:27:02,754 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-21 14:27:02,806 | INFO | app.main | main.py:23 | Application startup started
+2026-05-21 14:27:02,807 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-21 14:27:02,807 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-21 14:28:07,862 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-21 14:28:07,911 | INFO | app.main | main.py:23 | Application startup started
+2026-05-21 14:28:07,911 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-21 14:28:07,911 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-21 14:28:58,724 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-21 14:28:59,168 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-21 14:29:15,845 | INFO | app.ml_predictions | ml_prediction_service.py:302 | ML training started | parking_id=None test_size=0.2 min_rows=30
+2026-05-21 14:29:15,936 | INFO | app.ml_predictions | ml_prediction_service.py:371 | ML training completed | parking_id=None metric_id=1 mae=3.6018 mse=29.2998 r2=0.9877
+2026-05-21 14:43:06,796 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-21 14:43:06,796 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-21 14:43:06,797 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-21 14:43:06,797 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-21 14:43:06,799 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-21 14:43:06,799 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-21 14:43:08,674 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-21 14:43:08,674 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-21 14:43:08,729 | INFO | app.main | main.py:23 | Application startup started
+2026-05-21 14:43:08,730 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-21 14:43:08,730 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-21 14:43:08,731 | INFO | app.main | main.py:23 | Application startup started
+2026-05-21 14:43:08,731 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-21 14:43:08,731 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-21 14:45:06,851 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-21 14:45:06,853 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-21 14:45:06,853 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-21 14:45:06,867 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-21 14:45:06,867 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-21 14:45:06,867 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-21 14:45:08,635 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-21 14:45:08,636 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-21 14:45:08,684 | INFO | app.main | main.py:23 | Application startup started
+2026-05-21 14:45:08,684 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-21 14:45:08,684 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-21 14:45:08,685 | INFO | app.main | main.py:23 | Application startup started
+2026-05-21 14:45:08,686 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-21 14:45:08,686 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-21 14:45:11,439 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-21 14:45:11,441 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-21 14:45:11,441 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-21 14:45:15,910 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-21 14:45:15,959 | INFO | app.main | main.py:23 | Application startup started
+2026-05-21 14:45:15,959 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-21 14:45:15,959 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-21 14:45:55,428 | INFO | app.ml_predictions | ml_prediction_service.py:302 | ML training started | parking_id=None test_size=0.2 min_rows=30
+2026-05-21 14:45:55,511 | INFO | app.ml_predictions | ml_prediction_service.py:371 | ML training completed | parking_id=None metric_id=2 mae=3.6018 mse=29.2998 r2=0.9877
+2026-05-21 14:46:10,779 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-21 14:46:10,781 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-21 14:46:10,781 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-21 14:46:19,707 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-21 14:46:19,758 | INFO | app.main | main.py:23 | Application startup started
+2026-05-21 14:46:19,758 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-21 14:46:19,758 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-21 14:46:45,920 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-21 14:46:46,141 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-21 14:46:53,331 | INFO | app.ml_predictions | ml_prediction_service.py:302 | ML training started | parking_id=None test_size=0.2 min_rows=30
+2026-05-21 14:46:53,391 | INFO | app.ml_predictions | ml_prediction_service.py:371 | ML training completed | parking_id=None metric_id=3 mae=3.6018 mse=29.2998 r2=0.9877
+2026-05-21 14:50:24,477 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-21 14:50:24,477 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-21 14:50:24,478 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-21 14:50:24,492 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-21 14:50:24,495 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-21 14:50:24,495 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-21 14:52:17,161 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-21 14:52:17,209 | INFO | app.main | main.py:23 | Application startup started
+2026-05-21 14:52:17,210 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-21 14:52:17,210 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-21 14:52:37,120 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-21 14:52:37,472 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-21 14:53:43,519 | INFO | app.ml_predictions | ml_prediction_service.py:302 | ML training started | parking_id=None test_size=0.2 min_rows=30
+2026-05-21 14:53:43,593 | INFO | app.ml_predictions | ml_prediction_service.py:371 | ML training completed | parking_id=None metric_id=4 mae=3.6018 mse=29.2998 r2=0.9877
+2026-05-21 14:56:17,198 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-21 14:56:17,203 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-21 14:56:17,203 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-21 14:56:19,012 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-21 14:56:19,061 | INFO | app.main | main.py:23 | Application startup started
+2026-05-21 14:56:19,062 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-21 14:56:19,062 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-21 14:57:28,733 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-21 14:57:28,733 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-21 14:57:28,733 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-21 14:57:32,353 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-21 14:57:32,403 | INFO | app.main | main.py:23 | Application startup started
+2026-05-21 14:57:32,404 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-21 14:57:32,404 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-21 14:57:41,697 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-21 14:57:42,051 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-21 15:00:16,541 | INFO | app.ml_predictions | ml_prediction_service.py:566 | ML prediction created | prediction_id=1 parking_id=1 load=71.67
+2026-05-21 15:07:24,233 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-21 15:07:24,238 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-21 15:07:24,239 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-21 15:07:26,136 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-21 15:07:26,184 | INFO | app.main | main.py:23 | Application startup started
+2026-05-21 15:07:26,184 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-21 15:07:26,184 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-21 15:07:38,221 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-21 15:07:38,222 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-21 15:07:38,223 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-21 15:07:40,059 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-21 15:07:40,111 | INFO | app.main | main.py:23 | Application startup started
+2026-05-21 15:07:40,111 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-21 15:07:40,112 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-21 15:08:30,496 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-21 15:08:30,497 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-21 15:08:30,497 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-21 15:08:32,206 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-21 15:08:32,257 | INFO | app.main | main.py:23 | Application startup started
+2026-05-21 15:08:32,258 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-21 15:08:32,258 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-21 15:09:28,351 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-21 15:09:28,351 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-21 15:09:28,351 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-21 15:09:30,107 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-21 15:09:30,158 | INFO | app.main | main.py:23 | Application startup started
+2026-05-21 15:09:30,158 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-21 15:09:30,159 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-21 15:09:42,322 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-21 15:09:42,672 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-21 15:12:07,299 | INFO | app.ml_predictions | ml_prediction_service.py:302 | ML training started | parking_id=None test_size=0.2 min_rows=30
+2026-05-21 15:12:08,096 | INFO | app.ml_predictions | ml_prediction_service.py:371 | ML training completed | parking_id=None metric_id=5 mae=22.4067 mse=924.5044 r2=0.9002
+2026-05-21 15:12:21,039 | INFO | app.ml_predictions | ml_prediction_service.py:566 | ML prediction created | prediction_id=2 parking_id=1 load=85.56
+2026-05-21 15:12:31,567 | INFO | app.ml_predictions | ml_prediction_service.py:566 | ML prediction created | prediction_id=3 parking_id=10 load=72.22
+2026-05-21 15:14:47,383 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-21 15:14:47,608 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-21 15:16:38,585 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-21 15:16:38,587 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-21 15:16:38,587 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-21 15:16:56,134 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-21 15:16:56,185 | INFO | app.main | main.py:23 | Application startup started
+2026-05-21 15:16:56,185 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-21 15:16:56,185 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-21 15:21:27,696 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/dashboard status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-21 15:21:27,698 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/popular-parkings status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-21 15:21:27,702 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/dashboard status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-21 15:21:27,702 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/peak-hours status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-21 15:21:27,703 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/popular-parkings status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-21 15:21:27,706 | INFO | app.auth | router.py:99 | Refresh token attempt
+2026-05-21 15:21:27,733 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/peak-hours status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-21 15:21:27,904 | INFO | app.auth | router.py:122 | Refresh token success | user_id=1 login=administrator
+2026-05-21 15:21:29,566 | INFO | app.auth | router.py:155 | Logout requested | user_id=1 login=administrator
+2026-05-21 15:21:31,173 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-21 15:21:31,351 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-21 16:06:07,460 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/auth/me status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-21 16:06:07,462 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/auth/me status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-21 16:06:07,466 | INFO | app.auth | router.py:99 | Refresh token attempt
+2026-05-21 16:06:07,470 | INFO | app.auth | router.py:122 | Refresh token success | user_id=1 login=administrator
+2026-05-21 16:10:52,063 | INFO | app.ml_predictions | ml_prediction_service.py:566 | ML prediction created | prediction_id=4 parking_id=1 load=87.22
+2026-05-21 16:12:07,807 | INFO | app.ml_predictions | ml_prediction_service.py:302 | ML training started | parking_id=None test_size=0.2 min_rows=30
+2026-05-21 16:12:08,737 | INFO | app.ml_predictions | ml_prediction_service.py:371 | ML training completed | parking_id=None metric_id=6 mae=22.4067 mse=924.5044 r2=0.9002
+2026-05-21 16:36:39,995 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/users status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-21 16:36:39,998 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/parking-requests status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-21 16:36:40,000 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/users status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-21 16:36:40,003 | INFO | app.auth | router.py:99 | Refresh token attempt
+2026-05-21 16:36:40,006 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/parking-requests status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-21 16:36:40,017 | INFO | app.auth | router.py:122 | Refresh token success | user_id=1 login=administrator
+2026-05-21 16:56:52,606 | INFO | app.ml_predictions | ml_prediction_service.py:302 | ML training started | parking_id=None test_size=0.2 min_rows=30
+2026-05-21 16:56:54,142 | INFO | app.ml_predictions | ml_prediction_service.py:371 | ML training completed | parking_id=None metric_id=7 mae=22.5703 mse=925.7155 r2=0.9057
+2026-05-21 16:57:44,447 | INFO | app.recommendations | recommendation_service.py:437 | Improved recommendation created | recommendation_id=1 user_id=1 recommended_parking_id=22 score=37.2350
+2026-05-21 17:10:18,106 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-21 17:10:18,118 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-21 17:10:18,118 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-21 17:10:19,999 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-21 17:10:20,053 | INFO | app.main | main.py:23 | Application startup started
+2026-05-21 17:10:20,053 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-21 17:10:20,053 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-21 17:11:52,973 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-21 17:11:52,974 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-21 17:11:52,974 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-21 17:11:54,762 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-21 17:11:54,812 | INFO | app.main | main.py:23 | Application startup started
+2026-05-21 17:11:54,812 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-21 17:11:54,812 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-21 17:13:33,490 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-21 17:13:33,491 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-21 17:13:33,491 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-21 17:13:35,278 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-21 17:13:35,331 | INFO | app.main | main.py:23 | Application startup started
+2026-05-21 17:13:35,331 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-21 17:13:35,332 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-21 17:13:56,490 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-21 17:13:56,490 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-21 17:13:56,490 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-21 17:13:58,306 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-21 17:13:58,356 | INFO | app.main | main.py:23 | Application startup started
+2026-05-21 17:13:58,357 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-21 17:13:58,357 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-21 17:14:25,201 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-21 17:14:25,201 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-21 17:14:25,201 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-21 17:14:26,981 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-21 17:14:27,031 | INFO | app.main | main.py:23 | Application startup started
+2026-05-21 17:14:27,032 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-21 17:14:27,032 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-21 17:17:28,183 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-21 17:17:28,185 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-21 17:17:28,186 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-21 17:17:29,996 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-21 17:17:30,049 | INFO | app.main | main.py:23 | Application startup started
+2026-05-21 17:17:30,050 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-21 17:17:30,050 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-21 17:17:59,774 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-21 17:17:59,774 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-21 17:17:59,775 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-21 17:18:01,567 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-21 17:18:01,620 | INFO | app.main | main.py:23 | Application startup started
+2026-05-21 17:18:01,620 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-21 17:18:01,621 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-21 17:36:25,469 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/auth/me status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-21 17:36:25,473 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/auth/me status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-21 17:36:25,491 | INFO | app.auth | router.py:99 | Refresh token attempt
+2026-05-21 17:36:25,727 | INFO | app.auth | router.py:122 | Refresh token success | user_id=1 login=administrator
+2026-05-21 17:36:57,273 | INFO | app.recommendations | recommendation_service.py:610 | Improved recommendation created | recommendation_id=2 user_id=1 recommended_parking_id=22 score=35.2963
+2026-05-21 17:43:31,130 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-21 17:43:31,136 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-21 17:43:31,136 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-22 12:11:37,370 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\astana\Desktop\parking_ai\backend\logs\app.log level=INFO
+2026-05-22 12:11:37,418 | INFO | app.main | main.py:23 | Application startup started
+2026-05-22 12:11:37,419 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\astana\Desktop\parking_ai\backend\uploads
+2026-05-22 12:11:37,419 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-22 12:12:02,415 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/auth/me status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-22 12:12:02,418 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/auth/me status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-22 12:12:02,421 | INFO | app.auth | router.py:99 | Refresh token attempt
+2026-05-22 12:12:02,516 | INFO | app.auth | router.py:122 | Refresh token success | user_id=1 login=administrator
+2026-05-22 13:19:56,042 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-22 13:19:56,053 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-22 13:19:56,053 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-26 14:11:44,661 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\user\Desktop\parking-ai\backend\logs\app.log level=INFO
+2026-05-26 14:11:45,049 | INFO | app.main | main.py:23 | Application startup started
+2026-05-26 14:11:45,058 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\user\Desktop\parking-ai\backend\uploads
+2026-05-26 14:11:45,059 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-26 14:11:46,275 | INFO | app.main | main.py:33 | Application shutdown started
+2026-05-26 14:11:46,276 | INFO | app.main | main.py:37 | Database engine disposed
+2026-05-26 14:11:46,276 | INFO | app.main | main.py:38 | Application shutdown completed
+2026-05-26 14:11:51,574 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\user\Desktop\parking-ai\backend\logs\app.log level=INFO
+2026-05-26 14:11:51,700 | INFO | app.main | main.py:23 | Application startup started
+2026-05-26 14:11:51,701 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\user\Desktop\parking-ai\backend\uploads
+2026-05-26 14:11:51,702 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-26 14:13:17,579 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/auth/me status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-26 14:13:17,585 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/auth/me status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-26 14:13:17,593 | INFO | app.auth | router.py:99 | Refresh token attempt
+2026-05-26 14:13:17,825 | INFO | app.auth | router.py:122 | Refresh token success | user_id=1 login=administrator
+2026-05-26 14:14:06,189 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/model-metrics/latest status_code=404 code=MODEL_METRIC_NOT_FOUND detail=Model metric not found
+2026-05-26 14:14:06,601 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/model-metrics/latest status_code=404 code=MODEL_METRIC_NOT_FOUND detail=Model metric not found
+2026-05-26 14:14:09,192 | INFO | app.ml_predictions | ml_prediction_service.py:566 | ML prediction created | prediction_id=1 parking_id=1 load=75.0
+2026-05-26 14:14:29,109 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/model-metrics/latest status_code=404 code=MODEL_METRIC_NOT_FOUND detail=Model metric not found
+2026-05-26 14:14:29,296 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/model-metrics/latest status_code=404 code=MODEL_METRIC_NOT_FOUND detail=Model metric not found
+2026-05-26 14:15:32,103 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/model-metrics/latest status_code=404 code=MODEL_METRIC_NOT_FOUND detail=Model metric not found
+2026-05-26 14:15:32,383 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/model-metrics/latest status_code=404 code=MODEL_METRIC_NOT_FOUND detail=Model metric not found
+2026-05-26 14:23:48,285 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/model-metrics/latest status_code=404 code=MODEL_METRIC_NOT_FOUND detail=Model metric not found
+2026-05-26 14:23:48,449 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/model-metrics/latest status_code=404 code=MODEL_METRIC_NOT_FOUND detail=Model metric not found
+2026-05-26 14:24:12,725 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/model-metrics/latest status_code=404 code=MODEL_METRIC_NOT_FOUND detail=Model metric not found
+2026-05-26 14:24:12,827 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/model-metrics/latest status_code=404 code=MODEL_METRIC_NOT_FOUND detail=Model metric not found
+2026-05-26 14:39:59,649 | INFO | app.auth | router.py:155 | Logout requested | user_id=1 login=administrator
+2026-05-26 14:40:07,994 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=mirlanuulu
+2026-05-26 14:40:08,064 | WARNING | app.auth | router.py:58 | Login failed | login_or_email=mirlanuulu code=INVALID_LOGIN_OR_PASSWORD detail=Invalid login or password
+2026-05-26 14:40:08,095 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=POST path=/api/v1/auth/login status_code=401 code=INVALID_LOGIN_OR_PASSWORD detail=Invalid login or password
+2026-05-26 14:40:18,015 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-26 14:40:19,049 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-26 14:46:47,732 | INFO | app.auth | router.py:155 | Logout requested | user_id=1 login=administrator
+2026-05-26 14:48:02,641 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=nurs
+2026-05-26 14:48:03,352 | INFO | app.auth | router.py:66 | Login success | user_id=12 login=nurs role_id=2
+2026-05-26 14:48:25,333 | INFO | app.parking_requests | parking_request_service.py:181 | Parking request create attempt | user_id=12 parking_id=31 selected_zone_id=None
+2026-05-26 14:48:25,461 | INFO | app.parking_requests | parking_request_service.py:222 | Parking request created | request_id=81 user_id=12 parking_id=31 status=created
+2026-05-26 14:48:51,537 | INFO | app.recommendations | recommendation_service.py:610 | Improved recommendation created | recommendation_id=33 user_id=12 recommended_parking_id=33 score=39.0726
+2026-05-26 14:52:42,320 | INFO | app.recommendations | recommendation_service.py:610 | Improved recommendation created | recommendation_id=34 user_id=12 recommended_parking_id=33 score=50.0726
+2026-05-26 14:52:59,796 | INFO | app.auth | router.py:155 | Logout requested | user_id=12 login=nurs
+2026-05-26 14:53:04,145 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-26 14:53:04,862 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-26 16:20:49,298 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\user\Desktop\parking-ai\backend\logs\app.log level=INFO
+2026-05-26 16:20:49,419 | INFO | app.main | main.py:23 | Application startup started
+2026-05-26 16:20:49,420 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\user\Desktop\parking-ai\backend\uploads
+2026-05-26 16:20:49,421 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-26 16:21:45,485 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/auth/me status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-26 16:21:45,524 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/auth/me status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-26 16:21:45,568 | INFO | app.auth | router.py:99 | Refresh token attempt
+2026-05-26 16:21:50,463 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-26 16:21:59,274 | INFO | app.auth | router.py:122 | Refresh token success | user_id=1 login=administrator
+2026-05-26 16:21:59,785 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-26 16:22:23,660 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-26 16:22:39,327 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-26 16:23:44,771 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\user\Desktop\parking-ai\backend\logs\app.log level=INFO
+2026-05-26 16:23:44,983 | INFO | app.main | main.py:23 | Application startup started
+2026-05-26 16:23:44,984 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\user\Desktop\parking-ai\backend\uploads
+2026-05-26 16:23:44,985 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-26 16:24:17,894 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-26 16:24:38,786 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-26 16:26:06,796 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-26 16:26:49,350 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-26 16:26:55,620 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-26 16:27:41,526 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-26 16:29:22,727 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-26 16:29:31,498 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-26 16:29:35,154 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-26 16:29:51,682 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-26 16:36:26,851 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\user\Desktop\parking-ai\backend\logs\app.log level=INFO
+2026-05-26 16:36:27,307 | INFO | app.main | main.py:23 | Application startup started
+2026-05-26 16:36:27,309 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\user\Desktop\parking-ai\backend\uploads
+2026-05-26 16:36:27,310 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-26 16:37:17,662 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-26 16:37:18,554 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-26 16:53:38,153 | INFO | app.auth | router.py:155 | Logout requested | user_id=1 login=administrator
+2026-05-26 16:53:44,873 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=nurs
+2026-05-26 16:53:45,605 | INFO | app.auth | router.py:66 | Login success | user_id=12 login=nurs role_id=2
+2026-05-26 16:54:02,941 | INFO | app.parking_requests | parking_request_service.py:181 | Parking request create attempt | user_id=12 parking_id=8 selected_zone_id=None
+2026-05-26 16:54:03,162 | INFO | app.parking_requests | parking_request_service.py:222 | Parking request created | request_id=82 user_id=12 parking_id=8 status=created
+2026-05-26 16:54:30,660 | INFO | app.recommendations | recommendation_service.py:610 | Improved recommendation created | recommendation_id=35 user_id=12 recommended_parking_id=33 score=39.0726
+2026-05-26 16:55:16,674 | INFO | app.ml_predictions | ml_prediction_service.py:566 | ML prediction created | prediction_id=62 parking_id=1 load=75.56
+2026-05-26 16:56:01,575 | INFO | app.recommendations | recommendation_service.py:610 | Improved recommendation created | recommendation_id=36 user_id=12 recommended_parking_id=33 score=39.0726
+2026-05-26 16:57:27,943 | INFO | app.parking_requests | parking_request_service.py:181 | Parking request create attempt | user_id=12 parking_id=1 selected_zone_id=None
+2026-05-26 16:57:28,183 | INFO | app.parking_requests | parking_request_service.py:222 | Parking request created | request_id=83 user_id=12 parking_id=1 status=created
+2026-05-26 16:57:30,710 | INFO | app.parking_requests | parking_request_service.py:181 | Parking request create attempt | user_id=12 parking_id=2 selected_zone_id=None
+2026-05-26 16:57:30,908 | INFO | app.parking_requests | parking_request_service.py:222 | Parking request created | request_id=84 user_id=12 parking_id=2 status=created
+2026-05-26 16:57:32,800 | INFO | app.parking_requests | parking_request_service.py:181 | Parking request create attempt | user_id=12 parking_id=1 selected_zone_id=None
+2026-05-26 16:57:32,916 | INFO | app.parking_requests | parking_request_service.py:222 | Parking request created | request_id=85 user_id=12 parking_id=1 status=created
+2026-05-26 16:57:36,824 | INFO | app.parking_requests | parking_request_service.py:181 | Parking request create attempt | user_id=12 parking_id=4 selected_zone_id=None
+2026-05-26 16:57:37,095 | INFO | app.parking_requests | parking_request_service.py:222 | Parking request created | request_id=86 user_id=12 parking_id=4 status=created
+2026-05-26 16:57:38,835 | INFO | app.parking_requests | parking_request_service.py:181 | Parking request create attempt | user_id=12 parking_id=5 selected_zone_id=None
+2026-05-26 16:57:39,526 | INFO | app.parking_requests | parking_request_service.py:222 | Parking request created | request_id=87 user_id=12 parking_id=5 status=created
+2026-05-26 16:57:41,682 | INFO | app.parking_requests | parking_request_service.py:181 | Parking request create attempt | user_id=12 parking_id=6 selected_zone_id=None
+2026-05-26 16:57:41,880 | INFO | app.parking_requests | parking_request_service.py:222 | Parking request created | request_id=88 user_id=12 parking_id=6 status=created
+2026-05-26 16:58:42,054 | INFO | app.auth | router.py:155 | Logout requested | user_id=12 login=nurs
+2026-05-26 16:58:50,394 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-26 16:58:51,285 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-26 17:13:02,784 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\user\Desktop\parking-ai\backend\logs\app.log level=INFO
+2026-05-26 17:13:02,908 | INFO | app.main | main.py:23 | Application startup started
+2026-05-26 17:13:02,909 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\user\Desktop\parking-ai\backend\uploads
+2026-05-26 17:13:02,909 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-26 17:14:52,455 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-26 17:15:04,737 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-26 17:15:08,273 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-26 17:15:14,890 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-26 17:16:15,489 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/ status_code=404 code=NOT_FOUND detail=Not Found
+2026-05-26 17:16:15,784 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/favicon.ico status_code=404 code=NOT_FOUND detail=Not Found
+2026-05-26 17:51:29,364 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/dashboard status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-26 17:51:29,850 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/peak-hours status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-26 17:51:30,537 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/weekdays-vs-weekends status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-26 17:51:30,798 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/popular-parkings status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-26 17:51:31,261 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/daily-load status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-26 17:51:31,822 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/dashboard status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-26 17:51:31,968 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/peak-hours status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-26 17:51:32,269 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/popular-parkings status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-26 17:51:32,456 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/daily-load status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-26 17:51:32,612 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/weekdays-vs-weekends status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-26 17:51:32,702 | INFO | app.auth | router.py:99 | Refresh token attempt
+2026-05-26 17:51:34,065 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/parking-load/1 status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-26 17:51:34,329 | INFO | app.auth | router.py:122 | Refresh token success | user_id=1 login=administrator
+2026-05-27 23:36:06,850 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\user\Desktop\parking-ai\backend\logs\app.log level=INFO
+2026-05-27 23:36:06,957 | INFO | app.main | main.py:23 | Application startup started
+2026-05-27 23:36:06,958 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\user\Desktop\parking-ai\backend\uploads
+2026-05-27 23:36:06,959 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-27 23:38:01,374 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/auth/me status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-27 23:38:01,380 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/auth/me status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-27 23:38:01,393 | INFO | app.auth | router.py:99 | Refresh token attempt
+2026-05-27 23:38:05,429 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-27 23:38:18,379 | INFO | app.auth | router.py:122 | Refresh token success | user_id=1 login=administrator
+2026-05-27 23:38:36,857 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-27 23:39:00,896 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-27 23:39:23,082 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-27 23:40:02,971 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-27 23:40:14,965 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-27 23:42:14,030 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-27 23:42:26,654 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-27 23:43:30,740 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-27 23:43:36,229 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-27 23:44:51,177 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\user\Desktop\parking-ai\backend\logs\app.log level=INFO
+2026-05-27 23:44:51,339 | INFO | app.main | main.py:23 | Application startup started
+2026-05-27 23:44:51,340 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\user\Desktop\parking-ai\backend\uploads
+2026-05-27 23:44:51,340 | INFO | app.main | main.py:29 | Application startup completed
+2026-05-27 23:46:58,539 | INFO | app.auth | router.py:155 | Logout requested | user_id=1 login=administrator
+2026-05-27 23:47:02,854 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=nurs
+2026-05-27 23:47:03,694 | INFO | app.auth | router.py:66 | Login success | user_id=12 login=nurs role_id=2
+2026-05-27 23:48:01,177 | INFO | app.parking_requests | parking_request_service.py:181 | Parking request create attempt | user_id=12 parking_id=26 selected_zone_id=None
+2026-05-27 23:48:01,301 | INFO | app.parking_requests | parking_request_service.py:222 | Parking request created | request_id=89 user_id=12 parking_id=26 status=created
+2026-05-27 23:48:19,502 | INFO | app.recommendations | recommendation_service.py:610 | Improved recommendation created | recommendation_id=37 user_id=12 recommended_parking_id=33 score=39.0726
+2026-05-27 23:50:46,771 | INFO | app.ml_predictions | ml_prediction_service.py:566 | ML prediction created | prediction_id=63 parking_id=1 load=73.89
+2026-05-27 23:50:56,670 | INFO | app.ml_predictions | ml_prediction_service.py:566 | ML prediction created | prediction_id=64 parking_id=1 load=74.44
+2026-05-27 23:51:04,075 | INFO | app.ml_predictions | ml_prediction_service.py:566 | ML prediction created | prediction_id=65 parking_id=1 load=75.0
+2026-05-27 23:51:15,211 | INFO | app.ml_predictions | ml_prediction_service.py:566 | ML prediction created | prediction_id=66 parking_id=1 load=67.78
+2026-05-27 23:51:28,224 | INFO | app.ml_predictions | ml_prediction_service.py:566 | ML prediction created | prediction_id=67 parking_id=1 load=61.11
+2026-05-27 23:51:49,423 | INFO | app.ml_predictions | ml_prediction_service.py:566 | ML prediction created | prediction_id=68 parking_id=1 load=61.11
+2026-05-27 23:52:02,273 | INFO | app.ml_predictions | ml_prediction_service.py:566 | ML prediction created | prediction_id=69 parking_id=21 load=38.82
+2026-05-27 23:52:32,787 | INFO | app.ml_predictions | ml_prediction_service.py:566 | ML prediction created | prediction_id=70 parking_id=21 load=40.0
+2026-05-27 23:52:39,617 | INFO | app.ml_predictions | ml_prediction_service.py:566 | ML prediction created | prediction_id=71 parking_id=21 load=37.65
+2026-05-27 23:52:49,909 | INFO | app.ml_predictions | ml_prediction_service.py:566 | ML prediction created | prediction_id=72 parking_id=21 load=51.18
+2026-05-27 23:53:09,911 | INFO | app.ml_predictions | ml_prediction_service.py:566 | ML prediction created | prediction_id=73 parking_id=21 load=40.0
+2026-05-27 23:53:51,497 | INFO | app.auth | router.py:155 | Logout requested | user_id=12 login=nurs
+2026-05-27 23:53:54,506 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-05-27 23:53:56,504 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-05-27 23:54:16,923 | INFO | app.ml_predictions | ml_prediction_service.py:302 | ML training started | parking_id=None test_size=0.2 min_rows=30
+2026-05-27 23:54:20,905 | INFO | app.ml_predictions | ml_prediction_service.py:371 | ML training completed | parking_id=None metric_id=11 mae=9.6813 mse=143.546 r2=0.8235
+2026-05-28 00:04:15,169 | INFO | app.parking_requests | parking_request_service.py:181 | Parking request create attempt | user_id=1 parking_id=43 selected_zone_id=None
+2026-05-28 00:04:18,282 | INFO | app.parking_requests | parking_request_service.py:222 | Parking request created | request_id=90 user_id=1 parking_id=43 status=created
+2026-05-28 00:04:35,252 | INFO | app.recommendations | recommendation_service.py:610 | Improved recommendation created | recommendation_id=38 user_id=1 recommended_parking_id=43 score=11.1600
+2026-05-28 00:06:47,022 | INFO | app.ml_predictions | ml_prediction_service.py:566 | ML prediction created | prediction_id=74 parking_id=43 load=0.0
+2026-05-28 00:07:14,320 | INFO | app.ml_predictions | ml_prediction_service.py:566 | ML prediction created | prediction_id=75 parking_id=34 load=62.22
+2026-05-28 00:09:04,391 | INFO | app.recommendations | recommendation_service.py:610 | Improved recommendation created | recommendation_id=39 user_id=1 recommended_parking_id=43 score=11.1600
+2026-05-28 01:36:41,284 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/popular-parkings status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-28 01:36:41,298 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/peak-hours status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-28 01:36:41,341 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/dashboard status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-28 01:36:41,403 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/popular-parkings status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-28 01:36:41,405 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/peak-hours status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-28 01:36:41,465 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/analytics/dashboard status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-05-28 01:36:41,508 | INFO | app.auth | router.py:99 | Refresh token attempt
+2026-05-28 01:36:41,653 | INFO | app.auth | router.py:122 | Refresh token success | user_id=1 login=administrator
+2026-05-28 01:42:09,968 | INFO | app.parking_requests | parking_request_service.py:295 | Parking request cancel attempt | request_id=90 current_user_id=1 is_admin=True
+2026-05-28 01:42:10,383 | INFO | app.parking_requests | parking_request_service.py:340 | Parking request cancelled | request_id=90 current_user_id=1
+2026-05-28 12:11:07,351 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\user\Desktop\parking-ai\backend\logs\app.log level=INFO
+2026-05-28 12:11:07,628 | INFO | app.main | main.py:23 | Application startup started
+2026-05-28 12:11:07,629 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\user\Desktop\parking-ai\backend\uploads
+2026-05-28 12:11:07,630 | INFO | app.main | main.py:29 | Application startup completed
+2026-06-04 16:52:03,079 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\user\Desktop\parking-ai\backend\logs\app.log level=INFO
+2026-06-04 16:52:03,211 | INFO | app.main | main.py:23 | Application startup started
+2026-06-04 16:52:03,212 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\user\Desktop\parking-ai\backend\uploads
+2026-06-04 16:52:03,212 | INFO | app.main | main.py:29 | Application startup completed
+2026-06-04 16:53:17,138 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/auth/me status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-06-04 16:53:17,336 | INFO | app.auth | router.py:99 | Refresh token attempt
+2026-06-04 16:53:17,542 | WARNING | app.auth | router.py:107 | Refresh token failed | reason=invalid_token
+2026-06-04 16:53:17,575 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=POST path=/api/v1/auth/refresh status_code=401 code=INVALID_REFRESH_TOKEN detail=Invalid refresh token
+2026-06-04 16:53:18,773 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/auth/me status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-06-04 16:53:19,920 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-06-04 16:53:30,278 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-06-04 16:53:38,072 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=asanov
+2026-06-04 16:53:39,025 | WARNING | app.auth | router.py:58 | Login failed | login_or_email=asanov code=INVALID_LOGIN_OR_PASSWORD detail=Invalid login or password
+2026-06-04 16:53:39,332 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=POST path=/api/v1/auth/login status_code=401 code=INVALID_LOGIN_OR_PASSWORD detail=Invalid login or password
+2026-06-04 16:53:46,518 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=mirlanuulu
+2026-06-04 16:53:47,492 | WARNING | app.auth | router.py:58 | Login failed | login_or_email=mirlanuulu code=INVALID_LOGIN_OR_PASSWORD detail=Invalid login or password
+2026-06-04 16:53:47,894 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=POST path=/api/v1/auth/login status_code=401 code=INVALID_LOGIN_OR_PASSWORD detail=Invalid login or password
+2026-06-04 16:53:54,257 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-06-04 16:54:00,246 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-06-04 17:07:23,681 | INFO | app.parking_requests | parking_request_service.py:181 | Parking request create attempt | user_id=1 parking_id=1 selected_zone_id=None
+2026-06-04 17:07:23,789 | INFO | app.parking_requests | parking_request_service.py:222 | Parking request created | request_id=91 user_id=1 parking_id=1 status=created
+2026-06-04 17:07:31,858 | INFO | app.recommendations | recommendation_service.py:610 | Improved recommendation created | recommendation_id=40 user_id=1 recommended_parking_id=43 score=11.1600
+2026-06-04 17:10:29,935 | INFO | app.ml_predictions | ml_prediction_service.py:566 | ML prediction created | prediction_id=76 parking_id=1 load=63.33
+2026-06-04 17:10:33,794 | INFO | app.ml_predictions | ml_prediction_service.py:566 | ML prediction created | prediction_id=77 parking_id=1 load=63.33
+2026-06-04 17:10:43,856 | INFO | app.ml_predictions | ml_prediction_service.py:566 | ML prediction created | prediction_id=78 parking_id=2 load=61.88
+2026-06-04 17:10:50,409 | INFO | app.ml_predictions | ml_prediction_service.py:566 | ML prediction created | prediction_id=79 parking_id=8 load=63.75
+2026-06-04 17:10:56,576 | INFO | app.ml_predictions | ml_prediction_service.py:566 | ML prediction created | prediction_id=80 parking_id=30 load=65.0
+2026-06-04 17:11:03,242 | INFO | app.ml_predictions | ml_prediction_service.py:566 | ML prediction created | prediction_id=81 parking_id=37 load=58.75
+2026-06-04 17:23:37,670 | INFO | app.parking_requests | parking_request_service.py:181 | Parking request create attempt | user_id=1 parking_id=1 selected_zone_id=None
+2026-06-04 17:23:37,764 | INFO | app.parking_requests | parking_request_service.py:222 | Parking request created | request_id=92 user_id=1 parking_id=1 status=created
+2026-06-04 17:24:35,044 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/recommendations/my status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-06-04 17:24:35,092 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/parking-requests/my status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-06-04 17:24:35,283 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/recommendations/my status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-06-04 17:24:35,384 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/parking-requests/my status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-06-04 17:24:44,571 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/auth/me status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-06-04 17:24:44,746 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/auth/me status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-06-04 17:24:44,790 | INFO | app.auth | router.py:99 | Refresh token attempt
+2026-06-04 17:24:45,318 | INFO | app.auth | router.py:122 | Refresh token success | user_id=1 login=administrator
+2026-06-05 20:49:36,179 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\user\Desktop\parking-ai\backend\logs\app.log level=INFO
+2026-06-05 20:49:36,292 | INFO | app.main | main.py:23 | Application startup started
+2026-06-05 20:49:36,292 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\user\Desktop\parking-ai\backend\uploads
+2026-06-05 20:49:36,293 | INFO | app.main | main.py:29 | Application startup completed
+2026-06-05 20:51:51,428 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/auth/me status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-06-05 20:51:51,658 | INFO | app.errors | exceptions.py:137 | HTTPException handled | method=GET path=/api/v1/auth/me status_code=401 code=UNAUTHORIZED detail=Could not validate credentials
+2026-06-05 20:51:51,673 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-06-05 20:51:52,495 | INFO | app.auth | router.py:99 | Refresh token attempt
+2026-06-05 20:54:37,204 | INFO | app.auth | router.py:122 | Refresh token success | user_id=1 login=administrator
+2026-06-05 20:54:52,278 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-06-05 20:55:02,359 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-06-05 20:55:53,241 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-06-05 20:56:48,743 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-06-05 20:57:47,884 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-06-05 20:59:49,778 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\user\Desktop\parking-ai\backend\logs\app.log level=INFO
+2026-06-05 20:59:49,981 | INFO | app.main | main.py:23 | Application startup started
+2026-06-05 20:59:49,982 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\user\Desktop\parking-ai\backend\uploads
+2026-06-05 20:59:49,982 | INFO | app.main | main.py:29 | Application startup completed
+2026-06-05 21:04:06,183 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-06-05 21:04:06,852 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-06-05 21:04:12,664 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-06-05 21:04:13,031 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-06-05 21:04:29,289 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-06-05 21:06:14,079 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-06-05 21:06:31,780 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-06-05 21:08:35,925 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-06-05 21:09:02,503 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-06-05 21:32:30,005 | INFO | app.startup | logging.py:56 | Logging initialized. log_file=C:\Users\user\Desktop\parking-ai\backend\logs\app.log level=INFO
+2026-06-05 21:32:30,137 | INFO | app.main | main.py:23 | Application startup started
+2026-06-05 21:32:30,138 | INFO | app.main | main.py:28 | Upload directory ready: C:\Users\user\Desktop\parking-ai\backend\uploads
+2026-06-05 21:32:30,138 | INFO | app.main | main.py:29 | Application startup completed
+2026-06-05 21:53:52,041 | INFO | app.auth | router.py:47 | Login attempt | login_or_email=administrator
+2026-06-05 21:53:59,216 | INFO | app.auth | router.py:66 | Login success | user_id=1 login=administrator role_id=1
+2026-06-05 21:56:54,541 | INFO | app.parking_requests | parking_request_service.py:181 | Parking request create attempt | user_id=1 parking_id=28 selected_zone_id=None
+2026-06-05 21:56:56,169 | INFO | app.parking_requests | parking_request_service.py:222 | Parking request created | request_id=93 user_id=1 parking_id=28 status=created
+2026-06-05 22:06:06,716 | INFO | app.parking_requests | parking_request_service.py:181 | Parking request create attempt | user_id=1 parking_id=18 selected_zone_id=None
+2026-06-05 22:06:07,722 | INFO | app.parking_requests | parking_request_service.py:222 | Parking request created | request_id=94 user_id=1 parking_id=18 status=created
+2026-06-05 22:10:28,004 | INFO | app.ml_predictions | ml_prediction_service.py:566 | ML prediction created | prediction_id=82 parking_id=1 load=63.33
+2026-06-05 22:10:47,758 | INFO | app.ml_predictions | ml_prediction_service.py:566 | ML prediction created | prediction_id=83 parking_id=27 load=55.26
+2026-06-05 22:11:16,391 | INFO | app.ml_predictions | ml_prediction_service.py:566 | ML prediction created | prediction_id=84 parking_id=27 load=63.16
+2026-06-05 22:11:28,038 | INFO | app.ml_predictions | ml_prediction_service.py:566 | ML prediction created | prediction_id=85 parking_id=27 load=55.26

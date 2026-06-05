@@ -1,0 +1,3896 @@
+/* DESIGN-7: final responsive polish and consistency layer */
+
+:root {
+  --final-safe-bottom: env(safe-area-inset-bottom, 0px);
+  --final-reading-width: 1440px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.app-layout__content,
+.home-page,
+.simple-page,
+.auth-page {
+  position: relative;
+  z-index: 1;
+}
+
+.app-layout__content {
+  max-width: var(--final-reading-width);
+}
+
+/* Keep final pages visually clean */
+.dashboard-glass-hero,
+.parkings-hero,
+.map-hero,
+.prediction-help-card,
+.recommendations-help-card,
+.home-page .dashboard-grid {
+  display: none !important;
+}
+
+.page-stack > .form-error:empty,
+.page-stack > .form-success:empty,
+.admin-page > .form-error:empty,
+.admin-page > .form-success:empty {
+  display: none !important;
+}
+
+/* Text readability on glass backgrounds */
+.card,
+.page-header,
+.simple-card,
+.auth-card,
+.admin-modal__panel,
+.parking-modal__panel,
+.empty-state,
+.error-message,
+.admin-table-wrapper,
+.parking-table-wrapper,
+.prediction-history__table-wrap {
+  text-wrap: pretty;
+}
+
+.page-header h1,
+.card__title,
+.auth-title,
+.simple-card h1,
+.admin-modal__header h2,
+.parking-modal__header h2,
+.chart-card__header h2,
+.recommendations-section__header h2,
+.notification-card h3,
+.parking-card h2 {
+  text-wrap: balance;
+}
+
+.page-header p,
+.card__subtitle,
+.auth-subtitle,
+.simple-card p,
+.empty-state p,
+.error-message p,
+.parking-card p,
+.recommendation-card__reason p,
+.notification-card p {
+  color: var(--ui-muted, var(--color-text-muted));
+}
+
+/* Auth final polish */
+.auth-card {
+  box-shadow:
+    0 34px 110px rgba(15, 23, 42, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.auth-theme-switch {
+  z-index: 30;
+}
+
+.auth-card .auth-input,
+.auth-card .auth-submit-button,
+.auth-card .auth-password-toggle {
+  touch-action: manipulation;
+}
+
+/* Theme switch compact everywhere */
+.theme-mode-switch {
+  flex: 0 0 auto;
+}
+
+.theme-mode-switch__label {
+  display: none !important;
+}
+
+.theme-mode-switch__nodes {
+  gap: 8px;
+}
+
+.theme-mode-switch__node {
+  width: 25px;
+  height: 25px;
+}
+
+/* Dashboard and cards */
+.dashboard-stats-grid,
+.stats-grid--four,
+.analytics-summary-grid,
+.notifications-summary-grid,
+.admin-dashboard-stats {
+  align-items: stretch;
+}
+
+.dashboard-stat-card,
+.analytics-summary-card,
+.notifications-summary-card,
+.admin-stat-card,
+.card,
+.parking-card,
+.recommendation-card,
+.notification-card,
+.chart-card {
+  min-width: 0;
+}
+
+.dashboard-stat-card__value,
+.analytics-summary-card strong,
+.notifications-summary-card strong,
+.admin-stat-card strong {
+  font-variant-numeric: tabular-nums;
+}
+
+.dashboard-list__item,
+.dashboard-hour-list__item,
+.dashboard-notifications__item,
+.parking-card__stats div,
+.prediction-result-card__metrics div,
+.recommendation-card__metrics div,
+.notification-card__meta div,
+.admin-result-grid div,
+.admin-confirm__details div {
+  min-width: 0;
+}
+
+/* Forms and filters */
+.form-field,
+.form-group,
+.analytics-filter,
+.map-toolbar label,
+.parkings-search,
+.parkings-filter,
+.admin-select-field,
+.prediction-form__field {
+  min-width: 0;
+}
+
+input,
+select,
+textarea {
+  max-width: 100%;
+}
+
+select {
+  cursor: pointer;
+}
+
+textarea {
+  line-height: 1.55;
+}
+
+.parkings-toolbar,
+.map-toolbar,
+.analytics-filters-card,
+.notifications-toolbar-card,
+.admin-filter-card .card__body {
+  min-width: 0;
+}
+
+.parkings-view-toggle,
+.notifications-filter-tabs {
+  min-width: 0;
+}
+
+/* Tables: readable desktop + safe mobile scroll */
+.admin-table-wrapper,
+.parking-table-wrapper,
+.prediction-history__table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+
+.admin-table-wrapper::-webkit-scrollbar,
+.parking-table-wrapper::-webkit-scrollbar,
+.prediction-history__table-wrap::-webkit-scrollbar,
+.map-parking-list::-webkit-scrollbar,
+.admin-modal__body::-webkit-scrollbar,
+.parking-modal__body::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+.admin-table-wrapper::-webkit-scrollbar-thumb,
+.parking-table-wrapper::-webkit-scrollbar-thumb,
+.prediction-history__table-wrap::-webkit-scrollbar-thumb,
+.map-parking-list::-webkit-scrollbar-thumb,
+.admin-modal__body::-webkit-scrollbar-thumb,
+.parking-modal__body::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.36);
+}
+
+.admin-table,
+.parking-table,
+.prediction-history__table {
+  min-width: 860px;
+}
+
+.admin-table th,
+.parking-table th,
+.prediction-history__table th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+}
+
+.admin-table td,
+.parking-table td,
+.prediction-history__table td {
+  word-break: normal;
+}
+
+.admin-table__actions,
+.parking-table__actions {
+  white-space: nowrap;
+}
+
+/* Map */
+.map-main-panel,
+.parking-map-card,
+.parking-map,
+.leaflet-container {
+  min-width: 0;
+}
+
+.parking-map,
+.leaflet-container {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  color: #0f172a;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.18);
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+}
+
+.leaflet-popup-content {
+  margin: 12px 14px;
+}
+
+.parking-map-popup,
+.parking-map-popup * {
+  color: #0f172a;
+}
+
+.leaflet-control-zoom a {
+  color: #0f172a !important;
+}
+
+/* Charts */
+.chart-card {
+  overflow: hidden;
+}
+
+.chart-card__body {
+  min-width: 0;
+}
+
+.chart-card__canvas,
+.chart-card canvas {
+  max-width: 100%;
+}
+
+.chart-card__state {
+  min-height: 260px;
+}
+
+/* Modals */
+.admin-modal,
+.parking-modal,
+.mobile-nav {
+  isolation: isolate;
+}
+
+.admin-modal__panel,
+.parking-modal__panel {
+  width: min(100%, 1040px);
+  margin-bottom: var(--final-safe-bottom);
+}
+
+.admin-modal__body,
+.parking-modal__body,
+.parking-details {
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.admin-modal__footer,
+.admin-form__actions,
+.notifications-create-form__actions,
+.recommendation-form__actions,
+.prediction-form__actions {
+  gap: 10px;
+}
+
+.admin-confirm__details strong,
+.admin-main-cell strong,
+.notification-card__meta strong,
+.recommendation-card__parking-panel strong,
+.parking-card h2 {
+  overflow-wrap: anywhere;
+}
+
+/* 403 / 404 */
+.simple-page {
+  min-height: 100vh;
+  padding: 96px 18px 32px;
+  background: transparent !important;
+}
+
+.simple-card {
+  border: 1px solid var(--ui-glass-border, rgba(255, 255, 255, 0.62));
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.16), transparent 44%),
+    var(--ui-glass-bg, rgba(255, 255, 255, 0.58));
+  box-shadow: var(--ui-glass-shadow, 0 22px 60px rgba(15, 23, 42, 0.1));
+  backdrop-filter: blur(var(--ui-glass-blur, 22px)) saturate(150%);
+  -webkit-backdrop-filter: blur(var(--ui-glass-blur, 22px)) saturate(150%);
+}
+
+.simple-code {
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--ui-primary, #2563eb), var(--ui-primary-2, #14b8a6));
+}
+
+/* Compact notification/readability */
+.notification-card__topline,
+.recommendation-card__header,
+.parking-card__title-row {
+  min-width: 0;
+}
+
+.notification-card__actions .btn,
+.parking-card__actions .btn,
+.recommendation-card .btn {
+  min-width: 0;
+}
+
+/* Final theme readability */
+:root[data-background-theme='blue'] .simple-card,
+:root[data-background-theme='dark'] .simple-card,
+:root[data-background-theme='blue'] .card,
+:root[data-background-theme='dark'] .card {
+  color: var(--ui-text);
+}
+
+:root[data-background-theme='blue'] .leaflet-popup-content-wrapper,
+:root[data-background-theme='dark'] .leaflet-popup-content-wrapper,
+:root[data-background-theme='blue'] .leaflet-popup-tip,
+:root[data-background-theme='dark'] .leaflet-popup-tip {
+  background: rgba(248, 250, 252, 0.96);
+}
+
+/* Mobile */
+@media (max-width: 1180px) {
+  .app-layout__content {
+    max-width: 100%;
+  }
+
+  .page-header {
+    align-items: stretch;
+  }
+
+  .page-header__actions {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 920px) {
+  .map-layout,
+  .predictions-main-grid,
+  .predictions-section-grid,
+  .recommendations-layout,
+  .analytics-charts-grid,
+  .analytics-charts-grid--top,
+  .content-grid--two,
+  .content-grid--three {
+    grid-template-columns: 1fr !important;
+  }
+
+  .map-side-panel {
+    order: -1;
+  }
+
+  .parking-map {
+    min-height: 480px !important;
+  }
+
+  .chart-card {
+    min-height: 340px;
+  }
+}
+
+@media (max-width: 760px) {
+  .app-layout__content {
+    padding-bottom: calc(26px + var(--final-safe-bottom));
+  }
+
+  .page-header,
+  .card,
+  .parking-card,
+  .recommendation-card,
+  .notification-card,
+  .chart-card,
+  .admin-link-card,
+  .admin-form,
+  .simple-card {
+    border-radius: 22px;
+  }
+
+  .page-header h1 {
+    font-size: 30px;
+  }
+
+  .dashboard-stats-grid,
+  .stats-grid--four,
+  .analytics-summary-grid,
+  .notifications-summary-grid,
+  .admin-dashboard-stats,
+  .parkings-grid,
+  .recommendations-grid,
+  .admin-link-grid,
+  .admin-result-grid,
+  .parking-card__stats,
+  .prediction-result-card__metrics,
+  .prediction-features-grid,
+  .recommendation-card__metrics,
+  .notification-card__meta,
+  .admin-form__grid,
+  .notifications-create-form__grid,
+  .prediction-form__grid,
+  .recommendation-form__grid,
+  .recommendation-form__grid--settings {
+    grid-template-columns: 1fr !important;
+  }
+
+  .dashboard-action-card,
+  .parking-card__top,
+  .prediction-result-card__hero,
+  .recommendation-card__header,
+  .recommendation-card__parking-panel,
+  .notification-card,
+  .admin-confirm {
+    grid-template-columns: 1fr !important;
+  }
+
+  .dashboard-action-card__icon,
+  .parking-card__icon,
+  .recommendation-card__parking-icon,
+  .notification-card__icon,
+  .admin-confirm__icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 16px;
+  }
+
+  .admin-table,
+  .parking-table,
+  .prediction-history__table {
+    min-width: 760px;
+  }
+
+  .admin-modal,
+  .parking-modal {
+    padding: 10px;
+    align-items: end;
+  }
+
+  .admin-modal__panel,
+  .parking-modal__panel {
+    width: 100%;
+    max-height: calc(100vh - 20px - var(--final-safe-bottom));
+    border-radius: 24px 24px 18px 18px;
+  }
+
+  .admin-modal__header,
+  .parking-modal__header,
+  .admin-modal__body,
+  .parking-modal__body,
+  .parking-details,
+  .admin-modal__footer {
+    padding-inline: 16px;
+  }
+
+  .parking-map {
+    min-height: 420px !important;
+  }
+
+  .map-parking-list {
+    max-height: 280px;
+  }
+}
+
+@media (max-width: 560px) {
+  .page-stack {
+    gap: 14px;
+  }
+
+  .page-header {
+    padding: 16px;
+  }
+
+  .page-header h1 {
+    font-size: 27px;
+  }
+
+  .page-header p {
+    font-size: 14px;
+  }
+
+  .topbar__right {
+    grid-template-columns: 1fr !important;
+  }
+
+  .topbar .theme-mode-switch,
+  .theme-mode-switch {
+    justify-content: center;
+  }
+
+  .parkings-toolbar,
+  .map-toolbar,
+  .analytics-filters-card,
+  .notifications-toolbar-card,
+  .admin-filter-card .card__body {
+    display: grid;
+    grid-template-columns: 1fr !important;
+  }
+
+  .parkings-view-toggle,
+  .notifications-filter-tabs {
+    border-radius: 18px;
+  }
+
+  .parkings-view-toggle,
+  .notifications-filter-tabs,
+  .parkings-view-toggle__button,
+  .notifications-filter-tabs button,
+  .btn,
+  .primary-button,
+  .secondary-button,
+  .form-submit-button {
+    width: 100%;
+  }
+
+  .admin-table,
+  .parking-table,
+  .prediction-history__table {
+    min-width: 680px;
+  }
+
+  .admin-table th,
+  .parking-table th,
+  .prediction-history__table th,
+  .admin-table td,
+  .parking-table td,
+  .prediction-history__table td {
+    padding: 12px;
+  }
+
+  .parking-map {
+    min-height: 360px !important;
+    border-radius: 20px;
+  }
+
+  .chart-card {
+    min-height: 300px;
+  }
+
+  .chart-card__canvas {
+    min-height: 230px;
+  }
+
+  .auth-page,
+  .simple-page {
+    padding-inline: 12px;
+  }
+
+  .simple-actions {
+    width: 100%;
+  }
+}
+
+@media (max-width: 390px) {
+  .admin-table,
+  .parking-table,
+  .prediction-history__table {
+    min-width: 640px;
+  }
+
+  .parking-map {
+    min-height: 330px !important;
+  }
+
+  .auth-title,
+  .simple-card h1 {
+    font-size: 29px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* Modern responsive parking details modal */
+
+body.modal-open {
+  overflow: hidden;
+}
+
+.parking-modal--modern {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: grid;
+  place-items: center;
+  padding: clamp(12px, 2vw, 24px);
+  isolation: isolate;
+}
+
+.parking-modal--modern .parking-modal__overlay {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(37, 99, 235, 0.22), transparent 32%),
+    radial-gradient(circle at 80% 0%, rgba(14, 165, 233, 0.18), transparent 34%),
+    rgba(2, 6, 23, 0.62);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  cursor: pointer;
+}
+
+.parking-modal__panel--modern {
+  position: relative;
+  z-index: 1;
+  width: min(1060px, 100%);
+  max-height: min(860px, calc(100vh - 32px));
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 34px;
+  color: var(--ui-text, #0f172a);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(248, 250, 252, 0.76)),
+    rgba(255, 255, 255, 0.72);
+  box-shadow:
+    0 32px 90px rgba(2, 6, 23, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(26px);
+  -webkit-backdrop-filter: blur(26px);
+}
+
+.parking-modal__header--modern {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  min-height: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 78px 18px 24px;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.72);
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.parking-modal__title-wrap {
+  min-width: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.parking-modal__icon {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 950;
+  box-shadow: 0 16px 28px rgba(15, 23, 42, 0.16);
+}
+
+.parking-modal__icon--low {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+.parking-modal__icon--medium {
+  background: linear-gradient(135deg, #f59e0b, #eab308);
+}
+
+.parking-modal__icon--high {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+.parking-modal__title-content {
+  min-width: 0;
+}
+
+.parking-modal__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 9px;
+}
+
+.parking-modal__header--modern h2 {
+  margin: 0;
+  color: var(--ui-text, #0f172a);
+  font-size: clamp(22px, 3vw, 32px);
+  line-height: 1.05;
+  letter-spacing: -0.055em;
+}
+
+.parking-modal__header--modern p {
+  margin: 8px 0 0;
+  color: var(--ui-muted, #64748b);
+  line-height: 1.45;
+}
+
+.parking-modal__header--modern .parking-modal__close,
+.parking-modal__header--modern .modal-close-button {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 44px;
+  min-width: 44px;
+  height: 44px;
+  min-height: 44px;
+  padding: 0;
+  border: 1px solid rgba(226, 232, 240, 0.86);
+  border-radius: 999px;
+  display: inline-grid;
+  place-items: center;
+  color: var(--ui-text, #0f172a);
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow:
+    0 14px 30px rgba(15, 23, 42, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.84);
+  cursor: pointer;
+  transition:
+    transform 0.18s ease,
+    border-color 0.18s ease,
+    background 0.18s ease,
+    color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.parking-modal__header--modern .modal-close-button svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.parking-modal__header--modern .modal-close-button path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.35;
+  stroke-linecap: round;
+}
+
+.parking-modal__header--modern .modal-close-button:hover {
+  color: #ffffff;
+  border-color: rgba(239, 68, 68, 0.5);
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  box-shadow: 0 18px 34px rgba(220, 38, 38, 0.24);
+  transform: translateY(-1px);
+}
+
+.modal-close-button__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.parking-modal__body--modern {
+  min-height: 0;
+  overflow: auto;
+  padding: 22px;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.parking-modal__loader {
+  min-height: 340px;
+  display: grid;
+  place-items: center;
+}
+
+.parking-details--modern {
+  display: grid;
+  gap: 18px;
+  padding: 0;
+  overflow: visible;
+}
+
+.parking-details--modern .parking-details__hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
+  gap: 18px;
+  align-items: stretch;
+  overflow: hidden;
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.62);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 8% 0%, rgba(37, 99, 235, 0.14), transparent 32%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.8), rgba(248, 250, 252, 0.58));
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.08);
+}
+
+.parking-details--modern .parking-details__hero::after {
+  content: '';
+  position: absolute;
+  right: -80px;
+  bottom: -110px;
+  width: 280px;
+  height: 280px;
+  border: 34px solid rgba(37, 99, 235, 0.07);
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.parking-details__hero-main,
+.parking-details__hero-side,
+.parking-details__hero-action {
+  position: relative;
+  z-index: 1;
+}
+
+.parking-details__eyebrow,
+.parking-details__section-header span {
+  display: block;
+  color: var(--ui-muted, #64748b);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.parking-details__hero-main > strong {
+  display: block;
+  margin-top: 10px;
+  color: var(--ui-text, #0f172a);
+  font-size: clamp(48px, 8vw, 86px);
+  line-height: 0.9;
+  letter-spacing: -0.085em;
+}
+
+.parking-details__hero-main > p {
+  margin: 10px 0 18px;
+  color: var(--ui-muted, #64748b);
+  font-weight: 900;
+}
+
+.parking-details__hero-side {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.parking-detail-metric {
+  min-height: 82px;
+  display: grid;
+  align-content: center;
+  gap: 6px;
+  padding: 14px 16px;
+  border: 1px solid rgba(226, 232, 240, 0.72);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.62);
+}
+
+.parking-detail-metric span {
+  color: var(--ui-muted, #64748b);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.parking-detail-metric strong {
+  color: var(--ui-text, #0f172a);
+  font-size: clamp(22px, 4vw, 32px);
+  line-height: 1;
+}
+
+.parking-detail-metric--success {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.14), rgba(255, 255, 255, 0.72));
+}
+
+.parking-detail-metric--warning {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.14), rgba(255, 255, 255, 0.72));
+}
+
+.parking-detail-metric--info {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.14), rgba(255, 255, 255, 0.72));
+}
+
+.parking-details--modern .parking-details__hero-action {
+  grid-column: 1 / -1;
+  width: min(360px, 100%);
+  justify-self: end;
+}
+
+.parking-details--modern .parking-details__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.parking-details--modern .parking-details__info-item,
+.parking-details--modern .parking-details__description,
+.parking-details--modern .parking-details__section,
+.parking-details--modern .parking-zone-card,
+.parking-details--modern .parking-history__item {
+  border: 1px solid rgba(226, 232, 240, 0.72);
+  background: rgba(255, 255, 255, 0.62);
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.06);
+}
+
+.parking-details--modern .parking-details__info-item {
+  min-width: 0;
+  display: grid;
+  gap: 6px;
+  padding: 15px 16px;
+  border-radius: 22px;
+}
+
+.parking-details--modern .parking-details__info-item span {
+  color: var(--ui-muted, #64748b);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.parking-details--modern .parking-details__info-item strong {
+  min-width: 0;
+  color: var(--ui-text, #0f172a);
+  font-size: 15px;
+  word-break: break-word;
+}
+
+.parking-details--modern .parking-details__description,
+.parking-details--modern .parking-details__section {
+  padding: 18px;
+  border-radius: 26px;
+}
+
+.parking-details--modern .parking-details__description h3,
+.parking-details--modern .parking-details__section-header h3 {
+  margin: 0;
+  color: var(--ui-text, #0f172a);
+  font-size: 19px;
+  letter-spacing: -0.03em;
+}
+
+.parking-details--modern .parking-details__description p {
+  margin: 10px 0 0;
+  color: var(--ui-muted, #64748b);
+  line-height: 1.65;
+}
+
+.parking-details--modern .parking-details__section-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.parking-details--modern .parking-zones {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.parking-details--modern .parking-zone-card {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+  border-radius: 22px;
+}
+
+.parking-zone-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.parking-zone-card__header strong,
+.parking-history__item strong {
+  display: block;
+  color: var(--ui-text, #0f172a);
+}
+
+.parking-zone-card__header span,
+.parking-history__item span,
+.parking-history__item small {
+  color: var(--ui-muted, #64748b);
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.parking-details--modern .parking-history {
+  display: grid;
+  gap: 10px;
+}
+
+.parking-details--modern .parking-history__item {
+  display: grid;
+  grid-template-columns: minmax(160px, 1fr) auto auto auto;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 20px;
+}
+
+.parking-details--modern .parking-details__empty {
+  margin: 0;
+  padding: 18px;
+  border-radius: 20px;
+  color: var(--ui-muted, #64748b);
+  background: rgba(248, 250, 252, 0.78);
+}
+
+@media (max-width: 900px) {
+  .parking-modal--modern {
+    place-items: end center;
+    padding: 10px;
+  }
+
+  .parking-modal__panel--modern {
+    width: 100%;
+    max-height: calc(100vh - 20px);
+    border-radius: 28px 28px 18px 18px;
+  }
+
+  .parking-details--modern .parking-details__hero,
+  .parking-details--modern .parking-details__grid,
+  .parking-details--modern .parking-zones {
+    grid-template-columns: 1fr;
+  }
+
+  .parking-details--modern .parking-details__hero-action {
+    width: 100%;
+    justify-self: stretch;
+  }
+
+  .parking-details--modern .parking-history__item {
+    grid-template-columns: 1fr auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .parking-modal--modern {
+    padding: 0;
+  }
+
+  .parking-modal__panel--modern {
+    max-height: 100vh;
+    border-radius: 0;
+    border-left: 0;
+    border-right: 0;
+  }
+
+  .parking-modal__header--modern {
+    padding: 16px 66px 14px 16px;
+  }
+
+  .parking-modal__icon {
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
+    border-radius: 16px;
+  }
+
+  .parking-modal__header--modern .parking-modal__close,
+  .parking-modal__header--modern .modal-close-button {
+    top: 13px;
+    right: 13px;
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    min-height: 40px;
+  }
+
+  .parking-modal__body--modern {
+    padding: 14px;
+  }
+
+  .parking-details--modern {
+    gap: 14px;
+  }
+
+  .parking-details--modern .parking-details__hero,
+  .parking-details--modern .parking-details__description,
+  .parking-details--modern .parking-details__section {
+    border-radius: 22px;
+    padding: 16px;
+  }
+
+  .parking-details__hero-main > strong {
+    font-size: 52px;
+  }
+
+  .parking-details--modern .parking-history__item {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+}
+
+/* Modern user-friendly predictions page */
+.predictions-page--modern {
+  display: grid;
+  gap: 18px;
+}
+
+.prediction-header-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.prediction-feedback {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid rgba(34, 197, 94, 0.22);
+  border-radius: 20px;
+  color: #166534;
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.16), rgba(255, 255, 255, 0.72));
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.08);
+}
+
+.prediction-feedback span {
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  color: #ffffff;
+  background: #16a34a;
+  font-weight: 900;
+}
+
+.prediction-feedback p {
+  margin: 0;
+  font-weight: 800;
+}
+
+.prediction-guide {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+  gap: 16px;
+  align-items: stretch;
+}
+
+.predictions-page--modern .prediction-guide__card,
+.predictions-page--modern .prediction-stat,
+.predictions-page--modern .prediction-form-card--modern,
+.predictions-page--modern .prediction-result-card--modern,
+.predictions-page--modern .prediction-history-card,
+.predictions-page--modern .model-metrics-card--modern {
+  border: 1px solid rgba(255, 255, 255, 0.52);
+  border-radius: 28px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.84), rgba(248, 250, 252, 0.64)),
+    rgba(255, 255, 255, 0.7);
+  box-shadow:
+    0 22px 55px rgba(15, 23, 42, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.prediction-guide__card--primary {
+  position: relative;
+  overflow: hidden;
+}
+
+.prediction-guide__card--primary::after {
+  content: '';
+  position: absolute;
+  right: -84px;
+  bottom: -110px;
+  width: 260px;
+  height: 260px;
+  border: 36px solid rgba(37, 99, 235, 0.08);
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.prediction-guide__content {
+  position: relative;
+  z-index: 1;
+}
+
+.prediction-guide__content h2 {
+  margin: 14px 0 10px;
+  color: var(--color-text, #0f172a);
+  font-size: clamp(24px, 4vw, 38px);
+  line-height: 1.06;
+  letter-spacing: -0.06em;
+}
+
+.prediction-guide__content p {
+  max-width: 740px;
+  margin: 0;
+  color: var(--color-text-muted, #64748b);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.prediction-guide__steps {
+  display: grid;
+  gap: 10px;
+}
+
+.prediction-guide__steps div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 76px;
+  padding: 14px;
+  border: 1px solid rgba(226, 232, 240, 0.78);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.62);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.07);
+}
+
+.prediction-guide__steps strong {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--color-primary, #2563eb), var(--color-secondary, #0ea5e9));
+  font-size: 18px;
+  font-weight: 950;
+}
+
+.prediction-guide__steps span {
+  color: var(--color-text, #0f172a);
+  font-weight: 900;
+}
+
+.prediction-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.prediction-stat {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+}
+
+.prediction-stat__icon {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 17px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #2563eb, #0ea5e9);
+  font-size: 16px;
+  font-weight: 950;
+  box-shadow: 0 14px 26px rgba(37, 99, 235, 0.22);
+}
+
+.prediction-stat--success .prediction-stat__icon {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  box-shadow: 0 14px 26px rgba(22, 163, 74, 0.2);
+}
+
+.prediction-stat--warning .prediction-stat__icon {
+  background: linear-gradient(135deg, #f59e0b, #eab308);
+  box-shadow: 0 14px 26px rgba(245, 158, 11, 0.2);
+}
+
+.prediction-stat--neutral .prediction-stat__icon {
+  background: linear-gradient(135deg, #64748b, #334155);
+  box-shadow: 0 14px 26px rgba(51, 65, 85, 0.18);
+}
+
+.prediction-stat span {
+  display: block;
+  color: var(--color-text-muted, #64748b);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.prediction-stat strong {
+  display: block;
+  margin-top: 7px;
+  color: var(--color-text, #0f172a);
+  font-size: clamp(24px, 4vw, 34px);
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+.prediction-stat p {
+  margin: 7px 0 0;
+  color: var(--color-text-muted, #64748b);
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.predictions-page--modern .predictions-main-grid {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.82fr) minmax(0, 1.18fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.predictions-page--modern .predictions-section-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(340px, 0.85fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.prediction-form--modern {
+  display: grid;
+  gap: 16px;
+}
+
+.prediction-field {
+  display: grid;
+  gap: 8px;
+}
+
+.prediction-field span,
+.prediction-form-summary span,
+.prediction-selected-parking span,
+.prediction-result-card__eyebrow,
+.prediction-result-metrics span,
+.model-metrics-card__latest--modern span {
+  color: var(--color-text-muted, #64748b);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.prediction-input {
+  min-height: 48px;
+  border-radius: 16px;
+}
+
+.prediction-form__grid--modern {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.prediction-selected-parking {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+  padding: 14px;
+  border: 1px solid rgba(37, 99, 235, 0.16);
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.09), rgba(255, 255, 255, 0.68));
+}
+
+.prediction-selected-parking strong {
+  display: block;
+  min-width: 0;
+  color: var(--color-text, #0f172a);
+  font-size: 15px;
+  word-break: break-word;
+}
+
+.prediction-selected-parking div:last-child {
+  text-align: right;
+}
+
+.prediction-presets {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.prediction-presets button {
+  min-height: 40px;
+  padding: 8px 10px;
+  border: 1px solid rgba(226, 232, 240, 0.92);
+  border-radius: 14px;
+  color: var(--color-text, #0f172a);
+  background: rgba(255, 255, 255, 0.66);
+  font-size: 13px;
+  font-weight: 850;
+  cursor: pointer;
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+.prediction-presets button:hover {
+  transform: translateY(-1px);
+  border-color: rgba(37, 99, 235, 0.32);
+  background: rgba(37, 99, 235, 0.08);
+}
+
+.prediction-form-summary {
+  display: grid;
+  gap: 6px;
+  padding: 14px;
+  border: 1px dashed rgba(37, 99, 235, 0.28);
+  border-radius: 18px;
+  background: rgba(37, 99, 235, 0.07);
+}
+
+.prediction-form-summary strong {
+  color: var(--color-text, #0f172a);
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.prediction-form-summary p {
+  margin: 0;
+  color: var(--color-text-muted, #64748b);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.prediction-result-card--modern {
+  position: relative;
+  overflow: hidden;
+}
+
+.prediction-result-card--modern .card__body {
+  padding: 0;
+}
+
+.prediction-result-card--modern::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 6px;
+  background: linear-gradient(90deg, #2563eb, #0ea5e9);
+}
+
+.prediction-result-card--success::before {
+  background: linear-gradient(90deg, #22c55e, #86efac);
+}
+
+.prediction-result-card--warning::before {
+  background: linear-gradient(90deg, #f59e0b, #fde68a);
+}
+
+.prediction-result-card--danger::before {
+  background: linear-gradient(90deg, #ef4444, #fca5a5);
+}
+
+.prediction-result-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 190px;
+  gap: 18px;
+  align-items: center;
+  padding: 22px;
+}
+
+.prediction-result-card__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.prediction-result-hero h2 {
+  margin: 8px 0 10px;
+  color: var(--color-text, #0f172a);
+  font-size: clamp(28px, 5vw, 46px);
+  line-height: 1.02;
+  letter-spacing: -0.07em;
+}
+
+.prediction-result-hero p {
+  max-width: 600px;
+  margin: 0;
+  color: var(--color-text-muted, #64748b);
+  line-height: 1.65;
+  font-weight: 750;
+}
+
+.prediction-result-card__parking {
+  display: grid;
+  gap: 4px;
+  margin-top: 18px;
+  padding: 14px;
+  border-radius: 18px;
+  background: rgba(248, 250, 252, 0.72);
+}
+
+.prediction-result-card__parking strong {
+  color: var(--color-text, #0f172a);
+  font-size: 16px;
+}
+
+.prediction-result-card__parking span {
+  color: var(--color-text-muted, #64748b);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.prediction-gauge {
+  width: 180px;
+  height: 180px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background:
+    conic-gradient(var(--color-primary, #2563eb) var(--prediction-percent), rgba(226, 232, 240, 0.9) 0),
+    rgba(255, 255, 255, 0.76);
+  box-shadow: inset 0 0 0 1px rgba(226, 232, 240, 0.78), 0 18px 40px rgba(15, 23, 42, 0.12);
+}
+
+.prediction-result-card--success .prediction-gauge {
+  background: conic-gradient(#22c55e var(--prediction-percent), rgba(226, 232, 240, 0.9) 0);
+}
+
+.prediction-result-card--warning .prediction-gauge {
+  background: conic-gradient(#f59e0b var(--prediction-percent), rgba(226, 232, 240, 0.9) 0);
+}
+
+.prediction-result-card--danger .prediction-gauge {
+  background: conic-gradient(#ef4444 var(--prediction-percent), rgba(226, 232, 240, 0.9) 0);
+}
+
+.prediction-gauge__inner {
+  width: 128px;
+  height: 128px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.prediction-gauge__inner strong {
+  color: var(--color-text, #0f172a);
+  font-size: 36px;
+  line-height: 1;
+  letter-spacing: -0.065em;
+}
+
+.prediction-gauge__inner span {
+  color: var(--color-text-muted, #64748b);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.prediction-result-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  padding: 0 22px 22px;
+}
+
+.prediction-result-metrics div,
+.prediction-features-grid--modern div,
+.model-metrics-card__latest--modern div,
+.model-metrics-card__history-list div {
+  padding: 14px;
+  border: 1px solid rgba(226, 232, 240, 0.82);
+  border-radius: 18px;
+  background: rgba(248, 250, 252, 0.72);
+}
+
+.prediction-result-metrics strong,
+.prediction-features-grid--modern strong,
+.model-metrics-card__latest--modern strong,
+.model-metrics-card__history-list strong {
+  display: block;
+  margin-top: 7px;
+  color: var(--color-text, #0f172a);
+  font-size: 17px;
+  line-height: 1.22;
+  word-break: break-word;
+}
+
+.prediction-result-details {
+  margin: 0 22px 22px;
+  padding: 14px;
+  border: 1px solid rgba(226, 232, 240, 0.82);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.54);
+}
+
+.prediction-result-details summary {
+  color: var(--color-text, #0f172a);
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.prediction-result-details p {
+  margin: 12px 0 0;
+  color: var(--color-text-muted, #64748b);
+}
+
+.prediction-features-grid--modern {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.prediction-history__table--modern {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+.prediction-history__table--modern th {
+  padding: 0 12px 8px;
+  color: var(--color-text-muted, #64748b);
+  font-size: 12px;
+  font-weight: 900;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.prediction-history__table--modern td {
+  padding: 14px 12px;
+  border-top: 1px solid rgba(226, 232, 240, 0.8);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+  background: rgba(255, 255, 255, 0.66);
+  color: var(--color-text, #0f172a);
+  vertical-align: middle;
+}
+
+.prediction-history__table--modern td:first-child {
+  border-left: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 18px 0 0 18px;
+}
+
+.prediction-history__table--modern td:last-child {
+  border-right: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 0 18px 18px 0;
+}
+
+.prediction-history__table--modern td strong {
+  display: block;
+  color: var(--color-text, #0f172a);
+}
+
+.prediction-history__table--modern td span {
+  display: block;
+  margin-top: 4px;
+  color: var(--color-text-muted, #64748b);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.model-quality-banner {
+  display: grid;
+  gap: 8px;
+  padding: 16px;
+  border: 1px solid rgba(37, 99, 235, 0.16);
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.09), rgba(255, 255, 255, 0.68));
+}
+
+.model-quality-banner strong {
+  color: var(--color-text, #0f172a);
+  font-size: 18px;
+}
+
+.model-quality-banner span {
+  color: var(--color-text-muted, #64748b);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.model-metrics-card__latest--modern {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+  padding: 0;
+}
+
+.model-metrics-card__latest--modern small {
+  display: block;
+  margin-top: 5px;
+  color: var(--color-text-muted, #64748b);
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.model-metrics-card__train-result--modern {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+  padding: 14px;
+  border: 1px solid rgba(34, 197, 94, 0.24);
+  border-radius: 18px;
+  background: rgba(34, 197, 94, 0.1);
+}
+
+.model-metrics-card__train-result--modern p {
+  margin: 0;
+  color: #166534;
+  line-height: 1.55;
+}
+
+.model-metrics-card__train-result--modern div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.model-metrics-card__history--modern {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.model-metrics-card__history--modern > strong {
+  color: var(--color-text, #0f172a);
+  font-size: 16px;
+}
+
+.model-metrics-card__history-list {
+  display: grid;
+  gap: 8px;
+}
+
+.model-metrics-card__history-list span {
+  color: var(--color-text-muted, #64748b);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+@media (max-width: 1100px) {
+  .prediction-guide,
+  .predictions-page--modern .predictions-main-grid,
+  .predictions-page--modern .predictions-section-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .prediction-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .prediction-header-actions {
+    width: 100%;
+    justify-content: stretch;
+  }
+
+  .prediction-header-actions .btn {
+    flex: 1 1 150px;
+  }
+
+  .prediction-guide__steps,
+  .prediction-stats-grid,
+  .prediction-form__grid--modern,
+  .prediction-selected-parking,
+  .prediction-result-hero,
+  .prediction-result-metrics,
+  .prediction-features-grid--modern,
+  .model-metrics-card__latest--modern {
+    grid-template-columns: 1fr;
+  }
+
+  .prediction-presets {
+    grid-template-columns: 1fr;
+  }
+
+  .prediction-selected-parking div:last-child {
+    text-align: left;
+  }
+
+  .prediction-result-hero {
+    justify-items: stretch;
+  }
+
+  .prediction-gauge {
+    width: 164px;
+    height: 164px;
+    justify-self: center;
+  }
+
+  .prediction-history__table-wrap {
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+
+  .prediction-history__table--modern {
+    min-width: 760px;
+  }
+}
+
+/* Theme adaptive fixes for Recommendations and Predictions */
+
+.recommendations-page,
+.predictions-page {
+  --feature-page-text: var(--ui-text, var(--color-text));
+  --feature-page-muted: var(--ui-muted, var(--color-text-muted));
+  --feature-page-muted-strong: var(--ui-muted-strong, var(--color-text-muted));
+  --feature-page-border: var(--ui-glass-border-soft, var(--color-border));
+  --feature-page-border-strong: var(--ui-glass-border, var(--color-border));
+  --feature-page-card: var(--ui-glass-bg, rgba(255, 255, 255, 0.68));
+  --feature-page-card-strong: var(--ui-glass-bg-strong, rgba(255, 255, 255, 0.82));
+  --feature-page-panel: var(--ui-glass-bg-soft, rgba(255, 255, 255, 0.42));
+  --feature-page-panel-strong: rgba(248, 250, 252, 0.82);
+  --feature-page-input-bg: rgba(255, 255, 255, 0.84);
+  --feature-page-input-text: #0f172a;
+  --feature-page-shadow: var(--ui-glass-shadow, 0 22px 60px rgba(15, 23, 42, 0.1));
+  --feature-page-shadow-hover: var(--ui-glass-shadow-hover, 0 28px 78px rgba(15, 23, 42, 0.16));
+  --feature-page-primary-soft: var(--ui-primary-soft, rgba(37, 99, 235, 0.12));
+  --feature-page-success-soft: var(--ui-success-bg, rgba(220, 252, 231, 0.76));
+  --feature-page-warning-soft: var(--ui-warning-bg, rgba(254, 243, 199, 0.8));
+  --feature-page-danger-soft: var(--ui-danger-bg, rgba(254, 226, 226, 0.78));
+  --feature-page-good-text: #166534;
+
+  color: var(--feature-page-text);
+
+  --color-text: var(--feature-page-text);
+  --color-text-muted: var(--feature-page-muted);
+  --color-border: var(--feature-page-border);
+  --color-primary-soft: var(--feature-page-primary-soft);
+  --color-success-soft: var(--feature-page-success-soft);
+  --color-warning-soft: var(--feature-page-warning-soft);
+  --color-error-soft: var(--feature-page-danger-soft);
+}
+
+:root[data-background-theme='blue'] .recommendations-page,
+:root[data-background-theme='blue'] .predictions-page,
+:root[data-background-theme='dark'] .recommendations-page,
+:root[data-background-theme='dark'] .predictions-page {
+  --feature-page-panel-strong: rgba(255, 255, 255, 0.075);
+  --feature-page-input-bg: rgba(15, 23, 42, 0.34);
+  --feature-page-input-text: #f8fafc;
+  --feature-page-good-text: #bbf7d0;
+}
+
+.recommendations-page .page-header,
+.predictions-page .page-header,
+.recommendations-page .card,
+.predictions-page .card,
+.recommendation-card,
+.prediction-result-card,
+.model-metrics-card,
+.prediction-form-card,
+.recommendation-form-card,
+.recommendations-help-card,
+.prediction-history-card,
+.recommendations-loader-card,
+.predictions-loading-card,
+.requests-list__item,
+.prediction-history__table-wrap {
+  color: var(--feature-page-text);
+  border-color: var(--feature-page-border-strong) !important;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.16), transparent 46%),
+    var(--feature-page-card) !important;
+  box-shadow: var(--feature-page-shadow);
+  backdrop-filter: blur(var(--ui-glass-blur, 22px)) saturate(150%);
+  -webkit-backdrop-filter: blur(var(--ui-glass-blur, 22px)) saturate(150%);
+}
+
+:root[data-background-theme='blue'] .recommendations-page .card,
+:root[data-background-theme='blue'] .predictions-page .card,
+:root[data-background-theme='blue'] .recommendations-page .page-header,
+:root[data-background-theme='blue'] .predictions-page .page-header,
+:root[data-background-theme='dark'] .recommendations-page .card,
+:root[data-background-theme='dark'] .predictions-page .card,
+:root[data-background-theme='dark'] .recommendations-page .page-header,
+:root[data-background-theme='dark'] .predictions-page .page-header {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.09), transparent 42%),
+    var(--feature-page-card) !important;
+}
+
+.recommendations-page .card:hover,
+.predictions-page .card:hover,
+.recommendation-card:hover,
+.requests-list__item:hover,
+.prediction-history__table-wrap:hover {
+  box-shadow: var(--feature-page-shadow-hover);
+}
+
+.recommendations-page .card__header,
+.predictions-page .card__header {
+  border-bottom-color: var(--feature-page-border);
+}
+
+.recommendations-page .card__title,
+.recommendations-page .card__subtitle,
+.predictions-page .card__title,
+.predictions-page .card__subtitle,
+.recommendations-page .page-header h1,
+.recommendations-page .page-header p,
+.predictions-page .page-header h1,
+.predictions-page .page-header p {
+  color: inherit;
+}
+
+.recommendations-page .card__subtitle,
+.predictions-page .card__subtitle,
+.recommendations-page .page-header p,
+.predictions-page .page-header p {
+  color: var(--feature-page-muted);
+}
+
+.recommendations-page .form-label,
+.predictions-page .form-label,
+.recommendations-page label > span,
+.predictions-page label > span,
+.recommendation-form__checkbox strong,
+.prediction-field span {
+  color: var(--feature-page-text);
+}
+
+.recommendations-page .form-input,
+.predictions-page .form-input,
+.predictions-page .prediction-input {
+  color: var(--feature-page-input-text) !important;
+  border-color: var(--feature-page-border) !important;
+  background: var(--feature-page-input-bg) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+:root[data-background-theme='blue'] .recommendations-page .form-input::placeholder,
+:root[data-background-theme='blue'] .predictions-page .form-input::placeholder,
+:root[data-background-theme='dark'] .recommendations-page .form-input::placeholder,
+:root[data-background-theme='dark'] .predictions-page .form-input::placeholder {
+  color: rgba(226, 232, 240, 0.58);
+}
+
+:root[data-background-theme='blue'] .recommendations-page .form-input option,
+:root[data-background-theme='blue'] .predictions-page .form-input option,
+:root[data-background-theme='dark'] .recommendations-page .form-input option,
+:root[data-background-theme='dark'] .predictions-page .form-input option {
+  color: #f8fafc;
+  background: #0f172a;
+}
+
+.recommendations-help-card__list div,
+.recommendation-form__checkbox,
+.recommendation-card__requested,
+.recommendation-card__parking-panel,
+.recommendation-card__parking-meta,
+.recommendation-card__metrics div,
+.recommendation-card__reason,
+.requests-list__meta div,
+.requests-list__recommendation-text,
+.prediction-form__preview,
+.prediction-result-card__percent,
+.prediction-result-card__metrics div,
+.prediction-features-grid div,
+.model-metrics-card__latest div,
+.model-metrics-card__history-list div,
+.prediction-help-card__steps div,
+.model-metrics-card__train-result,
+.prediction-history__state,
+.prediction-history__table th,
+.prediction-history__table td,
+.prediction-selected-parking,
+.prediction-form-summary,
+.prediction-result-card__parking,
+.prediction-result-details,
+.model-quality-banner,
+.model-metrics-card__latest--modern div,
+.model-metrics-card__history-list div,
+.prediction-result-metrics div,
+.prediction-features-grid--modern div,
+.prediction-guide__steps div,
+.prediction-stat {
+  color: var(--feature-page-text);
+  border-color: var(--feature-page-border) !important;
+  background: var(--feature-page-panel-strong) !important;
+}
+
+.recommendations-help-card__list span,
+.recommendation-card__header p,
+.recommendation-card__date,
+.recommendation-card__parking-panel span,
+.recommendation-card__metrics span,
+.requests-list__item p,
+.requests-list__meta span,
+.requests-list__recommendation-text span,
+.recommendation-form__checkbox small,
+.prediction-form__field span,
+.prediction-form__preview span,
+.prediction-result-card__hero p,
+.prediction-result-card__percent span,
+.prediction-result-card__metrics span,
+.prediction-features-grid span,
+.model-metrics-card__latest span,
+.model-metrics-card__history-list span,
+.prediction-help-card__steps span,
+.predictions-history-section__header p,
+.prediction-history__table th,
+.prediction-history__table td span,
+.prediction-field span,
+.prediction-form-summary span,
+.prediction-form-summary p,
+.prediction-selected-parking span,
+.prediction-result-card__eyebrow,
+.prediction-result-metrics span,
+.prediction-result-card__parking span,
+.prediction-gauge__inner span,
+.model-quality-banner span,
+.model-metrics-card__latest--modern small,
+.prediction-stat span,
+.prediction-stat p {
+  color: var(--feature-page-muted) !important;
+}
+
+.recommendations-help-card__list strong,
+.recommendation-card__header h2,
+.recommendation-card__requested strong,
+.recommendation-card__parking-panel strong,
+.recommendation-card__metrics strong,
+.recommendation-card__reason p,
+.requests-list__item h3,
+.requests-list__meta strong,
+.requests-list__recommendation-text p,
+.prediction-result-card__hero h2,
+.prediction-result-card__percent strong,
+.prediction-result-card__metrics strong,
+.prediction-features-grid strong,
+.model-metrics-card__latest strong,
+.model-metrics-card__history-list strong,
+.predictions-history-section__header h2,
+.prediction-history__table td,
+.prediction-history__table td strong,
+.prediction-selected-parking strong,
+.prediction-form-summary strong,
+.prediction-result-card__parking strong,
+.prediction-result-metrics strong,
+.prediction-gauge__inner strong,
+.model-quality-banner strong,
+.prediction-stat strong {
+  color: var(--feature-page-text) !important;
+}
+
+.recommendation-card__requested span,
+.recommendation-card__reason strong {
+  color: var(--ui-primary, var(--color-primary)) !important;
+}
+
+.recommendations-feedback,
+.predictions-feedback,
+.prediction-feedback {
+  border: 1px solid var(--ui-success-border, rgba(22, 163, 74, 0.28));
+  color: var(--feature-page-good-text) !important;
+  background: color-mix(in srgb, var(--ui-success-bg, rgba(34, 197, 94, 0.16)) 72%, transparent) !important;
+  box-shadow: var(--feature-page-shadow);
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+}
+
+.prediction-result-card__percent,
+.prediction-gauge__inner {
+  background: var(--feature-page-card-strong) !important;
+}
+
+.prediction-history__table {
+  color: var(--feature-page-text);
+}
+
+.prediction-history__table tr:last-child td {
+  border-bottom-color: transparent;
+}
+
+.prediction-history__table--modern td {
+  background: var(--feature-page-panel-strong) !important;
+}
+
+.prediction-presets button {
+  color: var(--feature-page-text);
+  border-color: var(--feature-page-border);
+  background: var(--feature-page-panel-strong);
+}
+
+.prediction-presets button:hover {
+  border-color: rgba(56, 189, 248, 0.4);
+  background: var(--feature-page-primary-soft);
+}
+
+:root[data-background-theme='blue'] .prediction-gauge__inner,
+:root[data-background-theme='dark'] .prediction-gauge__inner {
+  background: rgba(15, 23, 42, 0.9) !important;
+}
+
+:root[data-background-theme='blue'] .recommendations-page .empty-state,
+:root[data-background-theme='blue'] .predictions-page .empty-state,
+:root[data-background-theme='dark'] .recommendations-page .empty-state,
+:root[data-background-theme='dark'] .predictions-page .empty-state {
+  color: var(--feature-page-text);
+  border-color: var(--feature-page-border);
+  background: var(--feature-page-card) !important;
+}
+
+@media (max-width: 760px) {
+  .recommendations-page .card,
+  .predictions-page .card,
+  .recommendation-card,
+  .requests-list__item,
+  .prediction-stat {
+    border-radius: 22px;
+  }
+}
+
+/* Theme adaptive fixes for Map side panel and parking details modal */
+
+.map-page,
+.parking-modal {
+  --map-feature-text: var(--ui-text, var(--color-text, #0f172a));
+  --map-feature-muted: var(--ui-muted, var(--color-text-muted, #64748b));
+  --map-feature-border: var(--ui-glass-border-soft, var(--glass-border, rgba(255, 255, 255, 0.58)));
+  --map-feature-border-strong: var(--ui-glass-border, var(--glass-border, rgba(255, 255, 255, 0.7)));
+  --map-feature-card: var(--ui-glass-bg, var(--glass-surface, rgba(255, 255, 255, 0.66)));
+  --map-feature-card-strong: var(--ui-glass-bg-strong, var(--glass-surface-strong, rgba(255, 255, 255, 0.82)));
+  --map-feature-panel: rgba(255, 255, 255, 0.54);
+  --map-feature-panel-strong: rgba(248, 250, 252, 0.82);
+  --map-feature-shadow: var(--ui-glass-shadow, var(--glass-shadow, 0 22px 60px rgba(15, 23, 42, 0.12)));
+  --map-feature-shadow-hover: var(--ui-glass-shadow-hover, 0 28px 78px rgba(15, 23, 42, 0.16));
+
+  color: var(--map-feature-text);
+}
+
+:root[data-background-theme='blue'] .map-page,
+:root[data-background-theme='dark'] .map-page,
+:root[data-background-theme='blue'] .parking-modal,
+:root[data-background-theme='dark'] .parking-modal {
+  --map-feature-panel: rgba(15, 23, 42, 0.26);
+  --map-feature-panel-strong: rgba(15, 23, 42, 0.34);
+}
+
+.map-page .map-side-panel,
+.map-page .map-parking-row,
+.map-page .map-warning-card,
+.map-page .map-card-empty,
+.map-page .map-legend,
+.parking-modal .parking-modal__panel,
+.parking-modal .parking-details__hero,
+.parking-modal .parking-details__info-item,
+.parking-modal .parking-details__description,
+.parking-modal .parking-details__section,
+.parking-modal .parking-zone-card,
+.parking-modal .parking-history__item,
+.parking-modal .parking-details__empty {
+  color: var(--map-feature-text) !important;
+  border-color: var(--map-feature-border-strong) !important;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.16), transparent 46%),
+    var(--map-feature-card) !important;
+  box-shadow: var(--map-feature-shadow);
+  backdrop-filter: blur(var(--ui-glass-blur, var(--glass-blur, 22px))) saturate(150%);
+  -webkit-backdrop-filter: blur(var(--ui-glass-blur, var(--glass-blur, 22px))) saturate(150%);
+}
+
+:root[data-background-theme='blue'] .map-page .map-side-panel,
+:root[data-background-theme='blue'] .map-page .map-parking-row,
+:root[data-background-theme='blue'] .map-page .map-warning-card,
+:root[data-background-theme='blue'] .map-page .map-card-empty,
+:root[data-background-theme='blue'] .map-page .map-legend,
+:root[data-background-theme='blue'] .parking-modal .parking-modal__panel,
+:root[data-background-theme='blue'] .parking-modal .parking-details__hero,
+:root[data-background-theme='blue'] .parking-modal .parking-details__info-item,
+:root[data-background-theme='blue'] .parking-modal .parking-details__description,
+:root[data-background-theme='blue'] .parking-modal .parking-details__section,
+:root[data-background-theme='blue'] .parking-modal .parking-zone-card,
+:root[data-background-theme='blue'] .parking-modal .parking-history__item,
+:root[data-background-theme='blue'] .parking-modal .parking-details__empty,
+:root[data-background-theme='dark'] .map-page .map-side-panel,
+:root[data-background-theme='dark'] .map-page .map-parking-row,
+:root[data-background-theme='dark'] .map-page .map-warning-card,
+:root[data-background-theme='dark'] .map-page .map-card-empty,
+:root[data-background-theme='dark'] .map-page .map-legend,
+:root[data-background-theme='dark'] .parking-modal .parking-modal__panel,
+:root[data-background-theme='dark'] .parking-modal .parking-details__hero,
+:root[data-background-theme='dark'] .parking-modal .parking-details__info-item,
+:root[data-background-theme='dark'] .parking-modal .parking-details__description,
+:root[data-background-theme='dark'] .parking-modal .parking-details__section,
+:root[data-background-theme='dark'] .parking-modal .parking-zone-card,
+:root[data-background-theme='dark'] .parking-modal .parking-history__item,
+:root[data-background-theme='dark'] .parking-modal .parking-details__empty {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.09), transparent 42%),
+    var(--map-feature-card) !important;
+}
+
+.map-page .map-side-panel__header h2,
+.map-page .map-parking-row__content strong,
+.map-page .map-warning-card strong,
+.map-page .map-legend strong,
+.parking-modal .parking-modal__header h2,
+.parking-modal .parking-modal__eyebrow,
+.parking-modal .parking-details__hero h3,
+.parking-modal .parking-details__info-item strong,
+.parking-modal .parking-details__description h3,
+.parking-modal .parking-details__section h3,
+.parking-modal .parking-zone-card strong,
+.parking-modal .parking-history__item strong {
+  color: var(--map-feature-text) !important;
+}
+
+.map-page .map-side-panel__header p,
+.map-page .map-parking-row__content > span,
+.map-page .map-parking-row__meta small,
+.map-page .map-warning-card p,
+.map-page .map-card-empty,
+.map-page .map-legend span,
+.parking-modal .parking-modal__header p,
+.parking-modal .parking-details__hero p,
+.parking-modal .parking-details__info-item span,
+.parking-modal .parking-details__description p,
+.parking-modal .parking-zone-card span,
+.parking-modal .parking-history__item span,
+.parking-modal .parking-details__empty {
+  color: var(--map-feature-muted) !important;
+}
+
+.map-page .map-parking-row {
+  background: var(--map-feature-panel) !important;
+}
+
+.map-page .map-parking-row:hover {
+  transform: translateY(-2px);
+  border-color: rgba(56, 189, 248, 0.42) !important;
+  background: var(--map-feature-panel-strong) !important;
+  box-shadow: var(--map-feature-shadow-hover);
+}
+
+.map-page .map-warning-card {
+  border-color: rgba(245, 158, 11, 0.36) !important;
+  background:
+    linear-gradient(135deg, rgba(245, 158, 11, 0.18), transparent 58%),
+    var(--map-feature-panel) !important;
+}
+
+:root[data-background-theme='blue'] .map-page .map-warning-card strong,
+:root[data-background-theme='dark'] .map-page .map-warning-card strong {
+  color: #fde68a !important;
+}
+
+.map-page .map-parking-row__marker {
+  border-color: rgba(255, 255, 255, 0.72);
+}
+
+.map-page .map-parking-list {
+  scrollbar-color: rgba(148, 163, 184, 0.48) transparent;
+}
+
+.map-page .map-parking-list::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.42);
+}
+
+.map-page .map-card-empty {
+  border-style: dashed !important;
+  background: var(--map-feature-panel) !important;
+}
+
+/* Details modal opened from map / parking card */
+
+.parking-modal .parking-modal__overlay {
+  background:
+    radial-gradient(circle at 18% 18%, rgba(56, 189, 248, 0.22), transparent 34%),
+    radial-gradient(circle at 82% 8%, rgba(139, 92, 246, 0.18), transparent 36%),
+    rgba(2, 6, 23, 0.62) !important;
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+}
+
+.parking-modal .parking-modal__panel {
+  width: min(1060px, 100%) !important;
+  max-height: min(860px, calc(100vh - 32px));
+  overflow: hidden;
+  border-radius: 34px;
+}
+
+.parking-modal .parking-modal__header {
+  border-bottom-color: var(--map-feature-border) !important;
+  background: var(--map-feature-card-strong) !important;
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+}
+
+.parking-modal .parking-modal__close,
+.parking-modal .modal-close-button {
+  color: var(--map-feature-text) !important;
+  border-color: var(--map-feature-border) !important;
+  background: var(--map-feature-panel-strong) !important;
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.12);
+}
+
+.parking-modal .parking-modal__close:hover,
+.parking-modal .modal-close-button:hover {
+  color: #ffffff !important;
+  border-color: rgba(239, 68, 68, 0.5) !important;
+  background: linear-gradient(135deg, #ef4444, #dc2626) !important;
+  box-shadow: 0 18px 34px rgba(220, 38, 38, 0.24);
+}
+
+.parking-modal .parking-details {
+  color: var(--map-feature-text) !important;
+  background: transparent !important;
+}
+
+.parking-modal .parking-details__hero {
+  background:
+    radial-gradient(circle at 8% 0%, rgba(37, 99, 235, 0.16), transparent 32%),
+    var(--map-feature-panel) !important;
+}
+
+.parking-modal .parking-details__info-item,
+.parking-modal .parking-details__description,
+.parking-modal .parking-details__section,
+.parking-modal .parking-zone-card,
+.parking-modal .parking-history__item,
+.parking-modal .parking-details__empty {
+  background: var(--map-feature-panel-strong) !important;
+}
+
+.parking-modal .parking-details__hero::after {
+  border-color: rgba(56, 189, 248, 0.1) !important;
+}
+
+.parking-modal .load-progress__track {
+  background: rgba(148, 163, 184, 0.24) !important;
+}
+
+.parking-modal .parking-history__item {
+  gap: 10px;
+}
+
+/* Leaflet popup before clicking “Details” */
+
+.parking-map .leaflet-popup-content-wrapper,
+.parking-map .leaflet-popup-tip {
+  background: rgba(255, 255, 255, 0.96) !important;
+}
+
+:root[data-background-theme='blue'] .parking-map .leaflet-popup-content-wrapper,
+:root[data-background-theme='blue'] .parking-map .leaflet-popup-tip,
+:root[data-background-theme='dark'] .parking-map .leaflet-popup-content-wrapper,
+:root[data-background-theme='dark'] .parking-map .leaflet-popup-tip {
+  color: #f8fafc !important;
+  border-color: rgba(191, 219, 254, 0.24) !important;
+  background: rgba(15, 23, 42, 0.92) !important;
+}
+
+:root[data-background-theme='blue'] .parking-map-popup,
+:root[data-background-theme='blue'] .parking-map-popup *,
+:root[data-background-theme='dark'] .parking-map-popup,
+:root[data-background-theme='dark'] .parking-map-popup * {
+  color: #f8fafc;
+}
+
+:root[data-background-theme='blue'] .parking-map-popup__header p,
+:root[data-background-theme='blue'] .parking-map-popup__load span,
+:root[data-background-theme='blue'] .parking-map-popup__stats span,
+:root[data-background-theme='blue'] .parking-map-popup--user span,
+:root[data-background-theme='dark'] .parking-map-popup__header p,
+:root[data-background-theme='dark'] .parking-map-popup__load span,
+:root[data-background-theme='dark'] .parking-map-popup__stats span,
+:root[data-background-theme='dark'] .parking-map-popup--user span {
+  color: rgba(226, 232, 240, 0.74) !important;
+}
+
+:root[data-background-theme='blue'] .parking-map-popup__load,
+:root[data-background-theme='blue'] .parking-map-popup__stats div,
+:root[data-background-theme='dark'] .parking-map-popup__load,
+:root[data-background-theme='dark'] .parking-map-popup__stats div {
+  border-color: rgba(191, 219, 254, 0.22) !important;
+  background: rgba(255, 255, 255, 0.075) !important;
+}
+
+:root[data-background-theme='blue'] .parking-map-popup__bar,
+:root[data-background-theme='dark'] .parking-map-popup__bar {
+  background: rgba(148, 163, 184, 0.28) !important;
+}
+
+@media (max-width: 920px) {
+  .map-page .map-side-panel {
+    min-height: auto;
+    max-height: none;
+  }
+
+  .map-page .map-parking-list {
+    max-height: 420px;
+  }
+}
+
+@media (max-width: 680px) {
+  .parking-modal .parking-modal__panel {
+    max-height: 100vh;
+    border-radius: 0;
+  }
+
+  .parking-modal .parking-modal__header,
+  .parking-modal .parking-details {
+    padding: 16px;
+  }
+
+  .map-page .map-side-panel,
+  .map-page .map-parking-row,
+  .parking-modal .parking-details__hero,
+  .parking-modal .parking-details__description,
+  .parking-modal .parking-details__section {
+    border-radius: 22px;
+  }
+}
+
+/* Map and parking modal adaptive offset for Sidebar */
+
+.app-layout .parking-modal {
+  position: fixed;
+  inset: 0 12px 0 var(--sidebar-width);
+  width: auto;
+  max-width: calc(100vw - var(--sidebar-width) - 12px);
+  box-sizing: border-box;
+  transition:
+    inset 0.22s ease,
+    max-width 0.22s ease;
+}
+
+.app-layout .parking-modal__overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.app-layout .parking-modal__panel,
+.app-layout .parking-modal__panel--modern {
+  max-width: min(1060px, calc(100vw - var(--sidebar-width) - 48px)) !important;
+  margin-inline: auto;
+}
+
+.app-layout .parking-modal__body,
+.app-layout .parking-modal__body--modern {
+  max-width: 100%;
+}
+
+/* Когда Sidebar свернут, var(--sidebar-width) автоматически станет 96px */
+.app-layout--collapsed .parking-modal {
+  inset-left: var(--sidebar-width);
+  max-width: calc(100vw - var(--sidebar-width) - 12px);
+}
+
+/* Карта: учитываем, что справа уже меньше места из-за Sidebar */
+.app-layout .map-layout {
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+  align-items: stretch;
+}
+
+.app-layout .map-main-panel,
+.app-layout .parking-map-card,
+.app-layout .parking-map {
+  min-width: 0;
+}
+
+.app-layout .map-side-panel {
+  min-width: 0;
+}
+
+.app-layout .map-parking-row {
+  min-width: 0;
+}
+
+.app-layout .map-parking-row__content {
+  min-width: 0;
+}
+
+/* На средних экранах с открытым Sidebar лучше ставить список под карту */
+@media (max-width: 1320px) {
+  .app-layout:not(.app-layout--collapsed) .map-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .app-layout:not(.app-layout--collapsed) .map-side-panel {
+    min-height: auto;
+    max-height: none;
+  }
+
+  .app-layout:not(.app-layout--collapsed) .map-parking-list {
+    max-height: 420px;
+  }
+}
+
+/* Если Sidebar свернут, можно держать карту и список рядом чуть дольше */
+@media (max-width: 1120px) {
+  .app-layout--collapsed .map-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .app-layout--collapsed .map-side-panel {
+    min-height: auto;
+    max-height: none;
+  }
+
+  .app-layout--collapsed .map-parking-list {
+    max-height: 420px;
+  }
+}
+
+/* Mobile: Sidebar скрывается, модалка снова занимает весь экран */
+@media (max-width: 860px) {
+  .app-layout .parking-modal,
+  .app-layout--collapsed .parking-modal {
+    inset: 0;
+    max-width: 100vw;
+    padding: 10px;
+  }
+
+  .app-layout .parking-modal__panel,
+  .app-layout .parking-modal__panel--modern {
+    max-width: 100% !important;
+  }
+
+  .app-layout .map-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .app-layout .map-side-panel {
+    min-height: auto;
+    max-height: none;
+  }
+
+  .app-layout .map-parking-list {
+    max-height: 420px;
+  }
+}
+
+@media (max-width: 640px) {
+  .app-layout .parking-modal,
+  .app-layout--collapsed .parking-modal {
+    padding: 0;
+  }
+
+  .app-layout .parking-modal__panel,
+  .app-layout .parking-modal__panel--modern {
+    max-height: 100vh;
+    border-radius: 0 !important;
+  }
+
+  .app-layout .map-parking-list {
+    max-height: none;
+  }
+}
+
+/* Theme adaptive table for Parkings + responsive Admin modals */
+
+.parkings-page {
+  --parkings-table-text: var(--ui-text, var(--color-text, #0f172a));
+  --parkings-table-muted: var(--ui-muted, var(--color-text-muted, #64748b));
+  --parkings-table-border: var(--ui-glass-border-soft, var(--glass-border, rgba(226, 232, 240, 0.72)));
+  --parkings-table-border-strong: var(--ui-glass-border, var(--glass-border, rgba(255, 255, 255, 0.7)));
+  --parkings-table-card: var(--ui-glass-bg, var(--glass-surface, rgba(255, 255, 255, 0.68)));
+  --parkings-table-card-strong: var(--ui-glass-bg-strong, var(--glass-surface-strong, rgba(255, 255, 255, 0.84)));
+  --parkings-table-row: rgba(255, 255, 255, 0.62);
+  --parkings-table-row-hover: rgba(255, 255, 255, 0.78);
+  --parkings-table-row-disabled: rgba(248, 250, 252, 0.48);
+  --parkings-table-head: rgba(248, 250, 252, 0.82);
+  --parkings-table-shadow: var(--ui-glass-shadow, 0 22px 60px rgba(15, 23, 42, 0.1));
+  --parkings-table-shadow-hover: var(--ui-glass-shadow-hover, 0 28px 78px rgba(15, 23, 42, 0.16));
+}
+
+:root[data-background-theme='blue'] .parkings-page,
+:root[data-background-theme='dark'] .parkings-page {
+  --parkings-table-row: rgba(255, 255, 255, 0.075);
+  --parkings-table-row-hover: rgba(255, 255, 255, 0.13);
+  --parkings-table-row-disabled: rgba(15, 23, 42, 0.18);
+  --parkings-table-head: rgba(255, 255, 255, 0.08);
+}
+
+.parkings-page .parking-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--parkings-table-border-strong) !important;
+  border-radius: 28px;
+  color: var(--parkings-table-text) !important;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.16), transparent 46%),
+    var(--parkings-table-card) !important;
+  box-shadow: var(--parkings-table-shadow);
+  backdrop-filter: blur(var(--ui-glass-blur, var(--glass-blur, 22px))) saturate(150%);
+  -webkit-backdrop-filter: blur(var(--ui-glass-blur, var(--glass-blur, 22px))) saturate(150%);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(148, 163, 184, 0.45) transparent;
+}
+
+.parkings-page .parking-table-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.parkings-page .parking-table-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.parkings-page .parking-table-wrapper::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.42);
+}
+
+.parkings-page .parking-table {
+  min-width: 980px;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  padding: 10px;
+  color: var(--parkings-table-text) !important;
+}
+
+.parkings-page .parking-table thead {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.parkings-page .parking-table th {
+  padding: 12px 14px;
+  border-top: 1px solid var(--parkings-table-border) !important;
+  border-bottom: 1px solid var(--parkings-table-border) !important;
+  color: var(--parkings-table-muted) !important;
+  background: var(--parkings-table-head) !important;
+  font-size: 12px;
+  font-weight: 950;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.parkings-page .parking-table th:first-child {
+  border-left: 1px solid var(--parkings-table-border) !important;
+  border-radius: 18px 0 0 18px;
+}
+
+.parkings-page .parking-table th:last-child {
+  border-right: 1px solid var(--parkings-table-border) !important;
+  border-radius: 0 18px 18px 0;
+}
+
+.parkings-page .parking-table td {
+  padding: 15px 14px;
+  border-top: 1px solid var(--parkings-table-border) !important;
+  border-bottom: 1px solid var(--parkings-table-border) !important;
+  color: var(--parkings-table-text) !important;
+  background: var(--parkings-table-row) !important;
+  vertical-align: middle;
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease,
+    transform 0.18s ease;
+}
+
+.parkings-page .parking-table td:first-child {
+  border-left: 1px solid var(--parkings-table-border) !important;
+  border-radius: 20px 0 0 20px;
+}
+
+.parkings-page .parking-table td:last-child {
+  border-right: 1px solid var(--parkings-table-border) !important;
+  border-radius: 0 20px 20px 0;
+}
+
+.parkings-page .parking-table tbody tr:hover td {
+  border-color: rgba(56, 189, 248, 0.38) !important;
+  background: var(--parkings-table-row-hover) !important;
+}
+
+.parkings-page .parking-table__row--disabled td {
+  opacity: 0.72;
+  background: var(--parkings-table-row-disabled) !important;
+}
+
+.parkings-page .parking-table td strong {
+  color: var(--parkings-table-text) !important;
+  font-weight: 900;
+}
+
+.parkings-page .parking-table td span,
+.parkings-page .parking-table .load-progress__label,
+.parkings-page .parking-table .load-progress__status {
+  color: var(--parkings-table-muted) !important;
+}
+
+.parkings-page .parking-table .load-progress__track {
+  background: rgba(148, 163, 184, 0.24) !important;
+}
+
+.parkings-page .parking-table__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+  min-width: 190px;
+}
+
+.parkings-page .parking-table__actions .btn {
+  white-space: nowrap;
+}
+
+/* Admin modal: theme adaptive + responsive for create/edit/delete/status */
+
+.admin-modal {
+  --admin-modal-text: var(--ui-text, var(--color-text, #0f172a));
+  --admin-modal-muted: var(--ui-muted, var(--color-text-muted, #64748b));
+  --admin-modal-border: var(--ui-glass-border-soft, var(--glass-border, rgba(226, 232, 240, 0.72)));
+  --admin-modal-border-strong: var(--ui-glass-border, var(--glass-border, rgba(255, 255, 255, 0.68)));
+  --admin-modal-card: var(--ui-glass-bg, var(--glass-surface, rgba(255, 255, 255, 0.72)));
+  --admin-modal-card-strong: var(--ui-glass-bg-strong, var(--glass-surface-strong, rgba(255, 255, 255, 0.88)));
+  --admin-modal-panel: rgba(255, 255, 255, 0.64);
+  --admin-modal-input-bg: rgba(255, 255, 255, 0.86);
+  --admin-modal-input-text: #0f172a;
+  --admin-modal-shadow: var(--ui-glass-shadow, 0 30px 92px rgba(15, 23, 42, 0.18));
+
+  position: fixed;
+  inset: 0;
+  z-index: 1300;
+  display: grid;
+  place-items: center;
+  padding: clamp(12px, 2.2vw, 28px);
+  color: var(--admin-modal-text);
+  isolation: isolate;
+}
+
+:root[data-background-theme='blue'] .admin-modal,
+:root[data-background-theme='dark'] .admin-modal {
+  --admin-modal-panel: rgba(255, 255, 255, 0.075);
+  --admin-modal-input-bg: rgba(15, 23, 42, 0.36);
+  --admin-modal-input-text: #f8fafc;
+}
+
+.app-layout .admin-modal {
+  inset: 0 12px 0 var(--sidebar-width);
+  width: auto;
+  max-width: calc(100vw - var(--sidebar-width) - 12px);
+  transition:
+    inset 0.22s ease,
+    max-width 0.22s ease;
+}
+
+.app-layout--collapsed .admin-modal {
+  inset-left: var(--sidebar-width);
+  max-width: calc(100vw - var(--sidebar-width) - 12px);
+}
+
+.admin-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background:
+    radial-gradient(circle at 16% 16%, rgba(37, 99, 235, 0.24), transparent 34%),
+    radial-gradient(circle at 84% 8%, rgba(14, 165, 233, 0.18), transparent 34%),
+    rgba(2, 6, 23, 0.58) !important;
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  cursor: pointer;
+}
+
+.admin-modal__panel {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 720px);
+  max-height: min(860px, calc(100vh - 32px));
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--admin-modal-border-strong) !important;
+  border-radius: 32px;
+  color: var(--admin-modal-text) !important;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.16), transparent 46%),
+    var(--admin-modal-card) !important;
+  box-shadow: var(--admin-modal-shadow);
+  backdrop-filter: blur(var(--ui-glass-blur, var(--glass-blur, 24px))) saturate(150%);
+  -webkit-backdrop-filter: blur(var(--ui-glass-blur, var(--glass-blur, 24px))) saturate(150%);
+}
+
+.app-layout .admin-modal__panel {
+  max-width: min(100%, calc(100vw - var(--sidebar-width) - 48px));
+}
+
+.admin-modal__panel--sm {
+  width: min(100%, 560px);
+}
+
+.admin-modal__panel--md {
+  width: min(100%, 760px);
+}
+
+.admin-modal__panel--lg {
+  width: min(100%, 1040px);
+}
+
+.admin-modal__header,
+.admin-modal__footer {
+  flex: 0 0 auto;
+  border-color: var(--admin-modal-border) !important;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.12), transparent 48%),
+    var(--admin-modal-card-strong) !important;
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+}
+
+.admin-modal__header {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: auto;
+  padding: 20px 76px 18px 22px;
+  border-bottom: 1px solid var(--admin-modal-border) !important;
+}
+
+.admin-modal__header > div {
+  min-width: 0;
+}
+
+.admin-modal__header h2 {
+  margin: 0;
+  color: var(--admin-modal-text) !important;
+  font-size: clamp(22px, 3vw, 30px);
+  line-height: 1.1;
+  letter-spacing: -0.045em;
+}
+
+.admin-modal__header p {
+  margin: 8px 0 0;
+  color: var(--admin-modal-muted) !important;
+  line-height: 1.5;
+}
+
+.admin-modal__close,
+.admin-modal .modal-close-button {
+  top: 17px;
+  right: 18px;
+  color: var(--admin-modal-text) !important;
+  border-color: var(--admin-modal-border) !important;
+  background: var(--admin-modal-panel) !important;
+}
+
+.admin-modal__body {
+  min-height: 0;
+  overflow-y: auto;
+  padding: 22px;
+  color: var(--admin-modal-text) !important;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(148, 163, 184, 0.46) transparent;
+}
+
+.admin-modal__body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.admin-modal__body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.admin-modal__body::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.42);
+}
+
+.admin-modal__footer {
+  position: sticky;
+  bottom: 0;
+  z-index: 3;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 16px 22px;
+  border-top: 1px solid var(--admin-modal-border) !important;
+}
+
+.admin-modal .admin-form {
+  margin: 0;
+  color: var(--admin-modal-text) !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.admin-modal .admin-form__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.admin-modal .admin-form__grid .form-field--full,
+.admin-modal .admin-form__grid label:has(textarea),
+.admin-modal .admin-form__grid .form-field:has(textarea) {
+  grid-column: 1 / -1;
+}
+
+.admin-modal .form-field,
+.admin-modal .admin-form label {
+  min-width: 0;
+}
+
+.admin-modal .form-field span,
+.admin-modal .admin-form label > span,
+.admin-modal .admin-form small {
+  color: var(--admin-modal-muted) !important;
+}
+
+.admin-modal .admin-form input,
+.admin-modal .admin-form select,
+.admin-modal .admin-form textarea,
+.admin-modal .form-field input,
+.admin-modal .form-field select,
+.admin-modal .form-field textarea {
+  width: 100%;
+  color: var(--admin-modal-input-text) !important;
+  border-color: var(--admin-modal-border) !important;
+  background: var(--admin-modal-input-bg) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+:root[data-background-theme='blue'] .admin-modal input::placeholder,
+:root[data-background-theme='blue'] .admin-modal textarea::placeholder,
+:root[data-background-theme='dark'] .admin-modal input::placeholder,
+:root[data-background-theme='dark'] .admin-modal textarea::placeholder {
+  color: rgba(226, 232, 240, 0.58);
+}
+
+:root[data-background-theme='blue'] .admin-modal select option,
+:root[data-background-theme='dark'] .admin-modal select option {
+  color: #f8fafc;
+  background: #0f172a;
+}
+
+.admin-modal .admin-form__actions {
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+  margin: 18px -22px -22px;
+  padding: 16px 22px;
+  border-top: 1px solid var(--admin-modal-border) !important;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.12), transparent 48%),
+    var(--admin-modal-card-strong) !important;
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+}
+
+.admin-confirm {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+  color: var(--admin-modal-text) !important;
+}
+
+.admin-confirm__icon {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  font-size: 24px;
+  font-weight: 950;
+  box-shadow: 0 16px 32px rgba(220, 38, 38, 0.22);
+}
+
+.admin-confirm--warning .admin-confirm__icon {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  box-shadow: 0 16px 32px rgba(245, 158, 11, 0.2);
+}
+
+.admin-confirm__content {
+  min-width: 0;
+}
+
+.admin-confirm__details {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.admin-confirm__details div {
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid var(--admin-modal-border) !important;
+  border-radius: 18px;
+  background: var(--admin-modal-panel) !important;
+}
+
+.admin-confirm__details span {
+  display: block;
+  color: var(--admin-modal-muted) !important;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.admin-confirm__details strong {
+  display: block;
+  margin-top: 6px;
+  color: var(--admin-modal-text) !important;
+  word-break: break-word;
+}
+
+@media (max-width: 1180px) {
+  .app-layout:not(.app-layout--collapsed) .admin-modal__panel--lg {
+    width: min(100%, 860px);
+  }
+
+  .app-layout:not(.app-layout--collapsed) .admin-modal .admin-form__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 860px) {
+  .app-layout .admin-modal,
+  .app-layout--collapsed .admin-modal,
+  .admin-modal {
+    inset: 0;
+    max-width: 100vw;
+    padding: 10px;
+  }
+
+  .app-layout .admin-modal__panel,
+  .admin-modal__panel,
+  .admin-modal__panel--sm,
+  .admin-modal__panel--md,
+  .admin-modal__panel--lg {
+    width: 100%;
+    max-width: 100% !important;
+    max-height: calc(100vh - 20px);
+  }
+
+  .admin-modal .admin-form__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-modal__footer,
+  .admin-modal .admin-form__actions {
+    justify-content: stretch;
+  }
+
+  .admin-modal__footer .btn,
+  .admin-modal .admin-form__actions .btn {
+    flex: 1 1 160px;
+  }
+}
+
+@media (max-width: 640px) {
+  .parkings-page .parking-table-wrapper {
+    border-radius: 22px;
+  }
+
+  .parkings-page .parking-table {
+    min-width: 860px;
+    padding: 8px;
+  }
+
+  .parkings-page .parking-table th,
+  .parkings-page .parking-table td {
+    padding: 12px 10px;
+  }
+
+  .admin-modal,
+  .app-layout .admin-modal,
+  .app-layout--collapsed .admin-modal {
+    padding: 0;
+    place-items: stretch;
+  }
+
+  .admin-modal__panel,
+  .admin-modal__panel--sm,
+  .admin-modal__panel--md,
+  .admin-modal__panel--lg {
+    width: 100% !important;
+    max-height: 100vh !important;
+    border-radius: 0 !important;
+    border-left: 0 !important;
+    border-right: 0 !important;
+  }
+
+  .admin-modal__header {
+    padding: 16px 66px 14px 16px;
+  }
+
+  .admin-modal__body {
+    padding: 16px;
+  }
+
+  .admin-modal__footer,
+  .admin-modal .admin-form__actions {
+    padding: 14px 16px calc(14px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .admin-modal .admin-form__actions {
+    margin: 16px -16px -16px;
+  }
+
+  .admin-modal__close,
+  .admin-modal .modal-close-button {
+    top: 13px;
+    right: 13px;
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    min-height: 40px;
+  }
+
+  .admin-confirm {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-confirm__icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .admin-modal__footer .btn,
+  .admin-modal .admin-form__actions .btn {
+    flex-basis: 100%;
+    width: 100%;
+  }
+}
+
+/* Unified normal close buttons across the app */
+
+.admin-modal__header,
+.parking-modal__header,
+.mobile-nav__header {
+  position: relative;
+  padding-right: 76px;
+}
+
+:where(.modal-close-button, .admin-modal__close, .parking-modal__close, .mobile-nav__close) {
+  position: absolute !important;
+  top: 18px !important;
+  right: 18px !important;
+  z-index: 8;
+  width: 44px !important;
+  min-width: 44px !important;
+  height: 44px !important;
+  min-height: 44px !important;
+  padding: 0 !important;
+  border: 1px solid var(--ui-glass-border, var(--layout-panel-border, rgba(226, 232, 240, 0.75))) !important;
+  border-radius: 999px !important;
+  display: inline-grid !important;
+  place-items: center !important;
+  color: var(--ui-text, var(--layout-text, #0f172a)) !important;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.18), transparent 46%),
+    var(--ui-glass-bg-strong, var(--layout-panel-bg-strong, rgba(255, 255, 255, 0.86))) !important;
+  box-shadow:
+    0 14px 30px rgba(15, 23, 42, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.24) !important;
+  cursor: pointer !important;
+  font-size: 0 !important;
+  line-height: 1 !important;
+  opacity: 1 !important;
+  transform: none !important;
+  appearance: none;
+  -webkit-appearance: none;
+  transition:
+    transform 0.18s ease,
+    border-color 0.18s ease,
+    background 0.18s ease,
+    color 0.18s ease,
+    box-shadow 0.18s ease !important;
+}
+
+:root[data-background-theme='blue'] :where(.modal-close-button, .admin-modal__close, .parking-modal__close, .mobile-nav__close),
+:root[data-background-theme='dark'] :where(.modal-close-button, .admin-modal__close, .parking-modal__close, .mobile-nav__close) {
+  color: #f8fafc !important;
+  border-color: rgba(191, 219, 254, 0.24) !important;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent 46%),
+    rgba(15, 23, 42, 0.52) !important;
+  box-shadow:
+    0 16px 34px rgba(2, 6, 23, 0.26),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
+}
+
+:where(.modal-close-button, .admin-modal__close, .parking-modal__close, .mobile-nav__close) svg {
+  width: 20px !important;
+  height: 20px !important;
+  display: block !important;
+  pointer-events: none;
+}
+
+:where(.modal-close-button, .admin-modal__close, .parking-modal__close, .mobile-nav__close) path {
+  fill: none !important;
+  stroke: currentColor !important;
+  stroke-width: 2.45 !important;
+  stroke-linecap: round !important;
+  stroke-linejoin: round !important;
+}
+
+:where(.modal-close-button, .admin-modal__close, .parking-modal__close, .mobile-nav__close)::before,
+:where(.modal-close-button, .admin-modal__close, .parking-modal__close, .mobile-nav__close)::after {
+  content: none !important;
+}
+
+:where(.modal-close-button, .admin-modal__close, .parking-modal__close, .mobile-nav__close):hover:not(:disabled) {
+  color: #ffffff !important;
+  border-color: rgba(239, 68, 68, 0.58) !important;
+  background: linear-gradient(135deg, #ef4444, #dc2626) !important;
+  box-shadow: 0 18px 38px rgba(220, 38, 38, 0.28) !important;
+  transform: translateY(-1px) scale(1.02) !important;
+}
+
+:where(.modal-close-button, .admin-modal__close, .parking-modal__close, .mobile-nav__close):active:not(:disabled) {
+  transform: translateY(0) scale(0.97) !important;
+}
+
+:where(.modal-close-button, .admin-modal__close, .parking-modal__close, .mobile-nav__close):focus-visible {
+  outline: none !important;
+  border-color: rgba(56, 189, 248, 0.78) !important;
+  box-shadow:
+    0 0 0 4px rgba(56, 189, 248, 0.18),
+    0 18px 38px rgba(15, 23, 42, 0.2) !important;
+}
+
+:where(.modal-close-button, .admin-modal__close, .parking-modal__close, .mobile-nav__close):disabled {
+  cursor: not-allowed !important;
+  opacity: 0.55 !important;
+  transform: none !important;
+}
+
+.modal-close-button__label {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.mobile-nav__header > button:not(.mobile-nav__close) {
+  position: absolute !important;
+  top: 14px !important;
+  right: 14px !important;
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 999px !important;
+}
+
+@media (max-width: 760px) {
+  .admin-modal__header,
+  .parking-modal__header,
+  .mobile-nav__header {
+    padding-right: 68px !important;
+  }
+
+  :where(.modal-close-button, .admin-modal__close, .parking-modal__close, .mobile-nav__close) {
+    top: 14px !important;
+    right: 14px !important;
+    width: 40px !important;
+    min-width: 40px !important;
+    height: 40px !important;
+    min-height: 40px !important;
+  }
+
+  :where(.modal-close-button, .admin-modal__close, .parking-modal__close, .mobile-nav__close) svg {
+    width: 19px !important;
+    height: 19px !important;
+  }
+}
+
+/* Infrastructure integration */
+.infrastructure-manager {
+  display: grid;
+  gap: 16px;
+}
+
+.infrastructure-manager__summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.infrastructure-manager__summary > div,
+.nearby-object-card,
+.prediction-infrastructure-explain,
+.parking-nearby-object {
+  border: 1px solid var(--ui-glass-border-soft);
+  background: var(--ui-glass-bg-soft);
+  backdrop-filter: blur(var(--ui-glass-blur)) saturate(145%);
+  -webkit-backdrop-filter: blur(var(--ui-glass-blur)) saturate(145%);
+}
+
+.infrastructure-manager__summary > div {
+  display: grid;
+  gap: 7px;
+  padding: 14px;
+  border-radius: 18px;
+}
+
+.infrastructure-manager__summary span,
+.nearby-object-card span,
+.nearby-object-card p,
+.infrastructure-days-field span,
+.prediction-infrastructure-explain span,
+.prediction-infrastructure-explain p,
+.parking-nearby-object span,
+.parking-nearby-object small {
+  color: var(--ui-muted);
+}
+
+.infrastructure-manager__summary strong,
+.nearby-object-card h3,
+.nearby-object-card strong,
+.infrastructure-days-field strong,
+.prediction-infrastructure-explain h3,
+.prediction-infrastructure-explain strong,
+.parking-nearby-object strong {
+  color: var(--ui-text);
+}
+
+.infrastructure-manager__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px;
+  border: 1px dashed rgba(37, 99, 235, 0.34);
+  border-radius: 20px;
+  background: rgba(59, 130, 246, 0.08);
+}
+
+.infrastructure-manager__toolbar p {
+  max-width: 680px;
+  color: var(--ui-muted);
+  line-height: 1.55;
+}
+
+.infrastructure-manager__toolbar > div,
+.nearby-object-card__actions,
+.infrastructure-days-field__header > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.nearby-object-list {
+  display: grid;
+  gap: 12px;
+}
+
+.nearby-object-card {
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 20px;
+}
+
+.nearby-object-card__main {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.85fr);
+  gap: 14px;
+  align-items: start;
+}
+
+.nearby-object-card__main > div:first-child {
+  display: grid;
+  gap: 8px;
+}
+
+.nearby-object-card h3 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.nearby-object-card p {
+  margin: 0;
+}
+
+.nearby-object-card__metrics,
+.prediction-infrastructure-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.nearby-object-card__metrics > div,
+.prediction-infrastructure-grid > div {
+  display: grid;
+  gap: 5px;
+  padding: 10px;
+  border: 1px solid var(--ui-glass-border-soft);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.infrastructure-form {
+  display: grid;
+  gap: 16px;
+}
+
+.infrastructure-days-field {
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid var(--ui-glass-border-soft);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.infrastructure-days-field__header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.infrastructure-days-field__header > span {
+  font-weight: 900;
+}
+
+.infrastructure-days-field button,
+.infrastructure-day-pills button {
+  border: 1px solid var(--ui-glass-border-soft);
+  border-radius: 999px;
+  color: var(--ui-text);
+  background: rgba(255, 255, 255, 0.14);
+  cursor: pointer;
+  font-weight: 850;
+  transition: 0.2s ease;
+}
+
+.infrastructure-days-field__header button {
+  padding: 7px 10px;
+  font-size: 12px;
+}
+
+.infrastructure-day-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.infrastructure-day-pills button {
+  min-width: 42px;
+  min-height: 38px;
+}
+
+.infrastructure-days-field button:hover,
+.infrastructure-day-pills button:hover,
+.infrastructure-day-pills button.is-active {
+  border-color: rgba(37, 99, 235, 0.45);
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--ui-primary), var(--ui-primary-2));
+}
+
+.parking-nearby-objects {
+  display: grid;
+  gap: 10px;
+}
+
+.parking-nearby-object {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  border-radius: 18px;
+}
+
+.parking-nearby-object > div {
+  display: grid;
+  gap: 6px;
+}
+
+.parking-nearby-object > div:last-child {
+  justify-items: end;
+}
+
+.prediction-infrastructure-explain {
+  display: grid;
+  gap: 14px;
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 22px;
+}
+
+.prediction-infrastructure-explain__header {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.prediction-infrastructure-explain__header h3 {
+  margin: 4px 0 0;
+  font-size: 18px;
+}
+
+.prediction-infrastructure-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.prediction-infrastructure-explain p {
+  line-height: 1.55;
+}
+
+.prediction-selected-parking .badge {
+  width: fit-content;
+  margin-top: 6px;
+}
+
+@media (max-width: 980px) {
+  .infrastructure-manager__summary,
+  .nearby-object-card__main,
+  .prediction-infrastructure-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .infrastructure-manager__summary,
+  .nearby-object-card__main,
+  .nearby-object-card__metrics,
+  .prediction-infrastructure-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .infrastructure-manager__toolbar,
+  .parking-nearby-object,
+  .prediction-infrastructure-explain__header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .parking-nearby-object > div:last-child {
+    justify-items: start;
+  }
+}
+
+/* Theme adaptive checkboxes */
+.admin-check-field {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid var(--ui-glass-border-soft);
+  border-radius: 16px;
+  color: var(--ui-text);
+  background: var(--ui-glass-bg-soft);
+  cursor: pointer;
+  user-select: none;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.admin-check-field:hover {
+  border-color: rgba(37, 99, 235, 0.45);
+  background: rgba(59, 130, 246, 0.1);
+  transform: translateY(-1px);
+}
+
+.admin-check-field input[type='checkbox'] {
+  appearance: none;
+  -webkit-appearance: none;
+  position: relative;
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+  margin: 0;
+  border: 1.5px solid var(--ui-glass-border-soft);
+  border-radius: 7px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.22),
+      rgba(255, 255, 255, 0.08)
+    );
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    0 8px 18px rgba(15, 23, 42, 0.08);
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.admin-check-field input[type='checkbox']::after {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 2.5px;
+  width: 6px;
+  height: 11px;
+  border: solid #ffffff;
+  border-width: 0 2.5px 2.5px 0;
+  opacity: 0;
+  transform: rotate(45deg) scale(0.6);
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease;
+}
+
+.admin-check-field input[type='checkbox']:checked {
+  border-color: rgba(37, 99, 235, 0.7);
+  background: linear-gradient(135deg, var(--ui-primary), var(--ui-primary-2));
+  box-shadow:
+    0 10px 24px rgba(37, 99, 235, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.24);
+}
+
+.admin-check-field input[type='checkbox']:checked::after {
+  opacity: 1;
+  transform: rotate(45deg) scale(1);
+}
+
+.admin-check-field input[type='checkbox']:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.25);
+  outline-offset: 3px;
+}
+
+.admin-check-field input[type='checkbox']:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.admin-check-field:has(input[type='checkbox']:checked) {
+  border-color: rgba(37, 99, 235, 0.5);
+  background: rgba(59, 130, 246, 0.12);
+}
+
+.admin-check-field span {
+  color: var(--ui-text);
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+/* Dark theme checkbox contrast */
+[data-theme='dark'] .admin-check-field input[type='checkbox'],
+.theme-dark .admin-check-field input[type='checkbox'],
+body.dark .admin-check-field input[type='checkbox'] {
+  border-color: rgba(255, 255, 255, 0.2);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.12),
+      rgba(255, 255, 255, 0.04)
+    );
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 10px 24px rgba(0, 0, 0, 0.24);
+}
+
+[data-theme='dark'] .admin-check-field:has(input[type='checkbox']:checked),
+.theme-dark .admin-check-field:has(input[type='checkbox']:checked),
+body.dark .admin-check-field:has(input[type='checkbox']:checked) {
+  background: rgba(59, 130, 246, 0.16);
+  border-color: rgba(96, 165, 250, 0.52);
+}
+
+/* Blue theme checkbox glow */
+[data-theme='blue'] .admin-check-field input[type='checkbox']:checked,
+.theme-blue .admin-check-field input[type='checkbox']:checked,
+body.blue .admin-check-field input[type='checkbox']:checked {
+  box-shadow:
+    0 12px 28px rgba(59, 130, 246, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28);
+}
+
+/* Light theme checkbox softness */
+[data-theme='light'] .admin-check-field,
+.theme-light .admin-check-field,
+body.light .admin-check-field {
+  background: rgba(255, 255, 255, 0.68);
+}
+
+[data-theme='light'] .admin-check-field input[type='checkbox'],
+.theme-light .admin-check-field input[type='checkbox'],
+body.light .admin-check-field input[type='checkbox'] {
+  border-color: rgba(15, 23, 42, 0.14);
+  background: rgba(255, 255, 255, 0.86);
+}
+
+/* Stage 9: infrastructure-aware recommendations */
+.recommendations-help-card--infrastructure .card__body {
+  display: grid;
+  gap: 14px;
+}
+
+.recommendations-help-card__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.recommendation-selected-zone,
+.recommendation-card__infrastructure,
+.recommendation-card__objects article,
+.recommendation-card__infrastructure-metrics > div {
+  border: 1px solid var(--ui-glass-border-soft);
+  background: var(--ui-glass-bg-soft);
+  backdrop-filter: blur(var(--ui-glass-blur)) saturate(145%);
+  -webkit-backdrop-filter: blur(var(--ui-glass-blur)) saturate(145%);
+}
+
+.recommendation-selected-zone {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 12px;
+  border-radius: 18px;
+}
+
+.recommendation-selected-zone span {
+  color: var(--ui-muted);
+  line-height: 1.45;
+}
+
+.recommendation-card__infrastructure {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+  border-radius: 22px;
+}
+
+.recommendation-card__infrastructure-header {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.recommendation-card__infrastructure-header > div {
+  display: grid;
+  gap: 5px;
+}
+
+.recommendation-card__infrastructure-header span,
+.recommendation-card__infrastructure-metrics span,
+.recommendation-card__objects span,
+.recommendation-card__objects small,
+.recommendation-card__empty-infrastructure {
+  color: var(--ui-muted);
+}
+
+.recommendation-card__infrastructure-header strong,
+.recommendation-card__infrastructure-metrics strong,
+.recommendation-card__objects strong {
+  color: var(--ui-text);
+}
+
+.recommendation-card__infrastructure-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.recommendation-card__infrastructure-metrics > div {
+  display: grid;
+  gap: 5px;
+  padding: 11px;
+  border-radius: 15px;
+}
+
+.recommendation-card__objects {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.recommendation-card__objects article {
+  display: grid;
+  gap: 7px;
+  padding: 12px;
+  border-radius: 16px;
+}
+
+.recommendation-card__empty-infrastructure {
+  margin: 0;
+  line-height: 1.55;
+}
+
+@media (max-width: 760px) {
+  .recommendation-selected-zone,
+  .recommendation-card__infrastructure-header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .recommendation-card__infrastructure-metrics,
+  .recommendation-card__objects {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,724 @@
+CREATE DATABASE bishkek_parking_ai
+    WITH
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    CONNECTION LIMIT = -1;
+
+BEGIN;
+
+-- =========================================================
+-- EXTENSIONS
+-- =========================================================
+
+CREATE EXTENSION IF NOT EXISTS citext;
+
+-- =========================================================
+-- ENUM TYPES
+-- =========================================================
+
+DO $$
+BEGIN
+    CREATE TYPE history_source AS ENUM (
+        'admin_manual',
+        'generated',
+        'sensor_future'
+    );
+EXCEPTION
+    WHEN duplicate_object THEN NULL;
+END $$;
+
+DO $$
+BEGIN
+    CREATE TYPE parking_request_status AS ENUM (
+        'created',
+        'processing',
+        'recommended',
+        'completed',
+        'cancelled'
+    );
+EXCEPTION
+    WHEN duplicate_object THEN NULL;
+END $$;
+
+DO $$
+BEGIN
+    CREATE TYPE notification_type AS ENUM (
+        'place_available',
+        'parking_almost_full',
+        'high_load_forecast',
+        'system'
+    );
+EXCEPTION
+    WHEN duplicate_object THEN NULL;
+END $$;
+
+-- =========================================================
+-- COMMON TRIGGER FUNCTION
+-- =========================================================
+
+CREATE OR REPLACE FUNCTION set_updated_at()
+RETURNS TRIGGER AS $$
+BEGIN
+    NEW.updated_at = now();
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+-- =========================================================
+-- ROLES
+-- =========================================================
+
+CREATE TABLE IF NOT EXISTS roles (
+    id BIGSERIAL PRIMARY KEY,
+    code VARCHAR(50) NOT NULL UNIQUE,
+    name VARCHAR(100) NOT NULL,
+    description TEXT,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+DROP TRIGGER IF EXISTS trg_roles_updated_at ON roles;
+
+CREATE TRIGGER trg_roles_updated_at
+BEFORE UPDATE ON roles
+FOR EACH ROW
+EXECUTE FUNCTION set_updated_at();
+
+-- =========================================================
+-- USERS
+-- =========================================================
+
+CREATE TABLE IF NOT EXISTS users (
+    id BIGSERIAL PRIMARY KEY,
+
+    full_name VARCHAR(255) NOT NULL,
+    email CITEXT NOT NULL UNIQUE,
+    phone VARCHAR(30) NOT NULL UNIQUE,
+    login CITEXT NOT NULL UNIQUE,
+    password_hash VARCHAR(255) NOT NULL,
+
+    role_id BIGINT NOT NULL REFERENCES roles(id) ON UPDATE CASCADE ON DELETE RESTRICT,
+
+    preferred_language VARCHAR(5) NOT NULL DEFAULT 'ru',
+    is_active BOOLEAN NOT NULL DEFAULT true,
+
+    last_login_at TIMESTAMPTZ,
+
+    is_deleted BOOLEAN NOT NULL DEFAULT false,
+    deleted_at TIMESTAMPTZ,
+
+    created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+
+    CONSTRAINT chk_users_language
+        CHECK (preferred_language IN ('ru', 'ky', 'en')),
+
+    CONSTRAINT chk_users_soft_delete
+        CHECK (
+            (is_deleted = false AND deleted_at IS NULL)
+            OR
+            (is_deleted = true AND deleted_at IS NOT NULL)
+        )
+);
+
+CREATE INDEX IF NOT EXISTS idx_users_role_id ON users(role_id);
+CREATE INDEX IF NOT EXISTS idx_users_is_active ON users(is_active);
+CREATE INDEX IF NOT EXISTS idx_users_is_deleted ON users(is_deleted);
+
+DROP TRIGGER IF EXISTS trg_users_updated_at ON users;
+
+CREATE TRIGGER trg_users_updated_at
+BEFORE UPDATE ON users
+FOR EACH ROW
+EXECUTE FUNCTION set_updated_at();
+
+-- =========================================================
+-- PARKINGS
+-- =========================================================
+
+CREATE TABLE IF NOT EXISTS parkings (
+    id BIGSERIAL PRIMARY KEY,
+
+    name VARCHAR(150) NOT NULL UNIQUE,
+    address TEXT NOT NULL,
+
+    latitude NUMERIC(9, 6) NOT NULL,
+    longitude NUMERIC(9, 6) NOT NULL,
+
+    total_places INTEGER NOT NULL,
+    occupied_places INTEGER NOT NULL DEFAULT 0,
+
+    free_places INTEGER GENERATED ALWAYS AS (
+        GREATEST(total_places - occupied_places, 0)
+    ) STORED,
+
+    load_percentage NUMERIC(5, 2) GENERATED ALWAYS AS (
+        CASE
+            WHEN total_places > 0
+            THEN ROUND((occupied_places::NUMERIC / total_places::NUMERIC) * 100, 2)
+            ELSE 0
+        END
+    ) STORED,
+
+    load_level VARCHAR(20) GENERATED ALWAYS AS (
+        CASE
+            WHEN total_places <= 0 THEN 'low'
+            WHEN ((occupied_places::NUMERIC / total_places::NUMERIC) * 100) <= 50 THEN 'low'
+            WHEN ((occupied_places::NUMERIC / total_places::NUMERIC) * 100) <= 80 THEN 'medium'
+            ELSE 'high'
+        END
+    ) STORED,
+
+    load_color VARCHAR(20) GENERATED ALWAYS AS (
+        CASE
+            WHEN total_places <= 0 THEN 'green'
+            WHEN ((occupied_places::NUMERIC / total_places::NUMERIC) * 100) <= 50 THEN 'green'
+            WHEN ((occupied_places::NUMERIC / total_places::NUMERIC) * 100) <= 80 THEN 'yellow'
+            ELSE 'red'
+        END
+    ) STORED,
+
+    working_hours VARCHAR(100),
+    description TEXT,
+
+    is_active BOOLEAN NOT NULL DEFAULT true,
+
+    is_deleted BOOLEAN NOT NULL DEFAULT false,
+    deleted_at TIMESTAMPTZ,
+
+    created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+
+    CONSTRAINT chk_parkings_latitude
+        CHECK (latitude BETWEEN -90 AND 90),
+
+    CONSTRAINT chk_parkings_longitude
+        CHECK (longitude BETWEEN -180 AND 180),
+
+    CONSTRAINT chk_parkings_total_places
+        CHECK (total_places > 0),
+
+    CONSTRAINT chk_parkings_occupied_places
+        CHECK (occupied_places >= 0 AND occupied_places <= total_places),
+
+    CONSTRAINT chk_parkings_soft_delete
+        CHECK (
+            (is_deleted = false AND deleted_at IS NULL)
+            OR
+            (is_deleted = true AND deleted_at IS NOT NULL)
+        )
+);
+
+CREATE INDEX IF NOT EXISTS idx_parkings_is_active ON parkings(is_active);
+CREATE INDEX IF NOT EXISTS idx_parkings_is_deleted ON parkings(is_deleted);
+CREATE INDEX IF NOT EXISTS idx_parkings_load_percentage ON parkings(load_percentage);
+CREATE INDEX IF NOT EXISTS idx_parkings_load_level ON parkings(load_level);
+CREATE INDEX IF NOT EXISTS idx_parkings_location ON parkings(latitude, longitude);
+
+DROP TRIGGER IF EXISTS trg_parkings_updated_at ON parkings;
+
+CREATE TRIGGER trg_parkings_updated_at
+BEFORE UPDATE ON parkings
+FOR EACH ROW
+EXECUTE FUNCTION set_updated_at();
+
+-- =========================================================
+-- PARKING ZONES
+-- =========================================================
+
+CREATE TABLE IF NOT EXISTS parking_zones (
+    id BIGSERIAL PRIMARY KEY,
+
+    parking_id BIGINT NOT NULL REFERENCES parkings(id) ON UPDATE CASCADE ON DELETE CASCADE,
+
+    name VARCHAR(150) NOT NULL,
+
+    total_places INTEGER NOT NULL,
+    occupied_places INTEGER NOT NULL DEFAULT 0,
+
+    free_places INTEGER GENERATED ALWAYS AS (
+        GREATEST(total_places - occupied_places, 0)
+    ) STORED,
+
+    load_percentage NUMERIC(5, 2) GENERATED ALWAYS AS (
+        CASE
+            WHEN total_places > 0
+            THEN ROUND((occupied_places::NUMERIC / total_places::NUMERIC) * 100, 2)
+            ELSE 0
+        END
+    ) STORED,
+
+    load_level VARCHAR(20) GENERATED ALWAYS AS (
+        CASE
+            WHEN total_places <= 0 THEN 'low'
+            WHEN ((occupied_places::NUMERIC / total_places::NUMERIC) * 100) <= 50 THEN 'low'
+            WHEN ((occupied_places::NUMERIC / total_places::NUMERIC) * 100) <= 80 THEN 'medium'
+            ELSE 'high'
+        END
+    ) STORED,
+
+    load_color VARCHAR(20) GENERATED ALWAYS AS (
+        CASE
+            WHEN total_places <= 0 THEN 'green'
+            WHEN ((occupied_places::NUMERIC / total_places::NUMERIC) * 100) <= 50 THEN 'green'
+            WHEN ((occupied_places::NUMERIC / total_places::NUMERIC) * 100) <= 80 THEN 'yellow'
+            ELSE 'red'
+        END
+    ) STORED,
+
+    is_active BOOLEAN NOT NULL DEFAULT true,
+
+    is_deleted BOOLEAN NOT NULL DEFAULT false,
+    deleted_at TIMESTAMPTZ,
+
+    created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+
+    CONSTRAINT uq_parking_zones_parking_name UNIQUE (parking_id, name),
+    CONSTRAINT uq_parking_zones_id_parking UNIQUE (id, parking_id),
+
+    CONSTRAINT chk_zones_total_places
+        CHECK (total_places > 0),
+
+    CONSTRAINT chk_zones_occupied_places
+        CHECK (occupied_places >= 0 AND occupied_places <= total_places),
+
+    CONSTRAINT chk_zones_soft_delete
+        CHECK (
+            (is_deleted = false AND deleted_at IS NULL)
+            OR
+            (is_deleted = true AND deleted_at IS NOT NULL)
+        )
+);
+
+CREATE INDEX IF NOT EXISTS idx_parking_zones_parking_id ON parking_zones(parking_id);
+CREATE INDEX IF NOT EXISTS idx_parking_zones_is_active ON parking_zones(is_active);
+CREATE INDEX IF NOT EXISTS idx_parking_zones_is_deleted ON parking_zones(is_deleted);
+
+DROP TRIGGER IF EXISTS trg_parking_zones_updated_at ON parking_zones;
+
+CREATE TRIGGER trg_parking_zones_updated_at
+BEFORE UPDATE ON parking_zones
+FOR EACH ROW
+EXECUTE FUNCTION set_updated_at();
+
+-- =========================================================
+-- PARKING STATUS HISTORY
+-- =========================================================
+
+CREATE TABLE IF NOT EXISTS parking_status_history (
+    id BIGSERIAL PRIMARY KEY,
+
+    parking_id BIGINT NOT NULL REFERENCES parkings(id) ON UPDATE CASCADE ON DELETE CASCADE,
+    zone_id BIGINT,
+
+    total_places INTEGER NOT NULL,
+    occupied_places INTEGER NOT NULL,
+
+    free_places INTEGER GENERATED ALWAYS AS (
+        GREATEST(total_places - occupied_places, 0)
+    ) STORED,
+
+    load_percentage NUMERIC(5, 2) GENERATED ALWAYS AS (
+        CASE
+            WHEN total_places > 0
+            THEN ROUND((occupied_places::NUMERIC / total_places::NUMERIC) * 100, 2)
+            ELSE 0
+        END
+    ) STORED,
+
+    load_level VARCHAR(20) GENERATED ALWAYS AS (
+        CASE
+            WHEN total_places <= 0 THEN 'low'
+            WHEN ((occupied_places::NUMERIC / total_places::NUMERIC) * 100) <= 50 THEN 'low'
+            WHEN ((occupied_places::NUMERIC / total_places::NUMERIC) * 100) <= 80 THEN 'medium'
+            ELSE 'high'
+        END
+    ) STORED,
+
+    load_color VARCHAR(20) GENERATED ALWAYS AS (
+        CASE
+            WHEN total_places <= 0 THEN 'green'
+            WHEN ((occupied_places::NUMERIC / total_places::NUMERIC) * 100) <= 50 THEN 'green'
+            WHEN ((occupied_places::NUMERIC / total_places::NUMERIC) * 100) <= 80 THEN 'yellow'
+            ELSE 'red'
+        END
+    ) STORED,
+
+    source history_source NOT NULL DEFAULT 'admin_manual',
+    recorded_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+
+    CONSTRAINT fk_history_zone_parking
+        FOREIGN KEY (zone_id, parking_id)
+        REFERENCES parking_zones(id, parking_id)
+        ON UPDATE CASCADE
+        ON DELETE SET NULL,
+
+    CONSTRAINT chk_history_total_places
+        CHECK (total_places > 0),
+
+    CONSTRAINT chk_history_occupied_places
+        CHECK (occupied_places >= 0 AND occupied_places <= total_places)
+);
+
+CREATE INDEX IF NOT EXISTS idx_history_parking_recorded_at
+    ON parking_status_history(parking_id, recorded_at DESC);
+
+CREATE INDEX IF NOT EXISTS idx_history_zone_recorded_at
+    ON parking_status_history(zone_id, recorded_at DESC);
+
+CREATE INDEX IF NOT EXISTS idx_history_source
+    ON parking_status_history(source);
+
+-- =========================================================
+-- PARKING REQUESTS
+-- =========================================================
+
+CREATE TABLE IF NOT EXISTS parking_requests (
+    id BIGSERIAL PRIMARY KEY,
+
+    user_id BIGINT NOT NULL REFERENCES users(id) ON UPDATE CASCADE ON DELETE RESTRICT,
+    parking_id BIGINT NOT NULL REFERENCES parkings(id) ON UPDATE CASCADE ON DELETE CASCADE,
+    selected_zone_id BIGINT,
+
+    user_latitude NUMERIC(9, 6),
+    user_longitude NUMERIC(9, 6),
+
+    status parking_request_status NOT NULL DEFAULT 'created',
+    recommendation_text TEXT,
+
+    requested_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+    created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+
+    CONSTRAINT fk_request_selected_zone_parking
+        FOREIGN KEY (selected_zone_id, parking_id)
+        REFERENCES parking_zones(id, parking_id)
+        ON UPDATE CASCADE
+        ON DELETE SET NULL,
+
+    CONSTRAINT chk_request_latitude
+        CHECK (user_latitude IS NULL OR user_latitude BETWEEN -90 AND 90),
+
+    CONSTRAINT chk_request_longitude
+        CHECK (user_longitude IS NULL OR user_longitude BETWEEN -180 AND 180)
+);
+
+CREATE INDEX IF NOT EXISTS idx_requests_user_id ON parking_requests(user_id);
+CREATE INDEX IF NOT EXISTS idx_requests_parking_id ON parking_requests(parking_id);
+CREATE INDEX IF NOT EXISTS idx_requests_status ON parking_requests(status);
+CREATE INDEX IF NOT EXISTS idx_requests_requested_at ON parking_requests(requested_at DESC);
+
+DROP TRIGGER IF EXISTS trg_parking_requests_updated_at ON parking_requests;
+
+CREATE TRIGGER trg_parking_requests_updated_at
+BEFORE UPDATE ON parking_requests
+FOR EACH ROW
+EXECUTE FUNCTION set_updated_at();
+
+-- =========================================================
+-- PREDICTIONS
+-- =========================================================
+
+CREATE TABLE IF NOT EXISTS predictions (
+    id BIGSERIAL PRIMARY KEY,
+
+    parking_id BIGINT NOT NULL REFERENCES parkings(id) ON UPDATE CASCADE ON DELETE CASCADE,
+
+    prediction_datetime TIMESTAMPTZ NOT NULL,
+
+    predicted_occupied_places INTEGER NOT NULL,
+    predicted_free_places INTEGER NOT NULL,
+    predicted_load_percentage NUMERIC(5, 2) NOT NULL,
+    predicted_load_level VARCHAR(20) NOT NULL,
+    predicted_color VARCHAR(20) NOT NULL,
+
+    model_name VARCHAR(100) NOT NULL DEFAULT 'LinearRegression',
+    features JSONB NOT NULL DEFAULT '{}'::jsonb,
+
+    created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+
+    CONSTRAINT chk_predictions_places
+        CHECK (predicted_occupied_places >= 0 AND predicted_free_places >= 0),
+
+    CONSTRAINT chk_predictions_load_percentage
+        CHECK (predicted_load_percentage BETWEEN 0 AND 100),
+
+    CONSTRAINT chk_predictions_load_level
+        CHECK (predicted_load_level IN ('low', 'medium', 'high')),
+
+    CONSTRAINT chk_predictions_color
+        CHECK (predicted_color IN ('green', 'yellow', 'red'))
+);
+
+CREATE INDEX IF NOT EXISTS idx_predictions_parking_datetime
+    ON predictions(parking_id, prediction_datetime DESC);
+
+CREATE INDEX IF NOT EXISTS idx_predictions_model_name
+    ON predictions(model_name);
+
+-- =========================================================
+-- RECOMMENDATIONS
+-- =========================================================
+
+CREATE TABLE IF NOT EXISTS recommendations (
+    id BIGSERIAL PRIMARY KEY,
+
+    user_id BIGINT NOT NULL REFERENCES users(id) ON UPDATE CASCADE ON DELETE RESTRICT,
+
+    parking_request_id BIGINT REFERENCES parking_requests(id) ON UPDATE CASCADE ON DELETE SET NULL,
+
+    requested_parking_id BIGINT REFERENCES parkings(id) ON UPDATE CASCADE ON DELETE SET NULL,
+    recommended_parking_id BIGINT NOT NULL REFERENCES parkings(id) ON UPDATE CASCADE ON DELETE CASCADE,
+
+    reason TEXT NOT NULL,
+
+    distance_km NUMERIC(8, 3),
+    current_load_percentage NUMERIC(5, 2) NOT NULL,
+    predicted_load_percentage NUMERIC(5, 2),
+    expected_free_places INTEGER,
+
+    score NUMERIC(12, 4),
+
+    created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+
+    CONSTRAINT chk_recommendations_distance
+        CHECK (distance_km IS NULL OR distance_km >= 0),
+
+    CONSTRAINT chk_recommendations_current_load
+        CHECK (current_load_percentage BETWEEN 0 AND 100),
+
+    CONSTRAINT chk_recommendations_predicted_load
+        CHECK (predicted_load_percentage IS NULL OR predicted_load_percentage BETWEEN 0 AND 100),
+
+    CONSTRAINT chk_recommendations_expected_free
+        CHECK (expected_free_places IS NULL OR expected_free_places >= 0)
+);
+
+CREATE INDEX IF NOT EXISTS idx_recommendations_user_id
+    ON recommendations(user_id);
+
+CREATE INDEX IF NOT EXISTS idx_recommendations_recommended_parking_id
+    ON recommendations(recommended_parking_id);
+
+CREATE INDEX IF NOT EXISTS idx_recommendations_created_at
+    ON recommendations(created_at DESC);
+
+-- =========================================================
+-- NOTIFICATIONS
+-- =========================================================
+
+CREATE TABLE IF NOT EXISTS notifications (
+    id BIGSERIAL PRIMARY KEY,
+
+    user_id BIGINT REFERENCES users(id) ON UPDATE CASCADE ON DELETE CASCADE,
+    parking_id BIGINT REFERENCES parkings(id) ON UPDATE CASCADE ON DELETE CASCADE,
+
+    type notification_type NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    message TEXT NOT NULL,
+
+    is_read BOOLEAN NOT NULL DEFAULT false,
+    read_at TIMESTAMPTZ,
+
+    created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+
+    CONSTRAINT chk_notifications_read_at
+        CHECK (
+            (is_read = false AND read_at IS NULL)
+            OR
+            (is_read = true)
+        )
+);
+
+CREATE INDEX IF NOT EXISTS idx_notifications_user_read
+    ON notifications(user_id, is_read);
+
+CREATE INDEX IF NOT EXISTS idx_notifications_created_at
+    ON notifications(created_at DESC);
+
+CREATE INDEX IF NOT EXISTS idx_notifications_type
+    ON notifications(type);
+
+-- =========================================================
+-- MODEL METRICS
+-- =========================================================
+
+CREATE TABLE IF NOT EXISTS model_metrics (
+    id BIGSERIAL PRIMARY KEY,
+
+    model_name VARCHAR(100) NOT NULL,
+    parking_id BIGINT REFERENCES parkings(id) ON UPDATE CASCADE ON DELETE CASCADE,
+
+    mae NUMERIC(12, 4),
+    mse NUMERIC(12, 4),
+    r2_score NUMERIC(12, 4),
+
+    train_rows_count INTEGER,
+    test_rows_count INTEGER,
+
+    extra_info JSONB NOT NULL DEFAULT '{}'::jsonb,
+
+    trained_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+
+    CONSTRAINT chk_model_metrics_rows
+        CHECK (
+            (train_rows_count IS NULL OR train_rows_count >= 0)
+            AND
+            (test_rows_count IS NULL OR test_rows_count >= 0)
+        )
+);
+
+CREATE INDEX IF NOT EXISTS idx_model_metrics_model_name
+    ON model_metrics(model_name);
+
+CREATE INDEX IF NOT EXISTS idx_model_metrics_parking_id
+    ON model_metrics(parking_id);
+
+CREATE INDEX IF NOT EXISTS idx_model_metrics_trained_at
+    ON model_metrics(trained_at DESC);
+
+-- =========================================================
+-- AUTO HISTORY TRIGGERS
+-- =========================================================
+
+CREATE OR REPLACE FUNCTION write_parking_history_from_parking()
+RETURNS TRIGGER AS $$
+BEGIN
+    IF TG_OP = 'INSERT'
+       OR NEW.total_places IS DISTINCT FROM OLD.total_places
+       OR NEW.occupied_places IS DISTINCT FROM OLD.occupied_places
+    THEN
+        INSERT INTO parking_status_history (
+            parking_id,
+            zone_id,
+            total_places,
+            occupied_places,
+            source,
+            recorded_at
+        )
+        VALUES (
+            NEW.id,
+            NULL,
+            NEW.total_places,
+            NEW.occupied_places,
+            'admin_manual',
+            now()
+        );
+    END IF;
+
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+DROP TRIGGER IF EXISTS trg_parkings_write_history ON parkings;
+
+CREATE TRIGGER trg_parkings_write_history
+AFTER INSERT OR UPDATE OF total_places, occupied_places ON parkings
+FOR EACH ROW
+EXECUTE FUNCTION write_parking_history_from_parking();
+
+CREATE OR REPLACE FUNCTION write_parking_history_from_zone()
+RETURNS TRIGGER AS $$
+BEGIN
+    IF TG_OP = 'INSERT'
+       OR NEW.total_places IS DISTINCT FROM OLD.total_places
+       OR NEW.occupied_places IS DISTINCT FROM OLD.occupied_places
+    THEN
+        INSERT INTO parking_status_history (
+            parking_id,
+            zone_id,
+            total_places,
+            occupied_places,
+            source,
+            recorded_at
+        )
+        VALUES (
+            NEW.parking_id,
+            NEW.id,
+            NEW.total_places,
+            NEW.occupied_places,
+            'admin_manual',
+            now()
+        );
+    END IF;
+
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+DROP TRIGGER IF EXISTS trg_zones_write_history ON parking_zones;
+
+CREATE TRIGGER trg_zones_write_history
+AFTER INSERT OR UPDATE OF total_places, occupied_places ON parking_zones
+FOR EACH ROW
+EXECUTE FUNCTION write_parking_history_from_zone();
+
+-- =========================================================
+-- USEFUL VIEWS FOR ANALYTICS
+-- =========================================================
+
+CREATE OR REPLACE VIEW v_active_parkings AS
+SELECT
+    id,
+    name,
+    address,
+    latitude,
+    longitude,
+    total_places,
+    occupied_places,
+    free_places,
+    load_percentage,
+    load_level,
+    load_color,
+    working_hours,
+    description,
+    is_active,
+    created_at,
+    updated_at
+FROM parkings
+WHERE is_active = true
+  AND is_deleted = false;
+
+CREATE OR REPLACE VIEW v_dashboard_summary AS
+SELECT
+    COUNT(*)::INTEGER AS parking_count,
+    COALESCE(SUM(total_places), 0)::INTEGER AS total_places,
+    COALESCE(SUM(free_places), 0)::INTEGER AS free_places,
+    COALESCE(SUM(occupied_places), 0)::INTEGER AS occupied_places,
+    COALESCE(ROUND(AVG(load_percentage), 2), 0)::NUMERIC(5, 2) AS average_load_percentage
+FROM parkings
+WHERE is_active = true
+  AND is_deleted = false;
+
+CREATE OR REPLACE VIEW v_popular_parkings AS
+SELECT
+    p.id AS parking_id,
+    p.name AS parking_name,
+    COUNT(r.id)::INTEGER AS request_count
+FROM parkings p
+LEFT JOIN parking_requests r ON r.parking_id = p.id
+WHERE p.is_deleted = false
+GROUP BY p.id, p.name
+ORDER BY request_count DESC;
+
+CREATE OR REPLACE VIEW v_peak_hours AS
+SELECT
+    EXTRACT(HOUR FROM recorded_at)::INTEGER AS hour,
+    ROUND(AVG(load_percentage), 2) AS average_load_percentage,
+    COUNT(*)::INTEGER AS records_count
+FROM parking_status_history
+GROUP BY EXTRACT(HOUR FROM recorded_at)
+ORDER BY hour;
+
+-- =========================================================
+-- BASE SEED: ROLES
+-- =========================================================
+
+INSERT INTO roles (code, name, description)
+VALUES
+    ('admin', 'Администратор', 'Полный доступ к системе'),
+    ('driver', 'Водитель', 'Обычный пользователь, ищет парковочные места')
+ON CONFLICT (code) DO NOTHING;
+
+COMMIT;

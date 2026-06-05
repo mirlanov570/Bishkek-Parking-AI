@@ -1,0 +1,1321 @@
+/* DESIGN-5: user pages polish */
+
+.page-stack {
+  display: grid;
+  gap: 18px;
+}
+
+/* Remove visually noisy info/welcome/help blocks from user pages */
+.dashboard-glass-hero,
+.parkings-hero,
+.map-hero,
+.prediction-help-card,
+.recommendations-help-card {
+  display: none !important;
+}
+
+/* Shared page compactness */
+
+.dashboard-page,
+.parkings-page,
+.map-page,
+.analytics-page,
+.predictions-page,
+.recommendations-page,
+.notifications-page {
+  color: var(--ui-text);
+}
+
+.dashboard-page .page-header,
+.parkings-page .page-header,
+.map-page .page-header,
+.analytics-page .page-header,
+.predictions-page .page-header,
+.recommendations-page .page-header,
+.notifications-page .page-header {
+  margin-bottom: 2px;
+}
+
+.dashboard-page .page-header p,
+.parkings-page .page-header p,
+.map-page .page-header p,
+.analytics-page .page-header p,
+.predictions-page .page-header p,
+.recommendations-page .page-header p,
+.notifications-page .page-header p {
+  max-width: 680px;
+}
+
+/* Dashboard */
+
+.dashboard-stats-grid,
+.stats-grid,
+.analytics-summary-grid,
+.notifications-summary-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.stats-grid--four,
+.dashboard-stats-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.dashboard-stat-card {
+  min-height: 142px;
+  padding: 17px;
+  border-radius: 24px;
+}
+
+.dashboard-stat-card .card__body,
+.dashboard-stat-card.card .card__body {
+  padding: 0;
+}
+
+.dashboard-stat-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard-stat-card__icon {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--ui-primary), var(--ui-primary-2));
+  box-shadow: 0 14px 28px rgba(37, 99, 235, 0.2);
+  font-weight: 950;
+}
+
+.dashboard-stat-card__value {
+  display: block;
+  margin-top: 16px;
+  color: var(--ui-text);
+  font-size: clamp(28px, 3.6vw, 42px);
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
+
+.dashboard-stat-card__title {
+  display: block;
+  margin-top: 8px;
+  color: var(--ui-text);
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 1.3;
+}
+
+.dashboard-stat-card__subtitle {
+  margin: 6px 0 0;
+  color: var(--ui-muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.dashboard-panels-grid,
+.content-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.content-grid--three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.content-grid--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.dashboard-list,
+.dashboard-hour-list,
+.dashboard-notifications {
+  display: grid;
+  gap: 10px;
+}
+
+.dashboard-list__item,
+.dashboard-hour-list__item,
+.dashboard-notifications__item {
+  display: grid;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid var(--ui-glass-border-soft);
+  border-radius: 18px;
+  background: var(--ui-glass-bg-soft);
+}
+
+.dashboard-list__item {
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+}
+
+.dashboard-list__item strong,
+.dashboard-notifications__item strong {
+  color: var(--ui-text);
+}
+
+.dashboard-list__item span,
+.dashboard-hour-list__item small,
+.dashboard-notifications__item p,
+.dashboard-notifications__item small {
+  color: var(--ui-muted);
+}
+
+.dashboard-hour-list__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--ui-text);
+}
+
+.dashboard-mini-bar,
+.dashboard-load-bar,
+.load-progress__track {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.18);
+}
+
+.dashboard-mini-bar span,
+.dashboard-load-bar span,
+.load-progress__track span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--ui-primary), var(--ui-primary-2));
+}
+
+.dashboard-mini-bar--low span,
+.dashboard-load-bar--low span,
+.load-progress--low .load-progress__track span {
+  background: linear-gradient(90deg, #16a34a, #22c55e);
+}
+
+.dashboard-mini-bar--medium span,
+.dashboard-load-bar--medium span,
+.load-progress--medium .load-progress__track span {
+  background: linear-gradient(90deg, #f59e0b, #facc15);
+}
+
+.dashboard-mini-bar--high span,
+.dashboard-load-bar--high span,
+.load-progress--high .load-progress__track span {
+  background: linear-gradient(90deg, #ef4444, #dc2626);
+}
+
+.dashboard-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.dashboard-action-card {
+  min-height: 86px;
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+  padding: 13px;
+  border: 1px solid var(--ui-glass-border-soft);
+  border-radius: 20px;
+  color: var(--ui-text);
+  background: var(--ui-glass-bg-soft);
+  text-align: left;
+  transition:
+    transform 0.18s ease,
+    border-color 0.18s ease,
+    background 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.dashboard-action-card:hover:not(:disabled) {
+  border-color: rgba(37, 99, 235, 0.36);
+  background: var(--ui-glass-bg-strong);
+  box-shadow: var(--ui-glass-shadow);
+  transform: translateY(-2px);
+}
+
+.dashboard-action-card:disabled {
+  cursor: not-allowed;
+  opacity: 0.62;
+}
+
+.dashboard-action-card__icon {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--ui-primary), var(--ui-primary-2));
+  font-weight: 950;
+}
+
+.dashboard-action-card strong {
+  display: block;
+  color: var(--ui-text);
+  font-size: 14px;
+}
+
+.dashboard-action-card small {
+  display: block;
+  margin-top: 4px;
+  color: var(--ui-muted);
+  line-height: 1.35;
+}
+
+/* Parkings */
+
+.parkings-toolbar,
+.map-toolbar,
+.analytics-filters-card,
+.notifications-toolbar-card {
+  padding: 14px;
+  border-radius: 24px;
+}
+
+.parkings-toolbar {
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) minmax(170px, 0.32fr) minmax(170px, 0.32fr) auto;
+  gap: 12px;
+  align-items: end;
+}
+
+.parkings-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.parkings-filter-note,
+.notifications-alert,
+.recommendations-feedback,
+.predictions-feedback,
+.map-geolocation-message {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--ui-info-border);
+  border-radius: 18px;
+  color: var(--ui-info);
+  background: var(--ui-info-bg);
+  font-weight: 800;
+}
+
+.parkings-filter-note span {
+  color: inherit;
+}
+
+.parkings-view-toggle {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px;
+  border: 1px solid var(--ui-glass-border-soft);
+  border-radius: 999px;
+  background: var(--ui-glass-bg-soft);
+}
+
+.parkings-view-toggle__button {
+  min-height: 36px;
+  padding: 0 13px;
+  border: 0;
+  border-radius: 999px;
+  color: var(--ui-muted);
+  background: transparent;
+  font-weight: 900;
+}
+
+.parkings-view-toggle__button.active {
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--ui-primary), var(--ui-primary-2));
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.22);
+}
+
+.parkings-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.parking-card {
+  min-height: 100%;
+}
+
+.parking-card .card__body {
+  display: grid;
+  gap: 15px;
+}
+
+.parking-card__top {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+}
+
+.parking-card__icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--ui-primary), var(--ui-primary-2));
+  box-shadow: 0 14px 28px rgba(37, 99, 235, 0.18);
+  font-weight: 950;
+}
+
+.parking-card__icon--low {
+  background: linear-gradient(135deg, #16a34a, #22c55e);
+}
+
+.parking-card__icon--medium {
+  background: linear-gradient(135deg, #f59e0b, #facc15);
+}
+
+.parking-card__icon--high {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+.parking-card__title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.parking-card h2 {
+  margin: 0;
+  color: var(--ui-text);
+  font-size: 18px;
+  line-height: 1.25;
+  letter-spacing: -0.035em;
+}
+
+.parking-card p {
+  margin: 6px 0 0;
+  color: var(--ui-muted);
+  line-height: 1.5;
+}
+
+.parking-card__badges,
+.prediction-result-card__badges,
+.recommendation-card__badges,
+.notification-card__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.parking-card__stats,
+.prediction-result-card__metrics,
+.recommendation-card__metrics {
+  display: grid;
+  gap: 10px;
+}
+
+.parking-card__stats {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.parking-card__stats div,
+.prediction-result-card__metrics div,
+.recommendation-card__metrics div,
+.prediction-features-grid div {
+  display: grid;
+  gap: 5px;
+  padding: 12px;
+  border: 1px solid var(--ui-glass-border-soft);
+  border-radius: 17px;
+  background: var(--ui-glass-bg-soft);
+}
+
+.parking-card__stats span,
+.prediction-result-card__metrics span,
+.recommendation-card__metrics span,
+.prediction-features-grid span {
+  color: var(--ui-muted);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.parking-card__stats strong,
+.prediction-result-card__metrics strong,
+.recommendation-card__metrics strong,
+.prediction-features-grid strong {
+  color: var(--ui-text);
+  font-size: 18px;
+}
+
+.parking-card__actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+/* Map */
+
+.map-toolbar {
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) minmax(180px, 0.36fr) auto;
+  gap: 12px;
+  align-items: end;
+}
+
+.map-toolbar__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.map-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.map-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 360px);
+  gap: 16px;
+  align-items: start;
+}
+
+.map-main-panel,
+.map-side-panel,
+.parking-map-card {
+  border-radius: 28px;
+}
+
+.parking-map-card {
+  overflow: hidden;
+}
+
+.parking-map {
+  min-height: 620px;
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+.map-side-panel {
+  padding: 16px;
+}
+
+.map-side-panel__header {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.map-side-panel__header h2 {
+  margin: 0;
+  color: var(--ui-text);
+  font-size: 19px;
+  letter-spacing: -0.035em;
+}
+
+.map-side-panel__header p {
+  margin: 0;
+  color: var(--ui-muted);
+  line-height: 1.5;
+}
+
+.map-parking-list {
+  display: grid;
+  gap: 9px;
+  max-height: 545px;
+  overflow: auto;
+  padding-right: 2px;
+}
+
+.map-parking-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 12px minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid var(--ui-glass-border-soft);
+  border-radius: 18px;
+  color: var(--ui-text);
+  background: var(--ui-glass-bg-soft);
+  text-align: left;
+}
+
+.map-parking-row:hover {
+  border-color: rgba(37, 99, 235, 0.34);
+  background: var(--ui-glass-bg-strong);
+}
+
+.map-parking-row__marker {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--ui-primary);
+}
+
+.map-parking-row__marker--low {
+  background: #16a34a;
+}
+
+.map-parking-row__marker--medium {
+  background: #f59e0b;
+}
+
+.map-parking-row__marker--high {
+  background: #dc2626;
+}
+
+.map-parking-row__content strong {
+  color: var(--ui-text);
+}
+
+.map-parking-row__content span,
+.map-parking-row__meta {
+  color: var(--ui-muted);
+}
+
+.map-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  padding: 10px;
+  border: 1px solid var(--ui-glass-border-soft);
+  border-radius: 18px;
+  background: var(--ui-glass-bg-soft);
+}
+
+.map-legend__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--ui-muted);
+  font-size: 13px;
+  font-weight: 850;
+}
+
+.map-legend__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+}
+
+.map-legend__dot--green {
+  background: #16a34a;
+}
+
+.map-legend__dot--yellow {
+  background: #f59e0b;
+}
+
+.map-legend__dot--red {
+  background: #dc2626;
+}
+
+/* Analytics */
+
+.analytics-filters-card {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) minmax(130px, 0.34fr) repeat(2, minmax(150px, 0.42fr)) auto;
+  gap: 12px;
+  align-items: end;
+}
+
+.analytics-summary-grid {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.analytics-summary-card {
+  min-height: 136px;
+  overflow: hidden;
+}
+
+.analytics-summary-card .card__body {
+  display: grid;
+  gap: 9px;
+}
+
+.analytics-summary-card::before,
+.notifications-summary-card::before {
+  height: 4px;
+}
+
+.analytics-summary-card__top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.analytics-summary-card__icon {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--ui-primary), var(--ui-primary-2));
+  font-weight: 950;
+}
+
+.analytics-summary-card strong,
+.notifications-summary-card strong {
+  color: var(--ui-text);
+  font-size: clamp(28px, 3.6vw, 42px);
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
+
+.analytics-summary-card span,
+.notifications-summary-card span {
+  color: var(--ui-muted);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.analytics-summary-card p,
+.notifications-summary-card p {
+  margin: 0;
+  color: var(--ui-muted);
+  line-height: 1.45;
+}
+
+.analytics-charts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.analytics-charts-grid--top {
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+}
+
+.chart-card {
+  min-height: 380px;
+  border-radius: 28px;
+}
+
+.chart-card__header {
+  padding: 17px 17px 13px;
+}
+
+.chart-card__body {
+  padding: 16px;
+}
+
+.chart-card__canvas {
+  min-height: 280px;
+}
+
+/* Predictions */
+
+.predictions-main-grid,
+.predictions-section-grid {
+  display: grid;
+  gap: 16px;
+  align-items: start;
+}
+
+.predictions-main-grid {
+  grid-template-columns: minmax(320px, 0.75fr) minmax(0, 1.25fr);
+}
+
+.predictions-section-grid {
+  grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+}
+
+.prediction-form-card,
+.prediction-result-card,
+.model-metrics-card {
+  border-radius: 28px;
+}
+
+.prediction-form {
+  display: grid;
+  gap: 15px;
+}
+
+.prediction-form__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.prediction-form__preview {
+  padding: 12px;
+  border: 1px solid var(--ui-glass-border-soft);
+  border-radius: 18px;
+  background: var(--ui-glass-bg-soft);
+}
+
+.prediction-result-card {
+  overflow: hidden;
+}
+
+.prediction-result-card__hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 16px;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid var(--ui-glass-border-soft);
+  background:
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.16), transparent 34%),
+    var(--ui-glass-bg-soft);
+}
+
+.prediction-result-card__hero h2 {
+  margin: 12px 0 6px;
+  color: var(--ui-text);
+  font-size: clamp(24px, 3vw, 36px);
+  line-height: 1.05;
+  letter-spacing: -0.055em;
+}
+
+.prediction-result-card__hero p {
+  margin: 0;
+  color: var(--ui-muted);
+}
+
+.prediction-result-card__percent {
+  min-width: 160px;
+  padding: 16px;
+  border: 1px solid var(--ui-glass-border-soft);
+  border-radius: 24px;
+  background: var(--ui-glass-bg-strong);
+  text-align: center;
+}
+
+.prediction-result-card__percent strong {
+  display: block;
+  color: var(--ui-text);
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1;
+  letter-spacing: -0.07em;
+}
+
+.prediction-result-card__percent span {
+  display: block;
+  margin-top: 6px;
+  color: var(--ui-muted);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.prediction-result-card__metrics,
+.prediction-result-card__features {
+  padding: 16px;
+}
+
+.prediction-result-card__metrics {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.prediction-result-card__section-title {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.prediction-result-card__section-title strong {
+  color: var(--ui-text);
+}
+
+.prediction-result-card__section-title span {
+  color: var(--ui-muted);
+}
+
+.prediction-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+/* Recommendations */
+
+.recommendations-layout {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.75fr) minmax(0, 1.25fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.recommendations-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.recommendations-section {
+  display: grid;
+  gap: 14px;
+}
+
+.recommendations-section__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.recommendations-section__header h2 {
+  margin: 0;
+  color: var(--ui-text);
+  font-size: 22px;
+  letter-spacing: -0.04em;
+}
+
+.recommendations-section__header p {
+  margin: 6px 0 0;
+  color: var(--ui-muted);
+}
+
+.recommendation-card {
+  min-height: 100%;
+}
+
+.recommendation-card--highlighted {
+  border-color: rgba(37, 99, 235, 0.42);
+  box-shadow: 0 28px 82px rgba(37, 99, 235, 0.18);
+}
+
+.recommendation-card .card__body {
+  display: grid;
+  gap: 15px;
+}
+
+.recommendation-card__header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+}
+
+.recommendation-card__header h2 {
+  margin: 10px 0 5px;
+  color: var(--ui-text);
+  font-size: 22px;
+  letter-spacing: -0.045em;
+}
+
+.recommendation-card__header p,
+.recommendation-card__date {
+  color: var(--ui-muted);
+}
+
+.recommendation-card__requested,
+.recommendation-card__parking-panel,
+.recommendation-card__reason {
+  padding: 13px;
+  border: 1px solid var(--ui-glass-border-soft);
+  border-radius: 18px;
+  background: var(--ui-glass-bg-soft);
+}
+
+.recommendation-card__parking-panel {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+}
+
+.recommendation-card__parking-icon {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 17px;
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--ui-primary), var(--ui-primary-2));
+  font-weight: 950;
+}
+
+.recommendation-card__parking-panel strong,
+.recommendation-card__requested strong,
+.recommendation-card__reason strong {
+  color: var(--ui-text);
+}
+
+.recommendation-card__parking-panel span,
+.recommendation-card__requested span,
+.recommendation-card__reason p {
+  color: var(--ui-muted);
+}
+
+.recommendation-card__metrics {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+/* Notifications */
+
+.notifications-summary-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.notifications-summary-card {
+  min-height: 128px;
+}
+
+.notifications-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.notifications-toolbar h2 {
+  margin: 0;
+  color: var(--ui-text);
+}
+
+.notifications-toolbar p {
+  margin: 5px 0 0;
+  color: var(--ui-muted);
+}
+
+.notifications-filter-tabs {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  padding: 5px;
+  border: 1px solid var(--ui-glass-border-soft);
+  border-radius: 999px;
+  background: var(--ui-glass-bg-soft);
+}
+
+.notifications-filter-tabs button {
+  min-height: 36px;
+  padding: 0 13px;
+  border: 0;
+  border-radius: 999px;
+  color: var(--ui-muted);
+  background: transparent;
+  font-weight: 900;
+}
+
+.notifications-filter-tabs button.active {
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--ui-primary), var(--ui-primary-2));
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.22);
+}
+
+.notifications-list {
+  display: grid;
+  gap: 10px;
+}
+
+.notification-card {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) auto;
+  gap: 13px;
+  align-items: start;
+  padding: 14px;
+  border: 1px solid var(--ui-glass-border);
+  border-radius: 22px;
+  color: var(--ui-text);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.14), transparent 44%),
+    var(--ui-glass-bg);
+  box-shadow: var(--ui-glass-shadow);
+  backdrop-filter: blur(var(--ui-glass-blur)) saturate(150%);
+  -webkit-backdrop-filter: blur(var(--ui-glass-blur)) saturate(150%);
+}
+
+.notification-card--read {
+  opacity: 0.78;
+}
+
+.notification-card__icon {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 17px;
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--ui-primary), var(--ui-primary-2));
+  font-weight: 950;
+}
+
+.notification-card__icon--success {
+  background: linear-gradient(135deg, #16a34a, #22c55e);
+}
+
+.notification-card__icon--warning {
+  background: linear-gradient(135deg, #f59e0b, #facc15);
+}
+
+.notification-card__icon--danger {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+.notification-card__content {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+
+.notification-card__topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.notification-card__topline time {
+  color: var(--ui-muted);
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.notification-card h3 {
+  margin: 0;
+  color: var(--ui-text);
+  font-size: 18px;
+  line-height: 1.25;
+  letter-spacing: -0.035em;
+}
+
+.notification-card p {
+  margin: 0;
+  color: var(--ui-muted);
+  line-height: 1.5;
+}
+
+.notification-card__meta {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.notification-card__meta div {
+  display: grid;
+  gap: 4px;
+  padding: 9px;
+  border: 1px solid var(--ui-glass-border-soft);
+  border-radius: 14px;
+  background: var(--ui-glass-bg-soft);
+}
+
+.notification-card__meta span {
+  color: var(--ui-muted);
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.notification-card__meta strong {
+  overflow: hidden;
+  color: var(--ui-text);
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.notification-card__actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Admin notification creation form on notifications page */
+.notifications-admin-card {
+  border-radius: 28px;
+}
+
+.notifications-create-form {
+  display: grid;
+  gap: 14px;
+}
+
+.notifications-create-form__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.notifications-create-form__textarea {
+  grid-column: 1 / -1;
+}
+
+.notifications-create-form__actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Dark/blue theme readability */
+
+:root[data-background-theme='blue'] .parkings-filter-note,
+:root[data-background-theme='blue'] .notifications-alert,
+:root[data-background-theme='blue'] .recommendations-feedback,
+:root[data-background-theme='blue'] .predictions-feedback,
+:root[data-background-theme='blue'] .map-geolocation-message,
+:root[data-background-theme='dark'] .parkings-filter-note,
+:root[data-background-theme='dark'] .notifications-alert,
+:root[data-background-theme='dark'] .recommendations-feedback,
+:root[data-background-theme='dark'] .predictions-feedback,
+:root[data-background-theme='dark'] .map-geolocation-message {
+  color: #bae6fd;
+  background: rgba(14, 165, 233, 0.14);
+}
+
+/* Responsive */
+
+@media (max-width: 1320px) {
+  .stats-grid--four,
+  .dashboard-stats-grid,
+  .analytics-summary-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .parkings-grid,
+  .content-grid--three {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .recommendation-card__metrics {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1120px) {
+  .parkings-toolbar,
+  .map-toolbar,
+  .analytics-filters-card,
+  .predictions-main-grid,
+  .predictions-section-grid,
+  .recommendations-layout,
+  .map-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .analytics-charts-grid,
+  .analytics-charts-grid--top,
+  .content-grid--two,
+  .content-grid--three,
+  .recommendations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .map-side-panel {
+    order: -1;
+  }
+
+  .map-parking-list {
+    max-height: 320px;
+  }
+
+  .parking-map {
+    min-height: 520px;
+  }
+}
+
+@media (max-width: 820px) {
+  .stats-grid--four,
+  .dashboard-stats-grid,
+  .analytics-summary-grid,
+  .notifications-summary-grid,
+  .parkings-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-actions-grid,
+  .parking-card__actions,
+  .parking-card__stats,
+  .prediction-result-card__metrics,
+  .prediction-features-grid,
+  .recommendation-card__metrics,
+  .notifications-create-form__grid,
+  .notification-card__meta {
+    grid-template-columns: 1fr;
+  }
+
+  .prediction-result-card__hero,
+  .recommendation-card__header,
+  .recommendation-card__parking-panel,
+  .notification-card {
+    grid-template-columns: 1fr;
+  }
+
+  .prediction-result-card__percent {
+    width: 100%;
+  }
+
+  .notifications-toolbar,
+  .notification-card__topline {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .notifications-filter-tabs {
+    width: 100%;
+  }
+
+  .notifications-filter-tabs button {
+    flex: 1;
+  }
+
+  .parking-map {
+    min-height: 460px;
+  }
+}
+
+@media (max-width: 560px) {
+  .page-stack {
+    gap: 14px;
+  }
+
+  .parkings-toolbar,
+  .map-toolbar,
+  .analytics-filters-card,
+  .notifications-toolbar-card {
+    padding: 12px;
+    border-radius: 20px;
+  }
+
+  .parkings-view-toggle,
+  .notifications-filter-tabs {
+    width: 100%;
+    border-radius: 18px;
+  }
+
+  .parkings-view-toggle__button,
+  .notifications-filter-tabs button {
+    width: 100%;
+  }
+
+  .parkings-filter-note,
+  .notifications-alert,
+  .recommendations-feedback,
+  .predictions-feedback,
+  .map-geolocation-message {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .parking-card__title-row {
+    flex-direction: column;
+  }
+
+  .chart-card {
+    min-height: 320px;
+  }
+
+  .chart-card__canvas {
+    min-height: 240px;
+  }
+
+  .parking-map {
+    min-height: 380px;
+    border-radius: 22px;
+  }
+}

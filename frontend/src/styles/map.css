@@ -1,0 +1,913 @@
+.map-page {
+  gap: 18px;
+  position: relative;
+  isolation: isolate;
+}
+
+.map-page--glass::before,
+.map-page--glass::after {
+  content: '';
+  position: fixed;
+  z-index: -1;
+  width: 360px;
+  aspect-ratio: 1;
+  border-radius: 999px;
+  filter: blur(64px);
+  opacity: 0.22;
+  pointer-events: none;
+}
+
+.map-page--glass::before {
+  top: 120px;
+  right: 8%;
+  background: #60a5fa;
+}
+
+.map-page--glass::after {
+  left: 16%;
+  bottom: 8%;
+  background: #2dd4bf;
+}
+
+.map-hero,
+.map-toolbar,
+.map-loader-card,
+.map-side-panel,
+.parking-map-card,
+.map-metric-card {
+  border: 1px solid rgba(255, 255, 255, 0.62);
+  background: rgba(255, 255, 255, 0.58);
+  box-shadow: 0 22px 60px rgba(15, 23, 42, 0.09);
+  backdrop-filter: blur(22px) saturate(145%);
+  -webkit-backdrop-filter: blur(22px) saturate(145%);
+}
+
+.map-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
+  gap: 18px;
+  padding: 22px;
+  border-radius: 34px;
+  overflow: hidden;
+  position: relative;
+}
+
+.map-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 14% 22%, rgba(37, 99, 235, 0.18), transparent 28%),
+    radial-gradient(circle at 84% 20%, rgba(20, 184, 166, 0.2), transparent 26%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.34), rgba(248, 250, 252, 0.8));
+}
+
+.map-hero__content {
+  display: grid;
+  align-content: center;
+  gap: 20px;
+  min-height: 230px;
+  padding: 8px;
+}
+
+.map-hero__content h2 {
+  max-width: 760px;
+  margin: 0;
+  color: var(--color-text);
+  font-size: clamp(34px, 5vw, 58px);
+  line-height: 0.95;
+  letter-spacing: -0.07em;
+}
+
+.map-hero__content p {
+  max-width: 720px;
+  margin: 14px 0 0;
+  color: var(--color-text-muted);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.map-hero__metrics {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.map-metric-card {
+  display: grid;
+  gap: 7px;
+  padding: 17px;
+  border-radius: 24px;
+}
+
+.map-metric-card .card__body {
+  padding: 0;
+}
+
+.map-metric-card span {
+  color: var(--color-text-muted);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.map-metric-card strong {
+  color: var(--color-text);
+  font-size: 32px;
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+.map-metric-card small {
+  color: var(--color-text-muted);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.map-toolbar {
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) minmax(190px, 240px) auto;
+  gap: 14px;
+  align-items: end;
+  padding: 16px;
+  border-radius: 24px;
+}
+
+.map-toolbar label {
+  display: grid;
+  gap: 8px;
+}
+
+.map-toolbar label span {
+  color: var(--color-text-muted);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.map-toolbar input,
+.map-toolbar select {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid rgba(148, 163, 184, 0.34);
+  border-radius: 16px;
+  color: var(--color-text);
+  background: rgba(255, 255, 255, 0.7);
+  outline: 0;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.76);
+}
+
+.map-toolbar input {
+  padding: 0 14px;
+}
+
+.map-toolbar select {
+  padding: 0 12px;
+}
+
+.map-toolbar input:focus,
+.map-toolbar select:focus {
+  border-color: rgba(37, 99, 235, 0.62);
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow:
+    0 0 0 4px rgba(37, 99, 235, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.82);
+}
+
+.map-toolbar__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.map-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.map-geolocation-message {
+  margin: 0;
+  padding: 12px 14px;
+  border: 1px solid rgba(22, 163, 74, 0.25);
+  border-radius: 16px;
+  color: #166534;
+  background: rgba(220, 252, 231, 0.76);
+  font-weight: 800;
+}
+
+.map-loader-card {
+  min-height: 420px;
+  display: grid;
+  place-items: center;
+  border-radius: 26px;
+}
+
+.map-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 380px);
+  gap: 18px;
+  align-items: stretch;
+}
+
+.map-main-panel {
+  position: relative;
+  min-height: 650px;
+}
+
+.parking-map-card {
+  position: relative;
+  min-height: 650px;
+  overflow: hidden;
+  border-radius: 30px;
+  background: #dbeafe;
+}
+
+.parking-map {
+  width: 100%;
+  min-height: 650px;
+  z-index: 1;
+  font-family: var(--font-main);
+}
+
+.parking-map .leaflet-control-container .leaflet-top,
+.parking-map .leaflet-control-container .leaflet-bottom {
+  z-index: 500;
+}
+
+.parking-map .leaflet-control-zoom {
+  overflow: hidden;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 16px 35px rgba(15, 23, 42, 0.12);
+}
+
+.parking-map .leaflet-control-zoom a {
+  border: 0;
+  color: var(--color-text);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.parking-map .leaflet-popup-content-wrapper,
+.parking-map .leaflet-popup-tip {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(18px);
+}
+
+.parking-map .leaflet-popup-content-wrapper {
+  border: 1px solid rgba(226, 232, 240, 0.92);
+  border-radius: 22px;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.16);
+}
+
+.parking-map .leaflet-popup-content {
+  margin: 16px;
+}
+
+.parking-map-marker {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border: 3px solid #ffffff;
+  border-radius: 20px 20px 20px 6px;
+  color: #ffffff;
+  box-shadow: 0 16px 30px rgba(15, 23, 42, 0.28);
+  transform: rotate(-45deg);
+}
+
+.parking-map-marker::after {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  z-index: -1;
+  border-radius: inherit;
+  opacity: 0.22;
+  background: currentColor;
+}
+
+.parking-map-marker span {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.2);
+  font-size: 13px;
+  font-weight: 900;
+  transform: rotate(45deg);
+}
+
+.parking-map-marker--green {
+  background: var(--color-success);
+}
+
+.parking-map-marker--yellow {
+  background: var(--color-warning);
+}
+
+.parking-map-marker--red {
+  background: var(--color-error);
+}
+
+.parking-map-marker--gray,
+.parking-map-marker--blue {
+  background: var(--color-primary);
+}
+
+.parking-map-user-marker {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 3px solid #ffffff;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.18);
+  box-shadow:
+    0 0 0 8px rgba(37, 99, 235, 0.14),
+    0 14px 28px rgba(37, 99, 235, 0.28);
+}
+
+.parking-map-user-marker span {
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: var(--color-primary);
+}
+
+.parking-map-popup {
+  display: grid;
+  gap: 13px;
+  min-width: 250px;
+}
+
+.parking-map-popup--user {
+  min-width: 190px;
+  gap: 6px;
+}
+
+.parking-map-popup--user span {
+  color: var(--color-text-muted);
+  font-weight: 800;
+}
+
+.parking-map-popup__header {
+  display: grid;
+  gap: 7px;
+}
+
+.parking-map-popup__header h3 {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 19px;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+}
+
+.parking-map-popup__header p {
+  margin: 0;
+  color: var(--color-text-muted);
+  line-height: 1.45;
+}
+
+.parking-map-popup__status {
+  width: fit-content;
+  min-height: 24px;
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 9px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.parking-map-popup__status--low {
+  color: #166534;
+  background: var(--color-success-soft);
+}
+
+.parking-map-popup__status--medium {
+  color: #92400e;
+  background: var(--color-warning-soft);
+}
+
+.parking-map-popup__status--high {
+  color: #991b1b;
+  background: var(--color-error-soft);
+}
+
+.parking-map-popup__load {
+  display: grid;
+  gap: 8px;
+  padding: 11px;
+  border: 1px solid rgba(226, 232, 240, 0.86);
+  border-radius: 16px;
+  background: rgba(248, 250, 252, 0.78);
+}
+
+.parking-map-popup__load div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.parking-map-popup__load span {
+  color: var(--color-text-muted);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.parking-map-popup__load strong {
+  color: var(--color-text);
+  font-size: 18px;
+  line-height: 1;
+}
+
+.parking-map-popup__bar {
+  height: 9px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #e2e8f0;
+}
+
+.parking-map-popup__bar span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.parking-map-popup__bar--low span {
+  background: var(--color-success);
+}
+
+.parking-map-popup__bar--medium span {
+  background: var(--color-warning);
+}
+
+.parking-map-popup__bar--high span {
+  background: var(--color-error);
+}
+
+.parking-map-popup__stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.parking-map-popup__stats div {
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid rgba(226, 232, 240, 0.86);
+  border-radius: 14px;
+  background: #f8fafc;
+}
+
+.parking-map-popup__stats span {
+  display: block;
+  color: var(--color-text-muted);
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 1.25;
+}
+
+.parking-map-popup__stats strong {
+  display: block;
+  margin-top: 5px;
+  color: var(--color-text);
+  font-size: 16px;
+  line-height: 1;
+}
+
+.parking-map-popup__actions {
+  display: grid;
+  gap: 9px;
+}
+
+.map-legend {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  z-index: 550;
+  min-width: 190px;
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+  border: 1px solid rgba(226, 232, 240, 0.82);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 20px 48px rgba(15, 23, 42, 0.14);
+  backdrop-filter: blur(18px) saturate(145%);
+  -webkit-backdrop-filter: blur(18px) saturate(145%);
+}
+
+.map-legend h3 {
+  margin: 0 0 2px;
+  color: var(--color-text);
+  font-size: 14px;
+}
+
+.map-legend__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-text-muted);
+  font-size: 13px;
+}
+
+.map-legend__dot {
+  width: 15px;
+  height: 15px;
+  flex: 0 0 15px;
+  border: 2px solid #ffffff;
+  border-radius: 999px;
+  box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.1);
+}
+
+.map-legend__dot--green {
+  background: var(--color-success);
+}
+
+.map-legend__dot--yellow {
+  background: var(--color-warning);
+}
+
+.map-legend__dot--red {
+  background: var(--color-error);
+}
+
+.map-side-panel {
+  display: flex;
+  min-height: 650px;
+  max-height: 650px;
+  flex-direction: column;
+  padding: 18px;
+  overflow: hidden;
+  border-radius: 30px;
+}
+
+.map-side-panel__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.map-side-panel__header h2 {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 22px;
+  letter-spacing: -0.04em;
+}
+
+.map-side-panel__header p {
+  margin: 7px 0 0;
+  color: var(--color-text-muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.map-warning-card {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 12px;
+  padding: 13px;
+  border: 1px solid rgba(245, 158, 11, 0.26);
+  border-radius: 18px;
+  color: #92400e;
+  background: rgba(254, 243, 199, 0.72);
+}
+
+.map-warning-card strong {
+  font-size: 13px;
+}
+
+.map-warning-card p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.map-parking-list {
+  display: grid;
+  gap: 10px;
+  padding-right: 4px;
+  overflow: auto;
+}
+
+.map-parking-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px;
+  border: 1px solid rgba(226, 232, 240, 0.78);
+  border-radius: 20px;
+  color: var(--color-text);
+  background: rgba(255, 255, 255, 0.58);
+  text-align: left;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.map-parking-row:hover {
+  transform: translateY(-2px);
+  border-color: rgba(37, 99, 235, 0.28);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.1);
+}
+
+.map-parking-row__marker {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border: 3px solid #ffffff;
+  border-radius: 16px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 900;
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.16);
+}
+
+.map-parking-row__marker--low {
+  background: var(--color-success);
+}
+
+.map-parking-row__marker--medium {
+  background: var(--color-warning);
+}
+
+.map-parking-row__marker--high {
+  background: var(--color-error);
+}
+
+.map-parking-row__content {
+  min-width: 0;
+}
+
+.map-parking-row__content strong {
+  display: block;
+  overflow: hidden;
+  color: var(--color-text);
+  font-size: 14px;
+  line-height: 1.3;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.map-parking-row__content > span {
+  display: block;
+  margin-top: 5px;
+  overflow: hidden;
+  color: var(--color-text-muted);
+  font-size: 12px;
+  line-height: 1.4;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.map-parking-row__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.map-parking-row__meta small {
+  color: var(--color-text-muted);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.map-card-empty {
+  margin: 0;
+  padding: 16px;
+  border: 1px dashed rgba(148, 163, 184, 0.5);
+  border-radius: 18px;
+  color: var(--color-text-muted);
+  background: rgba(255, 255, 255, 0.46);
+  font-weight: 800;
+  text-align: center;
+}
+
+@media (max-width: 1180px) {
+  .map-layout,
+  .map-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .map-side-panel {
+    min-height: auto;
+    max-height: none;
+  }
+
+  .map-parking-list {
+    max-height: 420px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .map-toolbar {
+    grid-template-columns: 1fr 220px;
+  }
+
+  .map-toolbar__actions {
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 760px) {
+  .map-toolbar,
+  .map-hero__metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .map-toolbar__actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .map-main-panel,
+  .parking-map-card,
+  .parking-map {
+    min-height: 540px;
+  }
+
+  .map-legend {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    min-width: 0;
+  }
+
+  .parking-map-popup__stats {
+    grid-template-columns: 1fr;
+  }
+
+  .map-hero {
+    padding: 18px;
+    border-radius: 26px;
+  }
+}
+
+/* Stage 6: infrastructure on map — theme adaptive */
+.map-toolbar--infrastructure {
+  grid-template-columns: minmax(260px, 1fr) minmax(180px, 220px) minmax(210px, 260px) auto;
+}
+
+/* Leaflet popup under app themes */
+.leaflet-popup-content-wrapper {
+  border: 1px solid var(--ui-glass-border-soft, var(--color-border, rgba(148, 163, 184, 0.26)));
+  border-radius: 22px;
+  color: var(--ui-text, var(--color-text, #0f172a));
+  background:
+    linear-gradient(
+      135deg,
+      var(--ui-glass-bg, var(--color-card-bg, rgba(255, 255, 255, 0.88))),
+      var(--ui-glass-bg-soft, var(--color-surface, rgba(255, 255, 255, 0.72)))
+    );
+  box-shadow: var(--ui-shadow-lg, 0 24px 70px rgba(15, 23, 42, 0.22));
+  backdrop-filter: blur(var(--ui-glass-blur, 18px)) saturate(150%);
+  -webkit-backdrop-filter: blur(var(--ui-glass-blur, 18px)) saturate(150%);
+}
+
+.leaflet-popup-tip {
+  background: var(--ui-glass-bg, var(--color-card-bg, rgba(255, 255, 255, 0.88)));
+  border: 1px solid var(--ui-glass-border-soft, var(--color-border, rgba(148, 163, 184, 0.26)));
+}
+
+.leaflet-popup-content {
+  margin: 0;
+  width: auto !important;
+}
+
+.parking-map-popup {
+  color: var(--ui-text, var(--color-text, #0f172a));
+}
+
+.parking-map-popup__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  align-items: center;
+}
+
+.parking-map-popup__zone {
+  width: fit-content;
+  min-height: 24px;
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 9px;
+  border: 1px solid color-mix(in srgb, var(--ui-primary, #2563eb) 28%, transparent);
+  border-radius: 999px;
+  color: var(--ui-primary, #2563eb);
+  background: color-mix(in srgb, var(--ui-primary, #2563eb) 13%, transparent);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.parking-map-popup__infrastructure {
+  display: grid;
+  gap: 10px;
+  padding: 11px;
+  border: 1px solid var(--ui-glass-border-soft, var(--color-border, rgba(148, 163, 184, 0.24)));
+  border-radius: 16px;
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--ui-primary, #2563eb) 9%, transparent),
+      var(--ui-glass-bg-soft, var(--color-card-bg, rgba(255, 255, 255, 0.36)))
+    );
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.parking-map-popup__infrastructure-header {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.parking-map-popup__infrastructure-header > div {
+  display: grid;
+  gap: 3px;
+}
+
+.parking-map-popup__infrastructure-header span,
+.parking-map-popup__infrastructure-header small,
+.parking-map-popup__infrastructure p,
+.parking-map-popup__object small,
+.parking-map-popup__object span {
+  color: var(--ui-muted, var(--color-text-muted, #64748b));
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.parking-map-popup__infrastructure-header strong,
+.parking-map-popup__object strong {
+  color: var(--ui-text, var(--color-text, #0f172a));
+  font-size: 13px;
+  line-height: 1.25;
+}
+
+.parking-map-popup__infrastructure p {
+  margin: 0;
+  line-height: 1.45;
+}
+
+.parking-map-popup__objects {
+  display: grid;
+  gap: 7px;
+}
+
+.parking-map-popup__object {
+  display: grid;
+  gap: 4px;
+  padding: 8px;
+  border: 1px solid var(--ui-glass-border-soft, var(--color-border, rgba(148, 163, 184, 0.22)));
+  border-radius: 13px;
+  background: var(--ui-glass-bg-soft, var(--color-card-bg, rgba(255, 255, 255, 0.28)));
+}
+
+.parking-map-popup__object span {
+  width: fit-content;
+  padding: 3px 8px;
+  border-radius: 999px;
+  color: var(--ui-primary, #2563eb);
+  background: color-mix(in srgb, var(--ui-primary, #2563eb) 12%, transparent);
+}
+
+.map-parking-row__meta {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+@media (max-width: 1180px) {
+  .map-toolbar--infrastructure {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .map-toolbar--infrastructure .map-toolbar__actions {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 760px) {
+  .map-toolbar--infrastructure {
+    grid-template-columns: 1fr;
+  }
+
+  .parking-map-popup__infrastructure-header {
+    flex-direction: column;
+  }
+}

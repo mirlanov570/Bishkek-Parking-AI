@@ -1,0 +1,123 @@
+.auth-form {
+    display: grid;
+    gap: 18px;
+    margin-top: 28px;
+  }
+  
+  .form-group {
+    display: grid;
+    gap: 8px;
+  }
+  
+  .form-label {
+    color: var(--color-text);
+    font-size: 14px;
+    font-weight: 800;
+  }
+  
+  .form-input {
+    width: 100%;
+    min-height: 50px;
+    padding: 0 15px;
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    outline: none;
+    color: var(--color-text);
+    background: #ffffff;
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease,
+      background 0.2s ease;
+  }
+  
+  .form-input::placeholder {
+    color: #94a3b8;
+  }
+  
+  .form-input:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+  }
+  
+  .form-input:disabled {
+    color: #94a3b8;
+    background: #f8fafc;
+  }
+  
+  .password-input-wrapper {
+    position: relative;
+  }
+  
+  .password-input {
+    padding-right: 108px;
+  }
+  
+  .password-toggle-button {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    min-width: 88px;
+    min-height: 36px;
+    padding: 0 12px;
+    border: 0;
+    border-radius: 10px;
+    color: var(--color-primary-dark);
+    background: var(--color-primary-soft);
+    font-size: 13px;
+    font-weight: 800;
+    transform: translateY(-50%);
+    transition:
+      background 0.2s ease,
+      color 0.2s ease;
+  }
+  
+  .password-toggle-button:hover {
+    color: #ffffff;
+    background: var(--color-primary);
+  }
+  
+  .form-submit-button {
+    min-height: 52px;
+    padding: 0 20px;
+    border: 0;
+    border-radius: 14px;
+    color: #ffffff;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    box-shadow: 0 16px 28px rgba(37, 99, 235, 0.24);
+    font-weight: 900;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+  
+  .form-submit-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 34px rgba(37, 99, 235, 0.3);
+  }
+  
+  .form-submit-button:disabled {
+    transform: none;
+    box-shadow: none;
+  }
+  
+  .form-error {
+    padding: 13px 14px;
+    border: 1px solid rgba(220, 38, 38, 0.28);
+    border-radius: 14px;
+    color: #991b1b;
+    background: var(--color-error-soft);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+  
+  @media (max-width: 520px) {
+    .password-input {
+      padding-right: 92px;
+    }
+  
+    .password-toggle-button {
+      min-width: 76px;
+      font-size: 12px;
+    }
+  }

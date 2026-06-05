@@ -1,0 +1,519 @@
+/* Stage 8: Recommendations and my parking requests */
+.recommendations-page {
+    display: grid;
+    gap: 18px;
+  }
+  
+  .recommendations-page .card {
+    border: 1px solid rgba(226, 232, 240, 0.92);
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.88);
+    box-shadow: var(--shadow-sm);
+    backdrop-filter: blur(14px);
+  }
+  
+  .recommendations-page .card__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 18px 18px 0;
+  }
+  
+  .recommendations-page .card__title {
+    margin: 0;
+    color: var(--color-text);
+    font-size: 20px;
+    line-height: 1.25;
+  }
+  
+  .recommendations-page .card__subtitle {
+    margin: 7px 0 0;
+    color: var(--color-text-muted);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  .recommendations-page .card__body {
+    padding: 18px;
+  }
+  
+  .recommendations-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+    gap: 18px;
+    align-items: start;
+  }
+  
+  .recommendation-form {
+    display: grid;
+    gap: 16px;
+  }
+  
+  .recommendation-form__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+  
+  .recommendation-form__grid--settings {
+    align-items: end;
+  }
+  
+  .recommendation-form__checkbox {
+    min-height: 74px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 14px;
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    background: rgba(248, 250, 252, 0.84);
+  }
+  
+  .recommendation-form__checkbox input {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+    accent-color: var(--color-primary);
+  }
+  
+  .recommendation-form__checkbox strong,
+  .recommendation-form__checkbox small {
+    display: block;
+  }
+  
+  .recommendation-form__checkbox strong {
+    color: var(--color-text);
+    font-size: 14px;
+  }
+  
+  .recommendation-form__checkbox small {
+    margin-top: 4px;
+    color: var(--color-text-muted);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.45;
+  }
+  
+  .recommendation-form__actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .recommendations-help-card__list {
+    display: grid;
+    gap: 12px;
+  }
+  
+  .recommendations-help-card__list div {
+    padding: 14px;
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    background: rgba(248, 250, 252, 0.84);
+  }
+  
+  .recommendations-help-card__list strong,
+  .recommendations-help-card__list span {
+    display: block;
+  }
+  
+  .recommendations-help-card__list strong {
+    color: var(--color-text);
+  }
+  
+  .recommendations-help-card__list span {
+    margin-top: 5px;
+    color: var(--color-text-muted);
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+  
+  .recommendations-section {
+    display: grid;
+    gap: 14px;
+  }
+  
+  .recommendations-section__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  
+  .recommendations-section h2,
+  .recommendations-section__header h2 {
+    margin: 0;
+    color: var(--color-text);
+    font-size: clamp(22px, 3vw, 28px);
+    letter-spacing: -0.04em;
+  }
+  
+  .recommendations-section__header p {
+    margin: 7px 0 0;
+    color: var(--color-text-muted);
+    line-height: 1.55;
+  }
+  
+  .recommendations-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+  
+  .recommendation-card {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .recommendation-card::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 auto;
+    height: 5px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  }
+  
+  .recommendation-card--highlighted::before {
+    background: linear-gradient(90deg, var(--color-success), var(--color-secondary));
+  }
+  
+  .recommendation-card__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 14px;
+  }
+  
+  .recommendation-card__badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  
+  .recommendation-card__header h2 {
+    margin: 0;
+    color: var(--color-text);
+    font-size: 22px;
+    line-height: 1.2;
+    letter-spacing: -0.04em;
+  }
+  
+  .recommendation-card__header p {
+    margin: 7px 0 0;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+  }
+  
+  .recommendation-card__date {
+    color: var(--color-text-muted);
+    font-size: 12px;
+    font-weight: 900;
+    white-space: nowrap;
+  }
+  
+  .recommendation-card__requested {
+    margin-top: 16px;
+    padding: 13px 14px;
+    border: 1px dashed rgba(37, 99, 235, 0.35);
+    border-radius: 16px;
+    background: var(--color-primary-soft);
+  }
+  
+  .recommendation-card__requested span,
+  .recommendation-card__requested strong {
+    display: block;
+  }
+  
+  .recommendation-card__requested span {
+    color: var(--color-primary-dark);
+    font-size: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+  
+  .recommendation-card__requested strong {
+    margin-top: 5px;
+    color: var(--color-text);
+  }
+  
+  .recommendation-card__parking-panel {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 14px;
+    align-items: center;
+    margin-top: 16px;
+    padding: 14px;
+    border: 1px solid var(--color-border);
+    border-radius: 18px;
+    background: rgba(248, 250, 252, 0.88);
+  }
+  
+  .recommendation-card__parking-icon {
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    border-radius: 17px;
+    color: #ffffff;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    box-shadow: 0 12px 22px rgba(37, 99, 235, 0.2);
+    font-weight: 900;
+  }
+  
+  .recommendation-card__parking-panel strong,
+  .recommendation-card__parking-panel span {
+    display: block;
+  }
+  
+  .recommendation-card__parking-panel strong {
+    color: var(--color-text);
+  }
+  
+  .recommendation-card__parking-panel span {
+    margin-top: 4px;
+    color: var(--color-text-muted);
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+  
+  .recommendation-card__parking-meta {
+    min-width: 92px;
+    padding: 10px 12px;
+    border-radius: 15px;
+    background: #ffffff;
+    text-align: center;
+  }
+  
+  .recommendation-card__parking-meta span {
+    margin: 0;
+    font-size: 11px;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+  
+  .recommendation-card__parking-meta strong {
+    margin-top: 5px;
+    font-size: 24px;
+    letter-spacing: -0.05em;
+  }
+  
+  .recommendation-card__metrics {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 16px;
+  }
+  
+  .recommendation-card__metrics div {
+    padding: 12px;
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.84);
+  }
+  
+  .recommendation-card__metrics span,
+  .recommendation-card__metrics strong {
+    display: block;
+  }
+  
+  .recommendation-card__metrics span {
+    color: var(--color-text-muted);
+    font-size: 11px;
+    font-weight: 900;
+    line-height: 1.25;
+    text-transform: uppercase;
+  }
+  
+  .recommendation-card__metrics strong {
+    margin-top: 7px;
+    color: var(--color-text);
+    font-size: 18px;
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+  
+  .recommendation-card__reason {
+    margin-top: 16px;
+    padding: 15px;
+    border: 1px solid rgba(37, 99, 235, 0.18);
+    border-radius: 18px;
+    background: var(--color-primary-soft);
+  }
+  
+  .recommendation-card__reason strong {
+    display: block;
+    color: var(--color-primary-dark);
+    font-size: 13px;
+    text-transform: uppercase;
+  }
+  
+  .recommendation-card__reason p {
+    margin: 8px 0 0;
+    color: var(--color-text);
+    line-height: 1.65;
+  }
+  
+  .requests-list {
+    display: grid;
+    gap: 14px;
+  }
+  
+  .requests-list__loader,
+  .recommendations-loader-card {
+    min-height: 180px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.78);
+  }
+  
+  .requests-list__item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(190px, 240px);
+    gap: 16px;
+    padding: 18px;
+    border: 1px solid rgba(226, 232, 240, 0.92);
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.88);
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .requests-list__main {
+    min-width: 0;
+  }
+  
+  .requests-list__topline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  
+  .requests-list__item h3 {
+    margin: 0;
+    color: var(--color-text);
+    font-size: 21px;
+    line-height: 1.25;
+  }
+  
+  .requests-list__item p {
+    margin: 7px 0 0;
+    color: var(--color-text-muted);
+    line-height: 1.55;
+  }
+  
+  .requests-list__meta {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 15px;
+  }
+  
+  .requests-list__meta div,
+  .requests-list__recommendation-text {
+    padding: 12px;
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    background: rgba(248, 250, 252, 0.84);
+  }
+  
+  .requests-list__meta span,
+  .requests-list__meta strong,
+  .requests-list__recommendation-text span {
+    display: block;
+  }
+  
+  .requests-list__meta span,
+  .requests-list__recommendation-text span {
+    color: var(--color-text-muted);
+    font-size: 11px;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+  
+  .requests-list__meta strong {
+    margin-top: 6px;
+    color: var(--color-text);
+    line-height: 1.35;
+  }
+  
+  .requests-list__recommendation-text {
+    margin-top: 12px;
+  }
+  
+  .requests-list__recommendation-text p {
+    margin-top: 7px;
+    color: var(--color-text);
+  }
+  
+  .requests-list__actions {
+    display: grid;
+    align-content: start;
+    gap: 10px;
+  }
+  
+  .recommendations-feedback {
+    padding: 13px 14px;
+    border-radius: 16px;
+    font-weight: 800;
+    line-height: 1.5;
+  }
+  
+  .recommendations-feedback--success {
+    color: #166534;
+    background: var(--color-success-soft);
+  }
+  
+  @media (max-width: 1180px) {
+    .recommendations-layout,
+    .recommendations-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .recommendation-card__metrics {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  
+  @media (max-width: 760px) {
+    .recommendation-form__grid,
+    .requests-list__item,
+    .requests-list__meta {
+      grid-template-columns: 1fr;
+    }
+  
+    .recommendation-form__actions {
+      justify-content: stretch;
+    }
+  
+    .recommendation-form__actions .btn {
+      width: 100%;
+    }
+  
+    .recommendation-card__header,
+    .recommendations-section__header {
+      flex-direction: column;
+    }
+  
+    .recommendation-card__date {
+      white-space: normal;
+    }
+  
+    .recommendation-card__parking-panel {
+      grid-template-columns: 1fr;
+    }
+  
+    .recommendation-card__parking-icon {
+      width: 42px;
+      height: 42px;
+    }
+  
+    .recommendation-card__metrics {
+      grid-template-columns: 1fr;
+    }
+  }
