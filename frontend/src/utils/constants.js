@@ -1,21 +1,22 @@
 export const APP_NAME = import.meta.env.VITE_APP_NAME || 'Bishkek Parking AI';
 
-export const API_BASE_URL =
-  import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:8000/api/v1';
+// В продакшене (облаке) эти пути должны быть относительными
+export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api/v1';
 
-export const BACKEND_BASE_URL =
-  import.meta.env.VITE_BACKEND_BASE_URL || 'http://127.0.0.1:8000';
+export const BACKEND_BASE_URL = import.meta.env.VITE_BACKEND_BASE_URL || '';
 
-export const UPLOADS_BASE_URL =
-  import.meta.env.VITE_UPLOADS_BASE_URL || 'http://127.0.0.1:8000/uploads';
+export const UPLOADS_BASE_URL = import.meta.env.VITE_UPLOADS_BASE_URL || '/uploads';
 
-export const FRONTEND_BASE_URL = 'http://127.0.0.1:5173';
+// Для фронтенда в облаке путь тоже должен быть относительным или пустым
+export const FRONTEND_BASE_URL = import.meta.env.VITE_FRONTEND_BASE_URL || window.location.origin;
+
+export const IS_DEVELOPMENT = import.meta.env.DEV;
 
 export const IS_DEVELOPMENT = import.meta.env.DEV;
 
 export const PROJECT_LINKS = {
   backend: BACKEND_BASE_URL,
-  swagger: `${BACKEND_BASE_URL}/docs`,
+  swagger: `${BACKEND_BASE_URL}/api/docs`, // Убедитесь, что путь к swagger верный для FastAPI
   frontend: FRONTEND_BASE_URL,
 };
 

@@ -859,7 +859,8 @@ $trainBody = @{
 } | ConvertTo-Json
 
 Invoke-RestMethod `
-    -Uri "http://127.0.0.1:8000/api/v1/predictions/train" `
+    #-Uri "http://127.0.0.1:8000/api/v1/predictions/train" `
+    -Uri "$BASE_URL/api/v1/predictions/train" `
     -Method POST `
     -ContentType "application/json" `
     -Headers @{
@@ -883,7 +884,8 @@ $predictBody = @{
 } | ConvertTo-Json
 
 Invoke-RestMethod `
-    -Uri "http://127.0.0.1:8000/api/v1/predictions/predict" `
+    #-Uri "http://127.0.0.1:8000/api/v1/predictions/predict" `
+    -Uri "$BASE_URL/api/v1/predictions/predict" `
     -Method POST `
     -ContentType "application/json" `
     -Headers @{
@@ -941,7 +943,9 @@ $recommendationBody = @{
 } | ConvertTo-Json
 
 Invoke-RestMethod `
-    -Uri "http://127.0.0.1:8000/api/v1/recommendations" `
+    #-Uri "http://127.0.0.1:8000/api/v1/recommendations" `
+    -Uri "$BASE_URL/api/v1/recommendations" `
+
     -Method POST `
     -ContentType "application/json" `
     -Headers @{
@@ -961,7 +965,8 @@ $recommendBody = @{
 } | ConvertTo-Json
 
 Invoke-RestMethod `
-    -Uri "http://127.0.0.1:8000/api/v1/parking-requests/$($parkingRequest.id)/recommend" `
+    #-Uri "http://127.0.0.1:8000/api/v1/parking-requests/$($parkingRequest.id)/recommend" `
+    -Uri "$BASE_URL/api/v1/parking-requests/$($parkingRequest.id)/recommend" `
     -Method POST `
     -ContentType "application/json" `
     -Headers @{
@@ -1001,7 +1006,8 @@ $requestBody = @{
 } | ConvertTo-Json
 
 $parkingRequest = Invoke-RestMethod `
-    -Uri "http://127.0.0.1:8000/api/v1/parking-requests" `
+    #-Uri "http://127.0.0.1:8000/api/v1/parking-requests" `
+    -Uri "$BASE_URL/api/v1/parking-requests" `
     -Method POST `
     -ContentType "application/json" `
     -Headers @{
@@ -1014,7 +1020,8 @@ $parkingRequest = Invoke-RestMethod `
 
 ```powershell
 Invoke-RestMethod `
-    -Uri "http://127.0.0.1:8000/api/v1/parking-requests/my" `
+    #-Uri "http://127.0.0.1:8000/api/v1/parking-requests/my" `
+    -Uri "$BASE_URL/api/v1/parking-requests/my" `
     -Method GET `
     -Headers @{
         Authorization = "Bearer $accessToken"
@@ -1029,7 +1036,8 @@ $cancelBody = @{
 } | ConvertTo-Json
 
 Invoke-RestMethod `
-    -Uri "http://127.0.0.1:8000/api/v1/parking-requests/$($parkingRequest.id)/cancel" `
+    #-Uri "http://127.0.0.1:8000/api/v1/parking-requests/$($parkingRequest.id)/cancel" `
+    -Uri "$BASE_URL/api/v1/parking-requests/$($parkingRequest.id)/cancel" `
     -Method POST `
     -ContentType "application/json" `
     -Headers @{
@@ -1051,7 +1059,8 @@ uploads/
 Загрузить файл:
 
 ```powershell
-curl.exe -X POST "http://127.0.0.1:8000/api/v1/files/upload" `
+#curl.exe -X POST "http://127.0.0.1:8000/api/v1/files/upload" `
+curl.exe -X POST "$BASE_URL/api/v1/files/upload" `
   -H "Authorization: Bearer $accessToken" `
   -F "file=@test-upload.pdf"
 ```
@@ -1059,7 +1068,8 @@ curl.exe -X POST "http://127.0.0.1:8000/api/v1/files/upload" `
 Открыть файл:
 
 ```text
-http://127.0.0.1:8000/uploads/<filename>
+#http://127.0.0.1:8000/uploads/<filename>
+/uploads/my-file.pdf
 ```
 
 Путь файла не сохраняется в БД, потому что в dump нет таблицы или поля для файлов.
@@ -1147,7 +1157,8 @@ Select-String -Path .\logs\app.log -Pattern "admin123"
 Backend base URL:
 
 ```text
-http://127.0.0.1:8000
+#http://127.0.0.1:8000
+
 ```
 
 API prefix:
@@ -1159,7 +1170,8 @@ API prefix:
 Пример:
 
 ```text
-http://127.0.0.1:8000/api/v1/parkings
+#http://127.0.0.1:8000/api/v1/parkings
+-Uri "$BASE_URL/api/v1/parkings" `
 ```
 
 В `.env` добавить адрес Django frontend:
